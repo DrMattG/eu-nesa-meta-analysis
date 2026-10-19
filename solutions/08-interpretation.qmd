@@ -1,0 +1,24 @@
+---
+title: "Solution 8 — From model to conclusion"
+format: html
+---
+
+## A model answer structure
+
+The exact numerical answer depends on the fitted teaching dataset. A strong response should have this structure:
+
+> Across the settings represented by the included studies, the intervention was associated with an average relative change of approximately **X%** in the outcome (**95% CI: A% to B%**). Effects varied among studies, with the prediction interval indicating that effects in a comparable new setting could plausibly range from **C to D**. Results were [stable/sensitive] across the prespecified sensitivity analyses, while [main credibility limitation] means the pooled estimate should be interpreted cautiously. These findings apply most directly to **the settings represented in the evidence base**.
+
+## What to look for
+
+A good answer:
+
+- describes magnitude rather than using a significance label;
+- distinguishes uncertainty in the mean from between-setting variation;
+- does not turn an observational moderator association into a causal claim;
+- does not claim that funnel diagnostics prove presence or absence of publication bias;
+- states the relevant evidence context rather than assuming universal applicability.
+
+## Decision-maker version
+
+There is no single correct wording. The important test is whether the short version preserves the substantive uncertainty and contextual limits of the full analysis rather than replacing them with a yes/no claim.

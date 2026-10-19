@@ -1,0 +1,15 @@
+{
+  "hash": "08002c6163f11e5486a952fd6b6e12ce",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Exercise 1 — Effect sizes\"\nformat: html\n---\n\n## Aim\n\nCalculate and interpret effect sizes for the synthetic reduced-tillage soil-carbon dataset.\n\n> **Teaching data:** `data/teaching/soil_carbon.csv` are synthetic and are provided only for learning.\n\n## 1. Load the data\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(metafor)\nlibrary(dplyr)\n\nsoil <- read.csv(\"../data/teaching/soil_carbon.csv\")\nhead(soil)\n```\n:::\n\n\nBefore calculating anything, write down the direction you want the effect to have. What should a value above the null mean?\n\n## 2. Calculate log response ratios\n\nComplete the missing arguments.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nes <- escalc(\n  measure = \"___\",\n  m1i = ___, sd1i = ___, n1i = ___,\n  m2i = ___, sd2i = ___, n2i = ___,\n  data = soil\n)\n```\n:::\n\n\n## 3. Back-transform\n\nCreate `RR` and `percent_change`.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nes <- es |>\n  mutate(\n    RR = ___,\n    percent_change = ___\n  )\n```\n:::\n\n\nIn one sentence, interpret Study A.\n\n## 4. Check one calculation manually\n\nUsing Study A, calculate:\n\n$$\\ln(RR)=\\ln(\\bar X_T/\\bar X_C)$$\n\nCompare your answer with `es$yi[1]`.\n\nWhy is this manual check useful?\n\n## 5. Effect-measure choice\n\nFor each question, choose a plausible effect measure and justify it briefly.\n\n1. How many tonnes/ha does an intervention change wheat yield when all studies report tonnes/ha?\n2. How much does an intervention change a latent “soil health” construct measured using several different validated scales?\n3. What proportional change in soil organic carbon occurs under reduced tillage?\n\n## 6. Reflection\n\nWhat information is lost or changed when you replace an absolute mean difference with a standardised or proportional effect?\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

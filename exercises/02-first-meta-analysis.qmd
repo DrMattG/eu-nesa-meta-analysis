@@ -1,0 +1,76 @@
+---
+title: "Exercise 2 — Your first meta-analysis"
+format: html
+---
+
+## Aim
+
+Fit, visualise and interpret a random-effects meta-analysis.
+
+## 1. Prepare effect sizes
+
+```{r}
+#| eval: false
+library(metafor)
+
+soil <- read.csv("../data/teaching/soil_carbon.csv")
+
+es <- escalc(
+  measure = "ROM",
+  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,
+  m2i = mean_control, sd2i = sd_control, n2i = n_control,
+  data = soil
+)
+```
+
+## 2. Fit the model
+
+Fill the blanks.
+
+```{r}
+#| eval: false
+m <- rma(
+  yi = ___,
+  vi = ___,
+  data = ___,
+  method = "___"
+)
+
+summary(m)
+```
+
+Identify the pooled estimate, 95% CI, $\tau^2$ and $I^2$.
+
+## 3. Back-transform
+
+```{r}
+#| eval: false
+predict(m, transf = exp)
+```
+
+Translate the pooled response ratio into a percentage difference.
+
+## 4. Make a forest plot
+
+```{r}
+#| eval: false
+forest(
+  m,
+  slab = paste(es$study_id, es$effect_id, sep = "."),
+  atransf = exp,
+  xlab = "Response ratio (reduced / conventional)"
+)
+abline(v = 1, lty = 2)
+```
+
+What does the forest plot show that the pooled estimate alone does not?
+
+## 5. Interpretation challenge
+
+Write three sentences that separately communicate:
+
+1. the average effect;
+2. uncertainty in that average;
+3. variation among effects / implications for a new comparable setting.
+
+Avoid counting how many individual studies are statistically significant.

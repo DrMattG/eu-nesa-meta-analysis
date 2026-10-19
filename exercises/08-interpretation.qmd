@@ -1,0 +1,55 @@
+---
+title: "Exercise 8 — From model to conclusion"
+format: html
+---
+
+## Aim
+
+Turn the completed analysis into a concise, decision-relevant evidence statement without outrunning the evidence.
+
+## 1. Return to the estimand
+
+Write your target estimand in one sentence: population/settings, intervention, comparator, outcome, effect measure and relevant time frame. Then state whether the analysed evidence matches it exactly or only approximately.
+
+## 2. Extract the quantities you need
+
+From your preferred model, record:
+
+```{r}
+#| eval: false
+summary(m)
+predict(m, transf = exp)
+```
+
+Capture:
+
+- pooled effect on the analysis scale;
+- transformed relative effect;
+- 95% confidence interval;
+- prediction interval;
+- heterogeneity estimate(s).
+
+## 3. Translate without significance language
+
+Write two sentences describing magnitude and uncertainty **without** using “significant”, “non-significant”, “works” or “does not work”.
+
+## 4. Add variation and context
+
+Add one sentence explaining what the prediction interval/heterogeneity means for applying the average effect to another agri-food setting.
+
+## 5. Add credibility
+
+Using Modules 6 and 7, add one sentence covering the most important robustness or reporting-bias limitation. Do not list every diagnostic.
+
+## 6. Decision-maker version
+
+Write a maximum 80-word summary for a policy or management audience. It should include:
+
+1. direction and approximate magnitude;
+2. uncertainty and/or variation;
+3. the most important qualification;
+4. the population/settings to which the evidence most directly applies.
+
+## 7. Final check
+
+Highlight any claim in your paragraph that goes beyond the design of the included studies or beyond the range of contexts represented. Rewrite it more cautiously.

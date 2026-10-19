@@ -1,0 +1,17 @@
+{
+  "hash": "7f2f42d5572d0dabd4eb29342404c0ca",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Exercise 5 — Meta-regression and effect modification\"\nformat: html\n---\n\n## Aim\n\nFit prespecified moderators, interpret coefficients, and distinguish an across-study association from a causal effect.\n\n## 1. Prepare the data\n\nUse the `es` object from the previous exercises, or recreate it from `soil_carbon.csv`.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlevels(factor(es$climate))\nrange(es$duration)\n```\n:::\n\n\nBefore fitting a model, write down a biological reason why **duration** might modify the reduced-tillage effect on soil carbon.\n\n## 2. Continuous moderator\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_duration <- rma.mv(\n  yi, vi,\n  mods = ~ ___,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\nsummary(m_duration)\n```\n:::\n\n\n1. What does the duration coefficient represent on the lnRR scale?\n2. Calculate `exp(coef(m_duration)[\"duration\"])`. What does this represent?\n3. Is the coefficient estimated precisely?\n\n## 3. Categorical moderator\n\n\n::: {.cell}\n\n```{.r .cell-code}\nes$climate <- factor(es$climate)\nlevels(es$climate)\n\nm_climate <- rma.mv(\n  yi, vi,\n  mods = ~ climate,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\nsummary(m_climate)\n```\n:::\n\n\nIdentify the reference category and explain one climate coefficient without calling it a separate “effect”.\n\n## 4. Two moderators\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_both <- rma.mv(\n  yi, vi,\n  mods = ~ duration + climate,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\nsummary(m_both)\n```\n:::\n\n\nCompare the duration coefficient with the single-moderator model. Why might it change?\n\n## 5. Causal interpretation challenge\n\nA colleague writes:\n\n> “Longer implementation causes reduced tillage to increase soil carbon more strongly.”\n\nRewrite this claim so that it is supported by an ordinary study-level meta-regression.\n\nThen list **two plausible confounders** of the across-study duration–effect association.\n\n## 6. Extrapolation\n\nThe observed durations are limited to the range in the dataset. Would you use this model to predict an effect at 30 years? Explain why or why not.\n\n## 7. Reporting\n\nWrite a short results paragraph that includes:\n\n- the moderator being examined and why;\n- the estimated direction/magnitude and uncertainty;\n- residual heterogeneity;\n- a caution about across-study interpretation.\n\nDo not report only the moderator p-value.\n",
+    "supporting": [
+      "05-meta-regression_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

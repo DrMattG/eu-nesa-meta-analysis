@@ -1,0 +1,2856 @@
+[
+  {
+    "objectID": "solutions/08-interpretation.html",
+    "href": "solutions/08-interpretation.html",
+    "title": "Solution 8 — From model to conclusion",
+    "section": "",
+    "text": "The exact numerical answer depends on the fitted teaching dataset. A strong response should have this structure:\n\nAcross the settings represented by the included studies, the intervention was associated with an average relative change of approximately X% in the outcome (95% CI: A% to B%). Effects varied among studies, with the prediction interval indicating that effects in a comparable new setting could plausibly range from C to D. Results were [stable/sensitive] across the prespecified sensitivity analyses, while [main credibility limitation] means the pooled estimate should be interpreted cautiously. These findings apply most directly to the settings represented in the evidence base."
+  },
+  {
+    "objectID": "solutions/08-interpretation.html#a-model-answer-structure",
+    "href": "solutions/08-interpretation.html#a-model-answer-structure",
+    "title": "Solution 8 — From model to conclusion",
+    "section": "",
+    "text": "The exact numerical answer depends on the fitted teaching dataset. A strong response should have this structure:\n\nAcross the settings represented by the included studies, the intervention was associated with an average relative change of approximately X% in the outcome (95% CI: A% to B%). Effects varied among studies, with the prediction interval indicating that effects in a comparable new setting could plausibly range from C to D. Results were [stable/sensitive] across the prespecified sensitivity analyses, while [main credibility limitation] means the pooled estimate should be interpreted cautiously. These findings apply most directly to the settings represented in the evidence base."
+  },
+  {
+    "objectID": "solutions/08-interpretation.html#what-to-look-for",
+    "href": "solutions/08-interpretation.html#what-to-look-for",
+    "title": "Solution 8 — From model to conclusion",
+    "section": "What to look for",
+    "text": "What to look for\nA good answer:\n\ndescribes magnitude rather than using a significance label;\ndistinguishes uncertainty in the mean from between-setting variation;\ndoes not turn an observational moderator association into a causal claim;\ndoes not claim that funnel diagnostics prove presence or absence of publication bias;\nstates the relevant evidence context rather than assuming universal applicability."
+  },
+  {
+    "objectID": "solutions/08-interpretation.html#decision-maker-version",
+    "href": "solutions/08-interpretation.html#decision-maker-version",
+    "title": "Solution 8 — From model to conclusion",
+    "section": "Decision-maker version",
+    "text": "Decision-maker version\nThere is no single correct wording. The important test is whether the short version preserves the substantive uncertainty and contextual limits of the full analysis rather than replacing them with a yes/no claim."
+  },
+  {
+    "objectID": "solutions/06-sensitivity.html",
+    "href": "solutions/06-sensitivity.html",
+    "title": "Solution 6 — Sensitivity and robustness",
+    "section": "",
+    "text": "The exact numerical statement should come from the fitted teaching model. A good conclusion separates the estimated mean response from its uncertainty and from between-study variation."
+  },
+  {
+    "objectID": "solutions/06-sensitivity.html#primary-conclusion",
+    "href": "solutions/06-sensitivity.html#primary-conclusion",
+    "title": "Solution 6 — Sensitivity and robustness",
+    "section": "",
+    "text": "The exact numerical statement should come from the fitted teaching model. A good conclusion separates the estimated mean response from its uncertainty and from between-study variation."
+  },
+  {
+    "objectID": "solutions/06-sensitivity.html#leave-one-out",
+    "href": "solutions/06-sensitivity.html#leave-one-out",
+    "title": "Solution 6 — Sensitivity and robustness",
+    "section": "2. Leave-one-out",
+    "text": "2. Leave-one-out\n\nloo &lt;- leave1out(m_primary)\nloo\n\nInterpret changes in effect magnitude, intervals and heterogeneity together. Crossing an arbitrary significance threshold is not, by itself, evidence that the scientific conclusion has fundamentally changed."
+  },
+  {
+    "objectID": "solutions/06-sensitivity.html#influence-diagnostics",
+    "href": "solutions/06-sensitivity.html#influence-diagnostics",
+    "title": "Solution 6 — Sensitivity and robustness",
+    "section": "3. Influence diagnostics",
+    "text": "3. Influence diagnostics\n\ninf &lt;- influence(m_primary)\nprint(inf)\nplot(inf)\n\nFirst check the data and extraction, then understand why the observation is influential: precision, unusual effect size, leverage, or model structure. Exclusion requires a substantive or methodological justification; influence alone is not one."
+  },
+  {
+    "objectID": "solutions/06-sensitivity.html#alternative-heterogeneity-estimator",
+    "href": "solutions/06-sensitivity.html#alternative-heterogeneity-estimator",
+    "title": "Solution 6 — Sensitivity and robustness",
+    "section": "4. Alternative heterogeneity estimator",
+    "text": "4. Alternative heterogeneity estimator\n\nm_pm &lt;- rma(yi, vi, data = es, method = \"PM\")\n\npredict(m_primary, transf = exp)\npredict(m_pm, transf = exp)\n\nCompare the pooled effect, uncertainty, heterogeneity and prediction interval. The important question is whether the decision-relevant interpretation changes, not whether the estimates are numerically identical."
+  },
+  {
+    "objectID": "solutions/06-sensitivity.html#dependence",
+    "href": "solutions/06-sensitivity.html#dependence",
+    "title": "Solution 6 — Sensitivity and robustness",
+    "section": "5. Dependence",
+    "text": "5. Dependence\n\nm_independent &lt;- rma(yi, vi, data = es, method = \"REML\")\n\nm_multilevel &lt;- rma.mv(\n  yi, vi,\n  random = ~ 1 | study_id/effect_id,\n  data = es,\n  method = \"REML\"\n)\n\nThe multilevel model better reflects the fact that some effects are nested within the same study. However, as discussed in Module 4, this does not reconstruct unknown sampling covariance caused by shared observations."
+  },
+  {
+    "objectID": "solutions/06-sensitivity.html#risk-of-bias-sensitivity",
+    "href": "solutions/06-sensitivity.html#risk-of-bias-sensitivity",
+    "title": "Solution 6 — Sensitivity and robustness",
+    "section": "6. Risk-of-bias sensitivity",
+    "text": "6. Risk-of-bias sensitivity\nA prespecified analysis could compare the primary synthesis of all eligible studies with a model excluding studies judged high risk in the relevant measurement domain. Greater caution would be warranted if excluding those studies materially changed the effect magnitude, uncertainty, prediction interval or direction of the substantive conclusion. The purpose is not to search for a preferred answer but to assess dependence on evidence with a plausible bias mechanism."
+  },
+  {
+    "objectID": "solutions/06-sensitivity.html#robustness-statement",
+    "href": "solutions/06-sensitivity.html#robustness-statement",
+    "title": "Solution 6 — Sensitivity and robustness",
+    "section": "7. Robustness statement",
+    "text": "7. Robustness statement\nA strong statement names each tested assumption and describes what changed. For example: results may be stable to the heterogeneity estimator but more sensitive to treatment of dependent effects. The conclusion should therefore be described as robust to the former choice, not as universally “robust”."
+  },
+  {
+    "objectID": "solutions/04-multilevel.html",
+    "href": "solutions/04-multilevel.html",
+    "title": "Solution 4 — Dependence and multilevel meta-analysis",
+    "section": "",
+    "text": "with(es, table(study_id))\ntable(table(es$study_id))\n\nStudies D and J each contribute two effects in this teaching dataset. Effects from the same study may share plots, participants, controls, measurement procedures or contextual conditions. The primary report would ideally tell us exactly how each effect was generated and whether groups or measurements overlap."
+  },
+  {
+    "objectID": "solutions/04-multilevel.html#map-the-dependence",
+    "href": "solutions/04-multilevel.html#map-the-dependence",
+    "title": "Solution 4 — Dependence and multilevel meta-analysis",
+    "section": "",
+    "text": "with(es, table(study_id))\ntable(table(es$study_id))\n\nStudies D and J each contribute two effects in this teaching dataset. Effects from the same study may share plots, participants, controls, measurement procedures or contextual conditions. The primary report would ideally tell us exactly how each effect was generated and whether groups or measurements overlap."
+  },
+  {
+    "objectID": "solutions/04-multilevel.html#naive-model",
+    "href": "solutions/04-multilevel.html#naive-model",
+    "title": "Solution 4 — Dependence and multilevel meta-analysis",
+    "section": "3. Naive model",
+    "text": "3. Naive model\n\nm_naive &lt;- rma(yi, vi, data = es, method = \"REML\")\nsummary(m_naive)\n\nThis model treats each row as conditionally independent apart from the common random-effects distribution."
+  },
+  {
+    "objectID": "solutions/04-multilevel.html#multilevel-model",
+    "href": "solutions/04-multilevel.html#multilevel-model",
+    "title": "Solution 4 — Dependence and multilevel meta-analysis",
+    "section": "4. Multilevel model",
+    "text": "4. Multilevel model\n\nm_mv &lt;- rma.mv(\n  yi = yi,\n  V = vi,\n  random = ~ 1 | study_id/effect_id,\n  data = es,\n  method = \"REML\"\n)\nsummary(m_mv)\n\nThe multilevel model partitions heterogeneity at study and effect-within-study levels. With this small synthetic dataset, do not over-interpret numerical differences between models; the exercise is about the changed assumptions."
+  },
+  {
+    "objectID": "solutions/04-multilevel.html#variance-components",
+    "href": "solutions/04-multilevel.html#variance-components",
+    "title": "Solution 4 — Dependence and multilevel meta-analysis",
+    "section": "5. Variance components",
+    "text": "5. Variance components\n\nm_mv$sigma2\n\nFor ~ 1 | study_id/effect_id, the first component corresponds to study-level heterogeneity and the second to heterogeneity among effects nested within studies. Their substantive meaning depends on what the repeated effects represent."
+  },
+  {
+    "objectID": "solutions/04-multilevel.html#limitation",
+    "href": "solutions/04-multilevel.html#limitation",
+    "title": "Solution 4 — Dependence and multilevel meta-analysis",
+    "section": "6. Limitation",
+    "text": "6. Limitation\nV = vi supplies only diagonal sampling variances. If two effect estimates share a control or repeated observations, their sampling errors can be correlated. Random effects represent heterogeneity in underlying effects; they do not reconstruct an unknown sampling covariance matrix. A full analysis might derive covariance from the study design, assume and vary plausible correlations, aggregate compatible effects, or use suitable cluster-robust inference."
+  },
+  {
+    "objectID": "solutions/04-multilevel.html#example-interpretation",
+    "href": "solutions/04-multilevel.html#example-interpretation",
+    "title": "Solution 4 — Dependence and multilevel meta-analysis",
+    "section": "7. Example interpretation",
+    "text": "7. Example interpretation\nThe dataset contains multiple estimates from some studies, so treating every row as independent can give prolific studies too much information and understate uncertainty. A multilevel model recognises the clustering of effects and separates study-level from within-study heterogeneity. However, the available teaching data do not identify sampling correlations created by shared observations or controls. In a full review we would map those relationships during extraction and assess whether conclusions are robust to defensible covariance or aggregation assumptions."
+  },
+  {
+    "objectID": "solutions/02-first-meta-analysis.html",
+    "href": "solutions/02-first-meta-analysis.html",
+    "title": "Solution 2 — Your first meta-analysis",
+    "section": "",
+    "text": "library(metafor)\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes &lt;- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n)\n\nm &lt;- rma(yi = yi, vi = vi, data = es, method = \"REML\")\nsummary(m)\npredict(m, transf = exp)\n\nforest(\n  m,\n  slab = paste(es$study_id, es$effect_id, sep = \".\"),\n  atransf = exp,\n  xlab = \"Response ratio (reduced / conventional)\"\n)\nabline(v = 1, lty = 2)"
+  },
+  {
+    "objectID": "solutions/02-first-meta-analysis.html#interpretation",
+    "href": "solutions/02-first-meta-analysis.html#interpretation",
+    "title": "Solution 2 — Your first meta-analysis",
+    "section": "Interpretation",
+    "text": "Interpretation\nA good answer separates the mean from variation. For example:\n\nAcross these synthetic studies, the model estimates the average proportional difference in soil carbon under reduced versus conventional tillage. The confidence interval describes uncertainty in that average effect. The prediction interval should be considered separately because it describes the range of underlying effects expected across comparable settings and may therefore be more relevant to local decisions.\n\nUse the numerical values produced by your fitted model rather than copying this wording mechanically."
+  },
+  {
+    "objectID": "slides/08-interpretation.html#a-model-output-is-not-yet-a-conclusion",
+    "href": "slides/08-interpretation.html#a-model-output-is-not-yet-a-conclusion",
+    "title": "Module 8 — From model to conclusion",
+    "section": "A model output is not yet a conclusion",
+    "text": "A model output is not yet a conclusion\n\n\n\n\nInterpretation reconnects the statistical model to the question we promised to answer.\n\n\nReturn explicitly to Module 0. A sophisticated model can still answer the wrong question. Ask participants what information, beyond the pooled estimate, they now think a conclusion needs.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#learning-objectives",
+    "href": "slides/08-interpretation.html#learning-objectives",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\ntranslate model output into substantive language;\ndistinguish mean effects from expected variation across settings;\navoid significance-based conclusions;\nseparate evidence about effects from assumptions about transportability;\nintegrate risk of bias, reporting bias and sensitivity analyses;\nwrite a concise, calibrated results paragraph for a decision-maker.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#reconstruct-the-estimand",
+    "href": "slides/08-interpretation.html#reconstruct-the-estimand",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Reconstruct the estimand",
+    "text": "Reconstruct the estimand\nBefore interpreting a number, complete the sentence:\n\nAmong [population/settings], what is the average effect of [intervention/exposure] compared with [comparator] on [outcome], measured as [effect measure], over [time frame]?\n\n\nDoes the evidence in the fitted model actually correspond to that estimand?\n\n\nThis catches estimand drift. Eligibility decisions, available outcomes and modelling choices may have shifted what was actually estimated relative to the review question.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#translate-the-effect-scale",
+    "href": "slides/08-interpretation.html#translate-the-effect-scale",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Translate the effect scale",
+    "text": "Translate the effect scale\nSuppose the pooled log response ratio is:\n\\[\\hat\\mu = 0.077\\]\nThen:\n\\[\\exp(0.077) = 1.08\\]\nSo the estimated average relative response is about 8% higher in the intervention group.\n\n“8% higher” is not the same as “an 8 percentage-point increase”.\n\n\nUse this to check scale literacy. Relative effects need a baseline to become absolute effects. Avoid language like “improved by 8%” unless the outcome and direction make “improved” defensible.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#relative-effects-need-context",
+    "href": "slides/08-interpretation.html#relative-effects-need-context",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Relative effects need context",
+    "text": "Relative effects need context\nAn 8% relative increase means different things from different baselines.\nIf the comparator mean were 20 units:\n\\[20 \\times 1.08 = 21.6\\]\nIf it were 100 units:\n\\[100 \\times 1.08 = 108\\]\n\nDecision relevance often requires both relative and absolute interpretation.\n\n\nDo not imply that the pooled ratio can always be safely applied to any baseline. This is an illustration of translation, and baseline risk/level may itself modify effects.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#confidence-interval-and-prediction-interval-answer-different-questions",
+    "href": "slides/08-interpretation.html#confidence-interval-and-prediction-interval-answer-different-questions",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Confidence interval and prediction interval answer different questions",
+    "text": "Confidence interval and prediction interval answer different questions\nConfidence interval: uncertainty about the estimated mean effect.\nPrediction interval: expected range of underlying effects in a comparable new setting, conditional on the model.\n\npredict(m, transf = exp)\n\n\nCould the mean be beneficial while effects in some settings are negligible or adverse?\n\n\nBring back Module 3. In heterogeneous agri-food systems this distinction can be central to management. A narrow CI around the mean does not imply consistent effects everywhere.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#do-not-turn-the-result-into-a-vote",
+    "href": "slides/08-interpretation.html#do-not-turn-the-result-into-a-vote",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Do not turn the result into a vote",
+    "text": "Do not turn the result into a vote\nAvoid:\n\n“The intervention works because the pooled effect was statistically significant.”\n\nPrefer to describe:\n\nmagnitude;\nuncertainty;\nheterogeneity and prediction;\nevidence credibility;\ncontexts represented by the evidence.\n\n\nThe question is not “did p cross 0.05?” but “what does the evidence support?”\n\n\nThis deliberately echoes Module 2 and the sensitivity module. Statistical significance is neither effect magnitude nor practical importance, and it does not establish consistency or causal validity.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#moderators-can-help-but-do-not-overclaim",
+    "href": "slides/08-interpretation.html#moderators-can-help-but-do-not-overclaim",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Moderators can help — but do not overclaim",
+    "text": "Moderators can help — but do not overclaim\nIf effects appear larger after longer intervention durations, we can report an across-study association.\nWe usually cannot conclude from that alone:\n\nincreasing intervention duration will cause the effect to become larger.\n\n\nPrediction from observed study characteristics is not automatically causal explanation.\n\n\nReconnect to Module 5. Confounding between study-level characteristics remains possible. Make the wording match the design and estimand.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#transportability-is-a-separate-question",
+    "href": "slides/08-interpretation.html#transportability-is-a-separate-question",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Transportability is a separate question",
+    "text": "Transportability is a separate question\nA meta-analysis describes the studies included in the synthesis.\nApplying it elsewhere requires asking:\n\nIs the new population represented?\nAre intervention implementation and comparator similar?\nAre climate, soil, production system and follow-up comparable?\nAre important effect modifiers distributed similarly?\nAre we interpolating or extrapolating?\n\n\nA pooled estimate does not automatically travel.\n\n\nThis is particularly important in agri-food systems where environmental and management contexts vary greatly. Avoid implying that a random-effects model itself solves external validity.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#bring-credibility-into-the-conclusion",
+    "href": "slides/08-interpretation.html#bring-credibility-into-the-conclusion",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Bring credibility into the conclusion",
+    "text": "Bring credibility into the conclusion\nInterpretation should reflect:\n\n\nInternal validityCould study results be biased?\n\n\nAvailabilityCould important evidence be missing?\n\n\nRobustnessDo defensible analytical choices change the story?\n\n\n\nPrecision cannot compensate for systematic bias.\n\n\nA very precise synthesis of biased studies is still biased. Do not collapse these dimensions into a single quality score unless a specific framework requires it and its assumptions are justified.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#a-useful-results-paragraph-has-layers",
+    "href": "slides/08-interpretation.html#a-useful-results-paragraph-has-layers",
+    "title": "Module 8 — From model to conclusion",
+    "section": "A useful results paragraph has layers",
+    "text": "A useful results paragraph has layers\n\nWhat was synthesised?\nWhat was the average magnitude and uncertainty?\nHow much did effects vary?\nWhat explained variation, if anything?\nHow credible and robust is the evidence?\nWhere does the conclusion apply?\n\n\nThis is the scaffold for the final exercise. Not every paper needs six sentences, but every conclusion should have considered these six questions.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#worked-example",
+    "href": "slides/08-interpretation.html#worked-example",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Worked example",
+    "text": "Worked example\n\nAcross the included studies, reduced tillage was associated with an estimated average increase in soil carbon of approximately 8% relative to conventional tillage (95% CI: 3% to 13%). Effects varied appreciably among studies, and the prediction interval included little or no benefit in some comparable settings. Some variation was associated with intervention duration, although this across-study relationship should not be interpreted causally. Results were broadly similar across prespecified sensitivity analyses, but incomplete reporting in parts of the evidence base means the average effect should be interpreted cautiously.\n\n\nNumbers here are a teaching example and should be replaced by the fitted teaching-data values if the dataset changes. Ask learners to identify which phrase corresponds to magnitude, uncertainty, heterogeneity, moderators, robustness and reporting bias.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#what-would-you-tell-a-decision-maker",
+    "href": "slides/08-interpretation.html#what-would-you-tell-a-decision-maker",
+    "title": "Module 8 — From model to conclusion",
+    "section": "What would you tell a decision-maker?",
+    "text": "What would you tell a decision-maker?\nNot:\n\n“Reduced tillage increases soil carbon by 8%.”\n\nA more useful answer is conditional:\n\n“Across the settings represented in the evidence, soil carbon was higher on average under reduced tillage, but effects varied among contexts. The average effect is therefore useful as a summary, not a guarantee for every setting.”\n\n\nWhat additional local information would you want before making a recommendation?\n\n\nLet participants supply the context variables. This is where evidence synthesis meets decision-making rather than replacing it.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#final-synthesis-the-whole-course",
+    "href": "slides/08-interpretation.html#final-synthesis-the-whole-course",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Final synthesis: the whole course",
+    "text": "Final synthesis: the whole course\n\n\nQuestion +estimand\n\n\n→\n\n\nEffect sizes +variance\n\n\n→\n\n\nModel +heterogeneity\n\n\n→\n\n\nCredibility +interpretation\n\n\nThen ask throughout:\n\nAre effects dependent?\nWhat explains variation?\nAre conclusions robust?\nWhat evidence might be missing?\nTo which settings can the result reasonably apply?\n\n\nThis slide is the conceptual map of Modules 0–8. Meta-analysis is a chain of linked decisions, not a single statistical command.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/08-interpretation.html#take-home-message",
+    "href": "slides/08-interpretation.html#take-home-message",
+    "title": "Module 8 — From model to conclusion",
+    "section": "Take-home message",
+    "text": "Take-home message\n\nA good meta-analysis does not merely produce a pooled number. It makes explicit what was estimated, how uncertain and variable it is, how credible the evidence is, and where the conclusion can reasonably apply.\n\n\nEnd by asking participants to return to the estimand they wrote in Module 0 and write one final evidence statement. Their conclusion should be recognisably connected to the original question.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#every-meta-analysis-contains-choices",
+    "href": "slides/06-sensitivity.html#every-meta-analysis-contains-choices",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "Every meta-analysis contains choices",
+    "text": "Every meta-analysis contains choices\nExamples include:\n\neligibility decisions;\neffect-size definitions;\nhandling of dependence;\nheterogeneity estimators;\nmoderator specification;\ntreatment of high-risk-of-bias studies;\nassumptions about missing correlations.\n\n\nWould another defensible choice change what we tell the decision-maker?\n\n\nFrame sensitivity analysis as part of the scientific argument. It is not a ritual performed after the primary model and it is not restricted to leave-one-out diagnostics.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#learning-objectives",
+    "href": "slides/06-sensitivity.html#learning-objectives",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\ndistinguish sensitivity analysis from influence diagnostics;\nidentify assumptions worth varying;\nuse leave-one-out and influence diagnostics appropriately;\ncompare defensible model specifications;\nincorporate risk of bias into sensitivity analyses;\nreport robustness without reducing it to significance/no significance.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#start-with-the-assumptions-that-could-matter",
+    "href": "slides/06-sensitivity.html#start-with-the-assumptions-that-could-matter",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "Start with the assumptions that could matter",
+    "text": "Start with the assumptions that could matter\n\n\nEvidenceWhich studies/effects belong in the synthesis?\n\n\nMeasurementHow were outcomes converted to a common effect?\n\n\nModelHow were heterogeneity and dependence represented?\n\n\n\nSensitivity analysis should target plausible sources of uncertainty.\n\n\nAsk participants to list three decisions they made before fitting their own most recent meta-analysis. Those are candidates for sensitivity analysis if reasonable alternatives exist.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#influence-diagnostics-answer-a-narrower-question",
+    "href": "slides/06-sensitivity.html#influence-diagnostics-answer-a-narrower-question",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "Influence diagnostics answer a narrower question",
+    "text": "Influence diagnostics answer a narrower question\n\nIs the fitted result unusually dependent on one study or effect?\n\n\nm &lt;- rma(yi, vi, data = es, method = \"REML\")\n\nleave1out(m)\ninfluence(m)\n\n\nAn influential study is not automatically a bad study.\n\n\nInfluence is a property of the dataset/model combination. A large, precise or unusual study may legitimately be influential. Do not delete studies merely because a diagnostic flags them.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#leave-one-out-what-are-we-looking-for",
+    "href": "slides/06-sensitivity.html#leave-one-out-what-are-we-looking-for",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "Leave-one-out: what are we looking for?",
+    "text": "Leave-one-out: what are we looking for?\nFor each omitted study/effect, examine changes in:\n\npooled magnitude;\nuncertainty;\nprediction interval;\nheterogeneity;\nsubstantive interpretation.\n\n\nDo not ask only whether \\(p\\) crosses 0.05.\n\n\nA result moving from p=.04 to p=.06 with essentially the same estimate is not a dramatic lack of robustness. Conversely, a conclusion can remain statistically significant while changing enough in magnitude to matter for decisions.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#robustness-is-about-the-conclusion",
+    "href": "slides/06-sensitivity.html#robustness-is-about-the-conclusion",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "Robustness is about the conclusion",
+    "text": "Robustness is about the conclusion\n\n\n\n\nUse this as the anchor. Some estimates move more than others. Ask participants whether the overall story is stable and what would need to be reported. The point is not to demand identical results.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#model-specification-sensitivity",
+    "href": "slides/06-sensitivity.html#model-specification-sensitivity",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "Model-specification sensitivity",
+    "text": "Model-specification sensitivity\nExamples:\n\nm_reml &lt;- rma(yi, vi, data = es, method = \"REML\")\nm_pm   &lt;- rma(yi, vi, data = es, method = \"PM\")\n\nm_mv &lt;- rma.mv(\n  yi, vi,\n  random = ~ 1 | study_id/effect_id,\n  data = es,\n  method = \"REML\"\n)\n\n\nWhich alternatives are scientifically defensible for this evidence base?\n\n\nDo not encourage a kitchen-sink multiverse for its own sake. Compare alternatives that represent genuine uncertainty in the analysis. The estimator example is useful pedagogically, but dependence and eligibility decisions may matter far more.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#sensitivity-to-dependence-assumptions",
+    "href": "slides/06-sensitivity.html#sensitivity-to-dependence-assumptions",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "Sensitivity to dependence assumptions",
+    "text": "Sensitivity to dependence assumptions\nIf a sampling correlation is unknown, we might repeat the analysis across plausible values:\n\n\\(\\rho = 0.2\\)    0.5    0.8\n\nThen ask whether estimates and uncertainty materially change.\n\nMake the unobserved assumption visible.\n\n\nThis links directly to Module 4. Do not imply these three rho values are universally appropriate; the plausible range must come from the design and subject matter.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#risk-of-bias-belongs-in-robustness-thinking",
+    "href": "slides/06-sensitivity.html#risk-of-bias-belongs-in-robustness-thinking",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "Risk of bias belongs in robustness thinking",
+    "text": "Risk of bias belongs in robustness thinking\nPossible approaches include:\n\nprimary analysis using all eligible evidence, with RoB clearly characterised;\nsensitivity analysis excluding studies with specified high-risk features;\nstratification/meta-regression where justified and adequately powered;\ninterpretation that gives greater weight to more credible evidence.\n\n\nA numerical “quality score” is not a substitute for domain-level critical appraisal.\n\n\nEmphasise prespecification. Excluding inconvenient studies after seeing their results is not a credible sensitivity analysis. Risk-of-bias domains should reflect mechanisms by which estimates could be biased.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#what-if-the-conclusion-changes",
+    "href": "slides/06-sensitivity.html#what-if-the-conclusion-changes",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "What if the conclusion changes?",
+    "text": "What if the conclusion changes?\nThat is information, not analytical failure.\n\nIdentify which assumption drives the change.\nExplain why both analyses are defensible—or why one is preferred.\nReport the range of plausible conclusions.\nAvoid choosing the specification because it gives the desired answer.\n\n\nFragility is itself a result.\n\n\nThis is an important cultural point. Sensitivity analysis is valuable precisely when it reveals that the conclusion depends on uncertain assumptions.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#what-if-nothing-changes",
+    "href": "slides/06-sensitivity.html#what-if-nothing-changes",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "What if nothing changes?",
+    "text": "What if nothing changes?\nRobustness increases confidence with respect to the assumptions tested.\nIt does not prove absence of:\n\npublication bias;\nunmeasured confounding;\noutcome reporting bias;\nmeasurement error;\npoor external validity.\n\n\nRobust to tested alternatives ≠ universally trustworthy.\n\n\nAvoid overclaiming from robustness. Sensitivity analyses are conditional checks, not validation of the whole evidence base.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#a-compact-reporting-structure",
+    "href": "slides/06-sensitivity.html#a-compact-reporting-structure",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "A compact reporting structure",
+    "text": "A compact reporting structure\n\nThe primary model estimated X. Results were similar when A and B were varied, but excluding studies with C shifted the estimate to Y and increased uncertainty. Conclusions are therefore robust to A/B, but sensitive to assumptions about C.\n\n\nThis is a template, not wording to copy mechanically. It forces authors to state what changed and what did not, rather than dumping a supplementary table of alternative models.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/06-sensitivity.html#take-home-message",
+    "href": "slides/06-sensitivity.html#take-home-message",
+    "title": "Module 6 — Sensitivity and robustness",
+    "section": "Take-home message",
+    "text": "Take-home message\n\n\nIdentify consequentialassumptions\n\n\n→\n\n\nSpecify defensiblealternatives\n\n\n→\n\n\nCompare estimates +uncertainty\n\n\n→\n\n\nReport what isstable or fragile\n\n\n\nSensitivity analysis asks how much our conclusion depends on choices we could reasonably have made differently.\n\n\nTransition to Module 7: one major threat cannot be solved simply by refitting the observed evidence—studies and outcomes that are missing because of selective reporting.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#one-paper-does-not-always-mean-one-effect",
+    "href": "slides/04-dependence.html#one-paper-does-not-always-mean-one-effect",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "One paper does not always mean one effect",
+    "text": "One paper does not always mean one effect\nA study may report several:\n\noutcomes;\ntreatment levels;\ntime points;\nsites;\ncomparisons sharing the same control;\neffect sizes calculated from the same participants or plots.\n\n\nMore rows ≠ more independent information.\n\n\nAsk participants how often they have extracted more than one effect from a paper. In agri-food evidence this is routine: several soil depths, crops, treatments, outcomes or follow-up times. The problem is not multiple outcomes themselves; it is pretending that their sampling errors and underlying effects are unrelated.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#learning-objectives",
+    "href": "slides/04-dependence.html#learning-objectives",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nrecognise common forms of dependence in meta-analysis;\nexplain why naive independence can distort precision and weighting;\ndistinguish study-level and effect-level variation;\nfit a simple multilevel model with rma.mv();\nidentify when a sampling variance–covariance matrix may be needed;\nexplain what a multilevel model does not solve.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#six-rows-three-studies",
+    "href": "slides/04-dependence.html#six-rows-three-studies",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "Six rows — three studies",
+    "text": "Six rows — three studies\n\n\n\n\nThe key point is unequal information. If Study A contributes three highly related outcomes and Study B contributes one, simply treating all four as independent lets A count roughly three times. It can also make standard errors too small because correlation is ignored.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#where-does-dependence-come-from",
+    "href": "slides/04-dependence.html#where-does-dependence-come-from",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "Where does dependence come from?",
+    "text": "Where does dependence come from?\n\n\nShared unitsSeveral outcomes measured on the same plots, farms or animals.\n\n\nShared comparatorSeveral interventions compared with the same control group.\n\n\nRepeated measurementThe same outcome measured at several times or depths.\n\n\n\nWhich of these would you expect in your own evidence base?\n\n\nInvite examples. Make clear that study ID is not a magic definition of dependence: dependence arises from shared information and design. The study is often a useful clustering unit, but analysts need to understand how the effects were generated.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#what-goes-wrong-if-we-ignore-it",
+    "href": "slides/04-dependence.html#what-goes-wrong-if-we-ignore-it",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "What goes wrong if we ignore it?",
+    "text": "What goes wrong if we ignore it?\nTreating correlated effects as independent can:\n\ngive studies with many outcomes disproportionate weight;\nunderestimate uncertainty;\nproduce confidence intervals that are too narrow;\nobscure variation within versus between studies;\nmake moderator tests look more informative than they are.\n\n\nThe pooled estimate itself may also shift when prolific studies differ systematically from the rest.\n\n\nAvoid saying that dependence always causes the same bias direction. The most predictable problem is incorrect uncertainty and weighting. The point estimate can also change because studies contributing many effects get more influence.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#three-common-responses",
+    "href": "slides/04-dependence.html#three-common-responses",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "Three common responses",
+    "text": "Three common responses\n\n\nChoose one effectSimple, but may discard relevant evidence and requires a defensible rule.\n\n\nCombine effectsUseful when effects genuinely answer the same question and covariance can be handled.\n\n\nModel dependenceRetain multiple effects and represent their structure explicitly.\n\n\n\nThe choice should follow the estimand and data-generating structure.\n\n\nThis links back to Module 0. Selecting one effect is not automatically wrong. Sometimes it is exactly what the estimand requires. The bad practice is choosing outcomes opportunistically after seeing results.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#a-simple-multilevel-model",
+    "href": "slides/04-dependence.html#a-simple-multilevel-model",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "A simple multilevel model",
+    "text": "A simple multilevel model\nFor effect \\(j\\) within study \\(i\\):\n\\[y_{ij}=\\mu+u_i+v_{ij}+e_{ij}\\]\n\n\\(\\mu\\): average effect\n\\(u_i\\): between-study deviation\n\\(v_{ij}\\): within-study heterogeneity among underlying effects\n\\(e_{ij}\\): sampling error\n\n\nKeep the notation intuitive. We are decomposing why observed effects differ. Sampling error is already represented by vi; random effects describe heterogeneity at additional levels.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#fit-it-with-rma.mv",
+    "href": "slides/04-dependence.html#fit-it-with-rma.mv",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "Fit it with rma.mv()",
+    "text": "Fit it with rma.mv()\n\nm_mv &lt;- rma.mv(\n  yi, vi,\n  random = ~ 1 | study_id/effect_id,\n  data = es,\n  method = \"REML\"\n)\n\nsummary(m_mv)\n\n\nThe nesting tells the model that effects are grouped within studies.\n\n\nExplain the formula as study/effect, not as mysterious metafor syntax. In a real dataset, effect_id must uniquely identify effects within study. Compare this with the earlier rma() model that treated rows as independent.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#read-the-variance-components",
+    "href": "slides/04-dependence.html#read-the-variance-components",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "Read the variance components",
+    "text": "Read the variance components\nA multilevel model may estimate variation:\n\nbetween studies — contexts differ;\nwithin studies — outcomes/comparisons differ within the same study;\nsampling error — observed estimates are noisy.\n\n\nWhich source of variation is scientifically interesting in your review?\n\n\nDo not make variance decomposition purely technical. A large within-study component may indicate outcome-specific effects or treatment contrasts. A large between-study component may point to contextual variation. Interpretation depends on what each row represents.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#but-random-effects-do-not-create-missing-covariance",
+    "href": "slides/04-dependence.html#but-random-effects-do-not-create-missing-covariance",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "But random effects do not create missing covariance",
+    "text": "But random effects do not create missing covariance\nIf two estimates share participants or a control group, their sampling errors may be correlated.\nA multilevel random-effects structure and a sampling covariance matrix address related but different problems.\n\n# Conceptual form when a sampling V matrix is available\nm_v &lt;- rma.mv(\n  yi,\n  V = V,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\n\n\nThis is an important sophistication. The simple exercise uses vi because we do not know the sampling correlations. Make explicit that adding a study random effect does not magically reconstruct correlations induced by a shared control or repeated measures. Later analyses may use known covariance formulas, plausible correlations, or robust variance methods.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#what-if-correlations-are-unknown",
+    "href": "slides/04-dependence.html#what-if-correlations-are-unknown",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "What if correlations are unknown?",
+    "text": "What if correlations are unknown?\nPossible strategies include:\n\nobtain enough primary information to calculate covariance;\nmake and vary a plausible correlation assumption;\naggregate effects when scientifically justified;\nuse cluster-robust inference where appropriate;\ntest whether conclusions depend on the chosen strategy.\n\n\n“We do not know the correlation” is a reason for sensitivity analysis — not a reason to assume zero silently.\n\n\nKeep this as a map rather than a full robust variance estimation lesson. The course can point learners towards advanced resources. The key habit is to make the dependence assumption visible.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#a-useful-diagnostic-before-modelling",
+    "href": "slides/04-dependence.html#a-useful-diagnostic-before-modelling",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "A useful diagnostic before modelling",
+    "text": "A useful diagnostic before modelling\n\nwith(es, table(study_id))\n\ntable(table(es$study_id))\n\nAsk:\n\nHow many studies contribute &gt;1 effect?\nWhy do they contribute more?\nDo prolific studies differ systematically?\nWhich effects share data?\n\n\nThis simple table is often surprisingly informative. Encourage participants to map the dependence structure during extraction rather than discovering it only when fitting the model.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#what-the-model-cannot-fix",
+    "href": "slides/04-dependence.html#what-the-model-cannot-fix",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "What the model cannot fix",
+    "text": "What the model cannot fix\nA multilevel model does not automatically fix:\n\nbiased primary studies;\nincompatible outcomes;\nselective outcome reporting;\nbadly measured moderators;\nconfounding;\nextrapolation beyond represented settings.\n\n\nA more complex model cannot rescue an incoherent synthesis question.\n\n\nConnect back to critical appraisal and estimands. Statistical sophistication is not a substitute for design judgement.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/04-dependence.html#take-home-message",
+    "href": "slides/04-dependence.html#take-home-message",
+    "title": "Module 4 — Dependence is not optional",
+    "section": "Take-home message",
+    "text": "Take-home message\n\n\nMap thedependence\n\n\n→\n\n\nDecide whatbelongs together\n\n\n→\n\n\nModel orcombine it\n\n\n→\n\n\nTest keyassumptions\n\n\n\nDependence is a feature of the evidence — not an inconvenience to delete.\n\n\nTransition to Module 5: once the dependence structure is represented, we can ask whether prespecified study characteristics explain some of the remaining heterogeneity.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 4 — Dependence is not optional"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#from-effects-to-synthesis",
+    "href": "slides/02-first-meta-analysis.html#from-effects-to-synthesis",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "From effects to synthesis",
+    "text": "From effects to synthesis\n\n\nEffect sizes\n\n\n→\n\n\nPrecision\n\n\n→\n\n\nModel\n\n\n→\n\n\nMean + variation\n\n\n\nPooling is a model-based summary, not a vote.\n\n\nReconnect to Module 1. We now have effect estimates and sampling variances. The task is to synthesise them without losing sight of the scientific quantity the model is supposed to estimate.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#learning-objectives",
+    "href": "slides/02-first-meta-analysis.html#learning-objectives",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain why simple averaging is usually inappropriate;\ndistinguish common-effect and random-effects assumptions;\nfit a random-effects model using metafor;\nread a forest plot;\ndistinguish confidence and prediction intervals;\ntranslate a pooled lnRR into an interpretable result.\n\n\nKeep returning to the estimand. A model is useful only insofar as its assumptions correspond to the scientific quantity we want to estimate.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#why-not-just-average",
+    "href": "slides/02-first-meta-analysis.html#why-not-just-average",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Why not just average?",
+    "text": "Why not just average?\n\n\n\nStudy A \\(n=200\\) small sampling variance\n\n\n\nStudy B \\(n=10\\) large sampling variance\n\n\n\nShould these contribute equally to our estimate of the mean effect?\n\n\nThe larger study is not necessarily better; it is more statistically precise. Bias, relevance and precision remain separate issues.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#two-reasons-observed-effects-differ",
+    "href": "slides/02-first-meta-analysis.html#two-reasons-observed-effects-differ",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Two reasons observed effects differ",
+    "text": "Two reasons observed effects differ\n\n\nSampling variationRepeat the same underlying study and estimates will still vary.\n\n\nBetween-study heterogeneityUnderlying effects may genuinely differ among soils, climates, crops or implementations.\n\n\nObserved variationWhat we see contains both sources.\n\n\n\nUse the field-trial analogy: repeat exactly the same trial many times and estimates vary because of sampling. Move it between climates and soils and the underlying effect may vary too.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#common-effect-or-random-effects",
+    "href": "slides/02-first-meta-analysis.html#common-effect-or-random-effects",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Common-effect or random-effects?",
+    "text": "Common-effect or random-effects?\n\n\nCommon-effect\nOne underlying effect for the included studies.\nObserved differences arise from sampling error.\n\nRandom-effects\nUnderlying effects may differ.\nEstimate their mean and between-study variation.\n\n\nRandom effects do not make scientifically incompatible studies compatible.\n\n\nAvoid presenting random effects as the automatic answer to heterogeneity. If studies estimate fundamentally different quantities, adding tau-squared does not rescue the estimand.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#the-model-in-two-lines",
+    "href": "slides/02-first-meta-analysis.html#the-model-in-two-lines",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "The model in two lines",
+    "text": "The model in two lines\n\\[y_i=\\theta_i+e_i\\]\n\\[\\theta_i=\\mu+u_i\\]\n\n\n\\(e_i\\) = sampling error\n\n\\(u_i\\) = between-study deviation\n\n\nWe want \\(\\mu\\), but we also care about the spread around it.\n\n\nKeep notation light. The point is to separate within-study sampling error from variation among underlying study effects. Module 3 will unpack that spread.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#fit-the-model",
+    "href": "slides/02-first-meta-analysis.html#fit-the-model",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Fit the model",
+    "text": "Fit the model\n\nlibrary(metafor)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes &lt;- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n)\n\nm &lt;- rma(yi, vi, data = es, method = \"REML\")\nsummary(m)\n\n\nExplain REML briefly as a commonly used estimator of between-study variance. There is no need to compare all tau-squared estimators in this introductory module.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#dont-read-the-output-top-to-bottom",
+    "href": "slides/02-first-meta-analysis.html#dont-read-the-output-top-to-bottom",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Don’t read the output top-to-bottom",
+    "text": "Don’t read the output top-to-bottom\nStart with four questions:\n\nWhat is the estimated mean effect?\nHow uncertain is that mean?\nHow much do underlying effects vary?\nWhat does this mean on the original, interpretable scale?\n\n\nThis is a deliberate antidote to reading every p-value printed by software. Participants should develop a hierarchy for interpretation.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#back-transform-the-mean",
+    "href": "slides/02-first-meta-analysis.html#back-transform-the-mean",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Back-transform the mean",
+    "text": "Back-transform the mean\n\npredict(m, transf = exp)\n\nIf the pooled \\(RR=1.10\\):\n\nSoil organic carbon is estimated to be 10% higher on average under reduced tillage than conventional tillage in the evidence represented by the model.\n\n\nThe final phrase matters. “Reduced tillage increases soil carbon by 10%” is a stronger causal and general claim that may not be justified by the designs or target population.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#forest-plot-read-the-evidence-not-just-the-diamond",
+    "href": "slides/02-first-meta-analysis.html#forest-plot-read-the-evidence-not-just-the-diamond",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Forest plot: read the evidence, not just the diamond",
+    "text": "Forest plot: read the evidence, not just the diamond\nA forest plot shows:\n\neach effect estimate;\nuncertainty around each estimate;\nrelative statistical precision;\nthe pooled estimate;\nsometimes a prediction interval.\n\n\nLook at the distribution before looking at the summary.\n\n\nAsk where participants’ eyes go first. Many people jump to the pooled diamond or count intervals crossing the null. Encourage them to inspect magnitude, precision and variation across studies first.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#anatomy-of-a-forest-plot",
+    "href": "slides/02-first-meta-analysis.html#anatomy-of-a-forest-plot",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Anatomy of a forest plot",
+    "text": "Anatomy of a forest plot\n\n\n\n\nRead this from the studies outward, not from the diamond backward. Point estimates show magnitude and direction; horizontal lines show uncertainty; point size commonly reflects statistical precision; the diamond summarises the modelled mean. Crossing the null is not a label for whether an individual study ‘worked’.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#create-the-forest-plot",
+    "href": "slides/02-first-meta-analysis.html#create-the-forest-plot",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Create the forest plot",
+    "text": "Create the forest plot\n\nforest(\n  m,\n  slab = paste(es$study_id, es$effect_id, sep = \".\"),\n  atransf = exp,\n  xlab = \"Response ratio (reduced / conventional)\"\n)\n\nabline(v = 1, lty = 2)\n\n\n\nRR = 1\nno proportional difference\n\nRR &gt; 1\nhigher under reduced tillage\n\nRR &lt; 1\nlower under reduced tillage\n\n\natransf = exp displays results on the ratio scale while the analysis remains on lnRR. That gives interpretable labels without changing the fitted model.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#confidence-interval-uncertainty-in-the-mean",
+    "href": "slides/02-first-meta-analysis.html#confidence-interval-uncertainty-in-the-mean",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Confidence interval: uncertainty in the mean",
+    "text": "Confidence interval: uncertainty in the mean\n\nHow precisely have we estimated \\(\\mu\\)?\n\nA 95% confidence interval describes uncertainty around the estimated mean underlying effect.\n\nIt does not describe the likely effect in a new setting.\n\n\nA precise mean can coexist with substantial variation among true effects. This is one of the most important distinctions in applied meta-analysis.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#prediction-interval-variation-across-settings",
+    "href": "slides/02-first-meta-analysis.html#prediction-interval-variation-across-settings",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Prediction interval: variation across settings",
+    "text": "Prediction interval: variation across settings\n\nWhat underlying effect might occur in a comparable new setting?\n\nConceptually:\n\\[\\hat\\mu \\pm t\\sqrt{SE(\\hat\\mu)^2+\\hat\\tau^2}\\]\n\nIf the CI excludes no effect but the prediction interval spans benefit and harm, what should a decision-maker hear?\n\n\nSay “comparable new setting” deliberately. Prediction intervals do not license extrapolation beyond the populations and contexts represented by the evidence.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#see-the-difference-ci-versus-pi",
+    "href": "slides/02-first-meta-analysis.html#see-the-difference-ci-versus-pi",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "See the difference: CI versus PI",
+    "text": "See the difference: CI versus PI\n\n\n\n\nKeep the centre fixed and point to the different widths. The confidence interval asks how well we know the mean. The prediction interval adds estimated between-study variation and asks about an underlying effect in a comparable setting. This distinction is often more useful than another significance test.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#same-mean-very-different-message",
+    "href": "slides/02-first-meta-analysis.html#same-mean-very-different-message",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Same mean, very different message",
+    "text": "Same mean, very different message\n\n\n\nEvidence base A Mean RR = 1.10 PI = 1.04–1.16\nEffects are relatively consistent.\n\n\n\nEvidence base B Mean RR = 1.10 PI = 0.82–1.48\nEffects vary substantially.\n\n\n\nThe pooled mean alone cannot distinguish these stories.\n\n\nThese are illustrative numbers. Ask which evidence base is easier to use for a local decision and what extra information would be useful for B.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#dont-vote-count-the-forest-plot",
+    "href": "slides/02-first-meta-analysis.html#dont-vote-count-the-forest-plot",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Don’t vote count the forest plot",
+    "text": "Don’t vote count the forest plot\n\nAvoid: “8 of 12 studies found a significant positive effect.”\n\nThat discards:\n\nmagnitude;\nprecision;\nuncertainty;\nbetween-study variation.\n\n\nSynthesis uses the estimates and their uncertainty directly.\n\n\nDistinguish narrative description from vote counting. It is fine to describe the pattern and direction of effects. Tallying statistical significance is not an appropriate synthesis method.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#a-better-results-sentence",
+    "href": "slides/02-first-meta-analysis.html#a-better-results-sentence",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "A better results sentence",
+    "text": "A better results sentence\nInstead of:\n\n“Most studies were significant, therefore reduced tillage works.”\n\nTry:\n\n“Across the included evidence, the estimated mean response was X%, with a 95% CI of … . Underlying effects varied, with a prediction interval of … .”\n\n\nWhat would you add before making a management recommendation?\n\n\nLikely additions: study design/risk of bias, applicability, contexts represented, uncertainty, possible effect modifiers, outcomes and trade-offs. This keeps statistical synthesis connected to evidence appraisal.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#practical-2-your-first-model",
+    "href": "slides/02-first-meta-analysis.html#practical-2-your-first-model",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Practical 2 — Your first model",
+    "text": "Practical 2 — Your first model\nOpen exercises/02-first-meta-analysis.qmd.\n\n\nFit\n\n\n→\n\n\nPlot\n\n\n→\n\n\nPredict\n\n\n→\n\n\nExplain\n\n\nFinal task: explain the result to a policy colleague without using “statistically significant” as the conclusion.\n\nAllow 25–35 minutes. Encourage pairs to compare their final wording. The interpretation is at least as important as successfully running the code.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/02-first-meta-analysis.html#take-home",
+    "href": "slides/02-first-meta-analysis.html#take-home",
+    "title": "Module 2 — Your first meta-analysis",
+    "section": "Take-home",
+    "text": "Take-home\n\nA pooled mean is one feature of a distribution of effects.\n\nA useful synthesis communicates:\nmean + uncertainty + variation + scope\n\nTransition to Module 3: we have deliberately mentioned variation without examining it closely. Now we ask what heterogeneity actually means and how to communicate it.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#learning-objectives",
+    "href": "slides/00-introduction.html#learning-objectives",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain what a meta-analysis does — and does not do;\ntranslate an agri-food question into a clear estimand;\ndistinguish the target question from the available data;\nidentify when studies are sufficiently compatible to combine;\nrecognise why model choice comes after defining the question.\n\n\nOpen by asking participants what they hope a meta-analysis gives them. Common answers are “an overall effect”, “more power”, or “a definitive answer”. Keep these answers visible if possible. Return to them at the end.\nThe central message of the module is that meta-analysis is not primarily a software procedure. It is a way of estimating a clearly defined quantity from multiple studies.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#what-is-meta-analysis",
+    "href": "slides/00-introduction.html#what-is-meta-analysis",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "What is meta-analysis?",
+    "text": "What is meta-analysis?\n\nMeta-analysis is the statistical synthesis of results from multiple studies addressing a sufficiently similar question.\n\nIt can help us estimate:\n\nthe average effect;\nuncertainty around that average;\nvariation in effects among contexts;\nwhether observed differences can be explained by study characteristics.\n\n\nEmphasise “sufficiently similar question”. Statistical compatibility does not establish conceptual compatibility. We can always put numbers into a model; that does not mean the resulting pooled estimate answers a useful question.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#meta-analysis-is-not-the-whole-review",
+    "href": "slides/00-introduction.html#meta-analysis-is-not-the-whole-review",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "Meta-analysis is not the whole review",
+    "text": "Meta-analysis is not the whole review\n\n\n\nEvidence generation\nQuestion\n↓\nEligibility criteria\n↓\nSearch & screening\n↓\nCritical appraisal\n\n\n\nQuantitative synthesis\nData extraction\n↓\nEffect sizes\n↓\nMeta-analysis\n↓\nInterpretation\n\n\n\nThis is an important distinction for people who have encountered meta-analysis as a statistics exercise. A sophisticated model cannot repair biased eligibility criteria, selective evidence, poor extraction, or incompatible outcomes.\nMention that critical appraisal should inform interpretation and, where appropriate, sensitivity analysis; it is not simply a box to tick.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#start-with-the-decision-or-claim",
+    "href": "slides/00-introduction.html#start-with-the-decision-or-claim",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "Start with the decision or claim",
+    "text": "Start with the decision or claim\nSuppose a policy colleague asks:\n\nDoes reduced tillage increase soil organic carbon?\n\nBefore opening R, ask:\n\nCompared with what?\nIn which systems?\nOver what time period?\nWhich measure of soil carbon?\nWhat kind of effect would answer the question?\n\n\nGive participants 60–90 seconds in pairs. Ask them to identify what is underspecified. The aim is to show that apparently simple questions hide multiple analytical choices.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#the-question-contains-an-estimand",
+    "href": "slides/00-introduction.html#the-question-contains-an-estimand",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "The question contains an estimand",
+    "text": "The question contains an estimand\nAn estimand is the quantity we want to estimate.\nFor our running example:\n\nThe average proportional difference in soil organic carbon under reduced tillage compared with conventional tillage, across eligible field studies and relevant agri-food contexts.\n\nWe still need to define:\nPopulation/context · Intervention · Comparator · Outcome · Effect measure · Target quantity\n\nDo not make this overly technical. “Estimand” is useful because it forces us to say exactly what number we want the synthesis to estimate.\nPoint out that the target quantity might be an average effect, a distribution of effects, an effect in a particular context, or something else. The pooled mean is not automatically the most decision-relevant target.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#a-useful-translation-exercise",
+    "href": "slides/00-introduction.html#a-useful-translation-exercise",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "A useful translation exercise",
+    "text": "A useful translation exercise\nBroad question\n\nDoes reduced tillage improve soil carbon?\n\nMore explicit synthesis question\n\nAmong agricultural field systems, what is the proportional difference in soil organic carbon under reduced or no tillage versus conventional tillage at the end of follow-up?\n\nEffect measure\n\\[\\ln(RR)=\\ln\\left(\\frac{\\bar X_{reduced}}{\\bar X_{control}}\\right)\\]\n\nExplain why the response ratio is attractive here: soil carbon is positive, studies may use different absolute scales, and a proportional effect has a meaningful interpretation. This is not a universal rule; Module 1 deals with choosing effect measures.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#what-evidence-belongs-together",
+    "href": "slides/00-introduction.html#what-evidence-belongs-together",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "What evidence belongs together?",
+    "text": "What evidence belongs together?\nTwo studies can both mention “soil carbon” and still estimate different things.\nConsider differences in:\n\nsoil carbon measure and depth;\nintervention definition;\ncomparator;\nfollow-up duration;\nexperimental design;\nclimate and soil system;\nunit of analysis.\n\nPooling is a scientific judgement before it is a statistical operation.\n\nAsk: “Would you combine soil organic carbon measured at 0–10 cm after one year with total carbon at 0–30 cm after 20 years?” There is no automatic yes/no answer. The point is that compatibility must be justified.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#variation-is-not-necessarily-noise",
+    "href": "slides/00-introduction.html#variation-is-not-necessarily-noise",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "Variation is not necessarily noise",
+    "text": "Variation is not necessarily noise\nAgri-food interventions often operate differently across:\n\nclimates;\nsoils;\ncrops;\nmanagement histories;\nintervention intensity;\nduration.\n\nA useful synthesis may therefore ask both:\n\nWhat is the average effect?\n\nand\n\nHow much do effects vary, and why?\n\n\nSet up the later heterogeneity module. Avoid implying that heterogeneity is a statistical nuisance to be “fixed”. In applied ecology and agriculture it is often scientifically important.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#the-data-do-not-define-the-question",
+    "href": "slides/00-introduction.html#the-data-do-not-define-the-question",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "The data do not define the question",
+    "text": "The data do not define the question\nA common workflow is:\n\n“These are the outcomes reported in the papers. Which can we meta-analyse?”\n\nA stronger workflow is:\n\n“This is the quantity our question requires. Which reported results estimate it?”\n\nThat distinction helps prevent estimand drift.\n\nGive an example: the management question concerns long-term soil carbon, but most studies report short-term microbial activity. Those data may be interesting, but pooling them does not answer the original question.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#what-does-a-pooled-effect-mean",
+    "href": "slides/00-introduction.html#what-does-a-pooled-effect-mean",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "What does a pooled effect mean?",
+    "text": "What does a pooled effect mean?\nImagine the synthesis eventually estimates a response ratio of 1.10.\nThat could be described as:\n\nOn average, soil organic carbon was approximately 10% higher under reduced tillage than under the comparator in the included evidence.\n\nBut this statement alone tells us nothing about:\n\nhow variable effects are;\nwhether the estimate is dominated by particular studies;\nrisk of bias;\napplicability to a new setting.\n\n\nStress the phrase “in the included evidence”. Avoid jumping from a pooled estimate to a universal causal statement. The strength of causal interpretation depends on study designs and assumptions.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#before-you-meta-analyse-five-questions",
+    "href": "slides/00-introduction.html#before-you-meta-analyse-five-questions",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "Before you meta-analyse: five questions",
+    "text": "Before you meta-analyse: five questions\n\nWhat quantity do I want to estimate?\nDo the included effects estimate that quantity?\nAre the effects comparable enough to synthesise?\nAre observations statistically independent?\nWhat sources of bias or uncertainty affect interpretation?\n\n\nThese questions can become a recurring checklist throughout the course. Question 4 foreshadows the multilevel module. Question 5 links the statistical training back to evidence-synthesis practice.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#mini-exercise-define-the-estimand",
+    "href": "slides/00-introduction.html#mini-exercise-define-the-estimand",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "Mini exercise: define the estimand",
+    "text": "Mini exercise: define the estimand\nA review asks:\n\nDo cover crops improve crop yield?\n\nIn pairs, specify:\n\npopulation/context;\nintervention;\ncomparator;\noutcome;\neffect measure;\ntarget quantity.\n\nThen ask: what decisions would change if the target were next-season yield versus mean yield over five years?\n\nAllow about five minutes. There is deliberately no single perfect answer. Ask two groups to share their estimands and compare how small wording changes alter which studies/results would be eligible.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "slides/00-introduction.html#take-home-message",
+    "href": "slides/00-introduction.html#take-home-message",
+    "title": "Module 0 — From question to meta-analysis",
+    "section": "Take-home message",
+    "text": "Take-home message\n\nThe question determines the estimand.\nThe estimand determines which effects are compatible.\nOnly then should the model be chosen.\n\nNext: How do we put compatible study results onto an appropriate effect-size scale?\n\nReturn to the opening question: what does meta-analysis give us? Ideally participants now answer in terms of estimating a defined quantity and its uncertainty/distribution, rather than merely “combining studies”.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 0 — From question to meta-analysis"
+    ]
+  },
+  {
+    "objectID": "instructor-guide.html",
+    "href": "instructor-guide.html",
+    "title": "Instructor guide",
+    "section": "",
+    "text": "This course treats meta-analysis as part of evidence synthesis, not simply as a statistical procedure. The recurring sequence is:\n\nQuestion → estimand → compatible evidence → effect size → model → heterogeneity → dependence → moderators → robustness → interpretation\n\nModules 0–3 form the introductory core and can be taught as a half-day intensive session or expanded with exercises into a full day."
+  },
+  {
+    "objectID": "instructor-guide.html#teaching-philosophy",
+    "href": "instructor-guide.html#teaching-philosophy",
+    "title": "Instructor guide",
+    "section": "",
+    "text": "This course treats meta-analysis as part of evidence synthesis, not simply as a statistical procedure. The recurring sequence is:\n\nQuestion → estimand → compatible evidence → effect size → model → heterogeneity → dependence → moderators → robustness → interpretation\n\nModules 0–3 form the introductory core and can be taught as a half-day intensive session or expanded with exercises into a full day."
+  },
+  {
+    "objectID": "instructor-guide.html#suggested-timings-for-modules-03",
+    "href": "instructor-guide.html#suggested-timings-for-modules-03",
+    "title": "Instructor guide",
+    "section": "Suggested timings for Modules 0–3",
+    "text": "Suggested timings for Modules 0–3\n\n\n\nModule\nSlides/discussion\nExercise\nTotal\n\n\n\n\n0. From question to meta-analysis\n30 min\n10 min\n40 min\n\n\n1. Effect sizes\n35 min\n25 min\n60 min\n\n\n2. First meta-analysis\n40 min\n30 min\n70 min\n\n\n3. Heterogeneity\n35 min\n25 min\n60 min\n\n\n\nAdd breaks as appropriate. For a shorter workshop, retain the interpretation questions and reduce coding time rather than removing the conceptual framing."
+  },
+  {
+    "objectID": "instructor-guide.html#presenter-notes",
+    "href": "instructor-guide.html#presenter-notes",
+    "title": "Instructor guide",
+    "section": "Presenter notes",
+    "text": "Presenter notes\nEvery RevealJS deck contains ::: {.notes} blocks. These are intended as teaching prompts rather than a script that must be read verbatim. They identify discussion questions, common misconceptions and transitions."
+  },
+  {
+    "objectID": "instructor-guide.html#teaching-dataset",
+    "href": "instructor-guide.html#teaching-dataset",
+    "title": "Instructor guide",
+    "section": "Teaching dataset",
+    "text": "Teaching dataset\ndata/teaching/soil_carbon.csv is synthetic. It is deliberately simple and should not be presented as empirical evidence about reduced tillage. The final EU-NESA package can supplement it with openly licensed empirical agri-food datasets where permissions and provenance are clear."
+  },
+  {
+    "objectID": "instructor-guide.html#r-setup",
+    "href": "instructor-guide.html#r-setup",
+    "title": "Instructor guide",
+    "section": "R setup",
+    "text": "R setup\nParticipants need:\ninstall.packages(c(\"metafor\", \"tidyverse\"))\nThe introductory exercises primarily use metafor; dplyr is used for readable data manipulation."
+  },
+  {
+    "objectID": "instructor-guide.html#key-messages-to-protect",
+    "href": "instructor-guide.html#key-messages-to-protect",
+    "title": "Instructor guide",
+    "section": "Key messages to protect",
+    "text": "Key messages to protect\n\nThe effect measure follows from the estimand.\nPrecision is not the same as methodological quality.\nRandom effects do not make conceptually incompatible studies compatible.\nDo not interpret individual statistical significance by vote counting.\n\\(I^2\\) is not a quality score or a universal traffic-light measure.\nPrediction intervals can be more decision-relevant than the confidence interval around the mean.\nCausal interpretation depends on study design and assumptions, not on meta-analysis alone."
+  },
+  {
+    "objectID": "instructor-guide.html#modules-46-suggested-teaching-plan",
+    "href": "instructor-guide.html#modules-46-suggested-teaching-plan",
+    "title": "Instructor guide",
+    "section": "Modules 4–6: suggested teaching plan",
+    "text": "Modules 4–6: suggested teaching plan\n\nModule 4 — Dependence is not optional (35–45 min + 30 min practical)\nUse participants’ own examples of multiple outcomes, time points and shared controls before introducing rma.mv(). The conceptual goal is to recognise dependence and map its source; the software is secondary. Explicitly distinguish random-effects clustering from sampling covariance.\n\n\nModule 5 — Explaining heterogeneity (35–45 min + 30 min practical)\nAsk learners to state a biological moderator hypothesis before fitting a model. Keep the causal warning prominent: most meta-regressions compare study characteristics across studies, even when treatment allocation within the primary studies was randomised. Focus reporting on estimates, uncertainty, data support and residual heterogeneity rather than moderator p-values.\n\n\nModule 6 — Sensitivity and robustness (30–40 min + 30 min practical)\nBegin by asking which analytical choices in the synthesis were genuinely uncertain. Separate influence diagnostics from sensitivity analyses. The endpoint is a robustness statement describing which conclusions are stable to which tested assumptions; avoid reducing robustness to whether statistical significance changes."
+  },
+  {
+    "objectID": "instructor-guide.html#module-7-missing-evidence-and-reporting-bias",
+    "href": "instructor-guide.html#module-7-missing-evidence-and-reporting-bias",
+    "title": "Instructor guide",
+    "section": "Module 7 — Missing evidence and reporting bias",
+    "text": "Module 7 — Missing evidence and reporting bias\nSuggested time: 40–50 minutes teaching + 25–35 minutes practical.\nThe central teaching principle is that funnel plots and regression tests identify patterns, not the mechanism that caused them. Start with the reporting process, then introduce statistical diagnostics. Encourage triangulation across search/extraction information, study characteristics and statistical patterns. Avoid teaching trim-and-fill as a correction procedure."
+  },
+  {
+    "objectID": "instructor-guide.html#module-8-from-model-to-conclusion",
+    "href": "instructor-guide.html#module-8-from-model-to-conclusion",
+    "title": "Instructor guide",
+    "section": "Module 8 — From model to conclusion",
+    "text": "Module 8 — From model to conclusion\nSuggested time: 40–50 minutes teaching + 30 minutes synthesis exercise.\nUse this as the capstone. Participants should return to the estimand from Module 0 and build a conclusion from magnitude, uncertainty, variation, credibility and applicability. The final exercise works well in pairs: one participant writes the technical paragraph and the other rewrites it for a decision-maker, then they compare what information was lost."
+  },
+  {
+    "objectID": "exercises/08-interpretation.html",
+    "href": "exercises/08-interpretation.html",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "",
+    "text": "Turn the completed analysis into a concise, decision-relevant evidence statement without outrunning the evidence.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#aim",
+    "href": "exercises/08-interpretation.html#aim",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "",
+    "text": "Turn the completed analysis into a concise, decision-relevant evidence statement without outrunning the evidence.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#return-to-the-estimand",
+    "href": "exercises/08-interpretation.html#return-to-the-estimand",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "1. Return to the estimand",
+    "text": "1. Return to the estimand\nWrite your target estimand in one sentence: population/settings, intervention, comparator, outcome, effect measure and relevant time frame. Then state whether the analysed evidence matches it exactly or only approximately.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#extract-the-quantities-you-need",
+    "href": "exercises/08-interpretation.html#extract-the-quantities-you-need",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "2. Extract the quantities you need",
+    "text": "2. Extract the quantities you need\nFrom your preferred model, record:\n\nsummary(m)\npredict(m, transf = exp)\n\nCapture:\n\npooled effect on the analysis scale;\ntransformed relative effect;\n95% confidence interval;\nprediction interval;\nheterogeneity estimate(s).",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#translate-without-significance-language",
+    "href": "exercises/08-interpretation.html#translate-without-significance-language",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "3. Translate without significance language",
+    "text": "3. Translate without significance language\nWrite two sentences describing magnitude and uncertainty without using “significant”, “non-significant”, “works” or “does not work”.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#add-variation-and-context",
+    "href": "exercises/08-interpretation.html#add-variation-and-context",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "4. Add variation and context",
+    "text": "4. Add variation and context\nAdd one sentence explaining what the prediction interval/heterogeneity means for applying the average effect to another agri-food setting.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#add-credibility",
+    "href": "exercises/08-interpretation.html#add-credibility",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "5. Add credibility",
+    "text": "5. Add credibility\nUsing Modules 6 and 7, add one sentence covering the most important robustness or reporting-bias limitation. Do not list every diagnostic.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#decision-maker-version",
+    "href": "exercises/08-interpretation.html#decision-maker-version",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "6. Decision-maker version",
+    "text": "6. Decision-maker version\nWrite a maximum 80-word summary for a policy or management audience. It should include:\n\ndirection and approximate magnitude;\nuncertainty and/or variation;\nthe most important qualification;\nthe population/settings to which the evidence most directly applies.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#final-check",
+    "href": "exercises/08-interpretation.html#final-check",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "7. Final check",
+    "text": "7. Final check\nHighlight any claim in your paragraph that goes beyond the design of the included studies or beyond the range of contexts represented. Rewrite it more cautiously.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html",
+    "href": "exercises/06-sensitivity.html",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "",
+    "text": "Test whether substantive conclusions depend on influential observations or defensible analytical choices.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#aim",
+    "href": "exercises/06-sensitivity.html#aim",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "",
+    "text": "Test whether substantive conclusions depend on influential observations or defensible analytical choices.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#define-the-primary-conclusion-first",
+    "href": "exercises/06-sensitivity.html#define-the-primary-conclusion-first",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "1. Define the primary conclusion first",
+    "text": "1. Define the primary conclusion first\nFit the primary model:\n\nm_primary &lt;- rma(yi, vi, data = es, method = \"REML\")\npredict(m_primary, transf = exp)\n\nBefore running diagnostics, write one sentence stating the substantive conclusion you would currently draw.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#leave-one-out-analysis",
+    "href": "exercises/06-sensitivity.html#leave-one-out-analysis",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "2. Leave-one-out analysis",
+    "text": "2. Leave-one-out analysis\n\nloo &lt;- leave1out(m_primary)\nloo\n\nAsk:\n\nHow much does the pooled estimate move?\nHow much does its uncertainty move?\nDoes heterogeneity change substantially?\nDoes the substantive conclusion change?\n\nAvoid using “does p remain &lt; 0.05?” as the sole robustness criterion.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#influence-diagnostics",
+    "href": "exercises/06-sensitivity.html#influence-diagnostics",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "3. Influence diagnostics",
+    "text": "3. Influence diagnostics\n\ninf &lt;- influence(m_primary)\nprint(inf)\nplot(inf)\n\nIf an effect is influential, what should you do before considering exclusion?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#alternative-heterogeneity-estimator",
+    "href": "exercises/06-sensitivity.html#alternative-heterogeneity-estimator",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "4. Alternative heterogeneity estimator",
+    "text": "4. Alternative heterogeneity estimator\n\nm_pm &lt;- rma(yi, vi, data = es, method = \"PM\")\n\npredict(m_primary, transf = exp)\npredict(m_pm, transf = exp)\n\nDoes this defensible modelling choice materially alter the interpretation?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#dependence-as-a-sensitivity-question",
+    "href": "exercises/06-sensitivity.html#dependence-as-a-sensitivity-question",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "5. Dependence as a sensitivity question",
+    "text": "5. Dependence as a sensitivity question\nCompare:\n\nm_independent &lt;- rma(yi, vi, data = es, method = \"REML\")\n\nm_multilevel &lt;- rma.mv(\n  yi, vi,\n  random = ~ 1 | study_id/effect_id,\n  data = es,\n  method = \"REML\"\n)\n\nHow do the estimates and standard errors differ? Which model better represents the known structure of the teaching data?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#risk-of-bias-thought-experiment",
+    "href": "exercises/06-sensitivity.html#risk-of-bias-thought-experiment",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "6. Risk-of-bias thought experiment",
+    "text": "6. Risk-of-bias thought experiment\nImagine two studies were judged at high risk of bias because outcome measurement differed systematically between intervention and control groups.\nDesign a prespecified sensitivity analysis. What would you compare, and what result would make you more cautious about the primary conclusion?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#robustness-statement",
+    "href": "exercises/06-sensitivity.html#robustness-statement",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "7. Robustness statement",
+    "text": "7. Robustness statement\nWrite a paragraph using this structure:\n\nThe primary analysis estimated ____. Results were similar/different when ____. The conclusion was most sensitive to ____. Therefore, ____.\n\nBe explicit about which assumptions you tested. Do not claim that the result is “robust” in general.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html",
+    "href": "exercises/04-multilevel.html",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "",
+    "text": "Recognise dependence, compare naive and multilevel models, and explain what changes when effects are clustered within studies.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#aim",
+    "href": "exercises/04-multilevel.html#aim",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "",
+    "text": "Recognise dependence, compare naive and multilevel models, and explain what changes when effects are clustered within studies.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#prepare-the-effect-sizes",
+    "href": "exercises/04-multilevel.html#prepare-the-effect-sizes",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "1. Prepare the effect sizes",
+    "text": "1. Prepare the effect sizes\n\nlibrary(metafor)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes &lt;- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n)",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#map-the-dependence",
+    "href": "exercises/04-multilevel.html#map-the-dependence",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "2. Map the dependence",
+    "text": "2. Map the dependence\n\nwith(es, table(study_id))\ntable(table(es$study_id))\n\n\nWhich studies contribute more than one effect?\nWhy might two effects from the same study be related?\nWhat additional information would you want from the primary paper to understand the dependence?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#fit-a-naive-model",
+    "href": "exercises/04-multilevel.html#fit-a-naive-model",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "3. Fit a naive model",
+    "text": "3. Fit a naive model\n\nm_naive &lt;- rma(yi, vi, data = es, method = \"REML\")\nsummary(m_naive)\n\nRecord the pooled estimate, SE, CI and heterogeneity estimate.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#fit-a-multilevel-model",
+    "href": "exercises/04-multilevel.html#fit-a-multilevel-model",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "4. Fit a multilevel model",
+    "text": "4. Fit a multilevel model\nFill the blanks.\n\nm_mv &lt;- rma.mv(\n  yi = ___,\n  V = ___,\n  random = ~ 1 | ___/___,\n  data = es,\n  method = \"REML\"\n)\nsummary(m_mv)\n\nCompare the estimate and uncertainty with m_naive.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#interpret-the-variance-components",
+    "href": "exercises/04-multilevel.html#interpret-the-variance-components",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "5. Interpret the variance components",
+    "text": "5. Interpret the variance components\nUse:\n\nm_mv$sigma2\n\nWhich component corresponds to variation among studies and which to variation among effects within studies? What might each represent scientifically?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#the-important-limitation",
+    "href": "exercises/04-multilevel.html#the-important-limitation",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "6. The important limitation",
+    "text": "6. The important limitation\nThe teaching data provide sampling variances (vi) but not sampling covariances between effects from the same study.\nExplain why a study-level random effect does not necessarily solve correlation caused by shared controls or repeated measurements.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#decision-challenge",
+    "href": "exercises/04-multilevel.html#decision-challenge",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "7. Decision challenge",
+    "text": "7. Decision challenge\nWrite 3–4 sentences explaining to a review team:\n\nwhy treating every row as independent is questionable;\nwhat the multilevel model improves;\nwhat dependence assumption remains unresolved;\nwhat you would seek or test in a full review.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html",
+    "href": "exercises/02-first-meta-analysis.html",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "",
+    "text": "Fit, visualise and interpret a random-effects meta-analysis.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#aim",
+    "href": "exercises/02-first-meta-analysis.html#aim",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "",
+    "text": "Fit, visualise and interpret a random-effects meta-analysis.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#prepare-effect-sizes",
+    "href": "exercises/02-first-meta-analysis.html#prepare-effect-sizes",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "1. Prepare effect sizes",
+    "text": "1. Prepare effect sizes\n\nlibrary(metafor)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes &lt;- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n)",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#fit-the-model",
+    "href": "exercises/02-first-meta-analysis.html#fit-the-model",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "2. Fit the model",
+    "text": "2. Fit the model\nFill the blanks.\n\nm &lt;- rma(\n  yi = ___,\n  vi = ___,\n  data = ___,\n  method = \"___\"\n)\n\nsummary(m)\n\nIdentify the pooled estimate, 95% CI, \\(\\tau^2\\) and \\(I^2\\).",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#back-transform",
+    "href": "exercises/02-first-meta-analysis.html#back-transform",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "3. Back-transform",
+    "text": "3. Back-transform\n\npredict(m, transf = exp)\n\nTranslate the pooled response ratio into a percentage difference.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#make-a-forest-plot",
+    "href": "exercises/02-first-meta-analysis.html#make-a-forest-plot",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "4. Make a forest plot",
+    "text": "4. Make a forest plot\n\nforest(\n  m,\n  slab = paste(es$study_id, es$effect_id, sep = \".\"),\n  atransf = exp,\n  xlab = \"Response ratio (reduced / conventional)\"\n)\nabline(v = 1, lty = 2)\n\nWhat does the forest plot show that the pooled estimate alone does not?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#interpretation-challenge",
+    "href": "exercises/02-first-meta-analysis.html#interpretation-challenge",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "5. Interpretation challenge",
+    "text": "5. Interpretation challenge\nWrite three sentences that separately communicate:\n\nthe average effect;\nuncertainty in that average;\nvariation among effects / implications for a new comparable setting.\n\nAvoid counting how many individual studies are statistically significant.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html",
+    "href": "exercises/01-effect-sizes.html",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "",
+    "text": "Calculate and interpret effect sizes for the synthetic reduced-tillage soil-carbon dataset.\n\nTeaching data: data/teaching/soil_carbon.csv are synthetic and are provided only for learning.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html#aim",
+    "href": "exercises/01-effect-sizes.html#aim",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "",
+    "text": "Calculate and interpret effect sizes for the synthetic reduced-tillage soil-carbon dataset.\n\nTeaching data: data/teaching/soil_carbon.csv are synthetic and are provided only for learning.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html#load-the-data",
+    "href": "exercises/01-effect-sizes.html#load-the-data",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "1. Load the data",
+    "text": "1. Load the data\n\nlibrary(metafor)\nlibrary(dplyr)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\nhead(soil)\n\nBefore calculating anything, write down the direction you want the effect to have. What should a value above the null mean?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html#calculate-log-response-ratios",
+    "href": "exercises/01-effect-sizes.html#calculate-log-response-ratios",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "2. Calculate log response ratios",
+    "text": "2. Calculate log response ratios\nComplete the missing arguments.\n\nes &lt;- escalc(\n  measure = \"___\",\n  m1i = ___, sd1i = ___, n1i = ___,\n  m2i = ___, sd2i = ___, n2i = ___,\n  data = soil\n)",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html#back-transform",
+    "href": "exercises/01-effect-sizes.html#back-transform",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "3. Back-transform",
+    "text": "3. Back-transform\nCreate RR and percent_change.\n\nes &lt;- es |&gt;\n  mutate(\n    RR = ___,\n    percent_change = ___\n  )\n\nIn one sentence, interpret Study A.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html#check-one-calculation-manually",
+    "href": "exercises/01-effect-sizes.html#check-one-calculation-manually",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "4. Check one calculation manually",
+    "text": "4. Check one calculation manually\nUsing Study A, calculate:\n\\[\\ln(RR)=\\ln(\\bar X_T/\\bar X_C)\\]\nCompare your answer with es$yi[1].\nWhy is this manual check useful?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html#effect-measure-choice",
+    "href": "exercises/01-effect-sizes.html#effect-measure-choice",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "5. Effect-measure choice",
+    "text": "5. Effect-measure choice\nFor each question, choose a plausible effect measure and justify it briefly.\n\nHow many tonnes/ha does an intervention change wheat yield when all studies report tonnes/ha?\nHow much does an intervention change a latent “soil health” construct measured using several different validated scales?\nWhat proportional change in soil organic carbon occurs under reduced tillage?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html#reflection",
+    "href": "exercises/01-effect-sizes.html#reflection",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "6. Reflection",
+    "text": "6. Reflection\nWhat information is lost or changed when you replace an absolute mean difference with a standardised or proportional effect?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/03-heterogeneity.html",
+    "href": "exercises/03-heterogeneity.html",
+    "title": "Exercise 3 — Understanding heterogeneity",
+    "section": "",
+    "text": "Two hypothetical syntheses both estimate an average response ratio of 1.10.\n\n\n\n\nMeta-analysis A\nMeta-analysis B\n\n\n\n\nMean RR\n1.10\n1.10\n\n\n95% CI\n1.05–1.15\n1.05–1.15\n\n\n95% prediction interval\n1.03–1.17\n0.82–1.48\n\n\n\nDiscuss:\n\nWould you give the same recommendation based on A and B?\nWhat information does the prediction interval add?\nWhy would saying only “the pooled effect was positive and statistically significant” be inadequate?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "exercises/03-heterogeneity.html#part-a-same-mean-different-story",
+    "href": "exercises/03-heterogeneity.html#part-a-same-mean-different-story",
+    "title": "Exercise 3 — Understanding heterogeneity",
+    "section": "",
+    "text": "Two hypothetical syntheses both estimate an average response ratio of 1.10.\n\n\n\n\nMeta-analysis A\nMeta-analysis B\n\n\n\n\nMean RR\n1.10\n1.10\n\n\n95% CI\n1.05–1.15\n1.05–1.15\n\n\n95% prediction interval\n1.03–1.17\n0.82–1.48\n\n\n\nDiscuss:\n\nWould you give the same recommendation based on A and B?\nWhat information does the prediction interval add?\nWhy would saying only “the pooled effect was positive and statistically significant” be inadequate?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "exercises/03-heterogeneity.html#part-b-inspect-heterogeneity-in-r",
+    "href": "exercises/03-heterogeneity.html#part-b-inspect-heterogeneity-in-r",
+    "title": "Exercise 3 — Understanding heterogeneity",
+    "section": "Part B — Inspect heterogeneity in R",
+    "text": "Part B — Inspect heterogeneity in R\n\nm &lt;- rma(yi, vi, data = es, method = \"REML\")\n\nm$tau2\nsqrt(m$tau2)\nm$I2\npredict(m, transf = exp)\n\nRecord each quantity and explain it in plain language.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "exercises/03-heterogeneity.html#part-c-generate-hypotheses",
+    "href": "exercises/03-heterogeneity.html#part-c-generate-hypotheses",
+    "title": "Exercise 3 — Understanding heterogeneity",
+    "section": "Part C — Generate hypotheses",
+    "text": "Part C — Generate hypotheses\nBefore fitting any meta-regression, propose three scientifically plausible reasons why the reduced-tillage effect might differ among studies.\nFor each, state whether the current dataset actually measures the proposed moderator.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "exercises/03-heterogeneity.html#part-d-decision-maker-summary",
+    "href": "exercises/03-heterogeneity.html#part-d-decision-maker-summary",
+    "title": "Exercise 3 — Understanding heterogeneity",
+    "section": "Part D — Decision-maker summary",
+    "text": "Part D — Decision-maker summary\nWrite four sentences summarising the synthesis for a decision-maker.\nRequirements:\n\nreport the average effect;\nacknowledge uncertainty;\ndescribe between-study variation;\nexplain applicability cautiously;\ndo not use generic labels such as “low”, “moderate” or “high” heterogeneity.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "exercises/05-meta-regression.html",
+    "href": "exercises/05-meta-regression.html",
+    "title": "Exercise 5 — Meta-regression and effect modification",
+    "section": "",
+    "text": "Fit prespecified moderators, interpret coefficients, and distinguish an across-study association from a causal effect.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 5 — Meta-regression and effect modification"
+    ]
+  },
+  {
+    "objectID": "exercises/05-meta-regression.html#aim",
+    "href": "exercises/05-meta-regression.html#aim",
+    "title": "Exercise 5 — Meta-regression and effect modification",
+    "section": "",
+    "text": "Fit prespecified moderators, interpret coefficients, and distinguish an across-study association from a causal effect.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 5 — Meta-regression and effect modification"
+    ]
+  },
+  {
+    "objectID": "exercises/05-meta-regression.html#prepare-the-data",
+    "href": "exercises/05-meta-regression.html#prepare-the-data",
+    "title": "Exercise 5 — Meta-regression and effect modification",
+    "section": "1. Prepare the data",
+    "text": "1. Prepare the data\nUse the es object from the previous exercises, or recreate it from soil_carbon.csv.\n\nlevels(factor(es$climate))\nrange(es$duration)\n\nBefore fitting a model, write down a biological reason why duration might modify the reduced-tillage effect on soil carbon.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 5 — Meta-regression and effect modification"
+    ]
+  },
+  {
+    "objectID": "exercises/05-meta-regression.html#continuous-moderator",
+    "href": "exercises/05-meta-regression.html#continuous-moderator",
+    "title": "Exercise 5 — Meta-regression and effect modification",
+    "section": "2. Continuous moderator",
+    "text": "2. Continuous moderator\n\nm_duration &lt;- rma.mv(\n  yi, vi,\n  mods = ~ ___,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\nsummary(m_duration)\n\n\nWhat does the duration coefficient represent on the lnRR scale?\nCalculate exp(coef(m_duration)[\"duration\"]). What does this represent?\nIs the coefficient estimated precisely?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 5 — Meta-regression and effect modification"
+    ]
+  },
+  {
+    "objectID": "exercises/05-meta-regression.html#categorical-moderator",
+    "href": "exercises/05-meta-regression.html#categorical-moderator",
+    "title": "Exercise 5 — Meta-regression and effect modification",
+    "section": "3. Categorical moderator",
+    "text": "3. Categorical moderator\n\nes$climate &lt;- factor(es$climate)\nlevels(es$climate)\n\nm_climate &lt;- rma.mv(\n  yi, vi,\n  mods = ~ climate,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\nsummary(m_climate)\n\nIdentify the reference category and explain one climate coefficient without calling it a separate “effect”.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 5 — Meta-regression and effect modification"
+    ]
+  },
+  {
+    "objectID": "exercises/05-meta-regression.html#two-moderators",
+    "href": "exercises/05-meta-regression.html#two-moderators",
+    "title": "Exercise 5 — Meta-regression and effect modification",
+    "section": "4. Two moderators",
+    "text": "4. Two moderators\n\nm_both &lt;- rma.mv(\n  yi, vi,\n  mods = ~ duration + climate,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\nsummary(m_both)\n\nCompare the duration coefficient with the single-moderator model. Why might it change?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 5 — Meta-regression and effect modification"
+    ]
+  },
+  {
+    "objectID": "exercises/05-meta-regression.html#causal-interpretation-challenge",
+    "href": "exercises/05-meta-regression.html#causal-interpretation-challenge",
+    "title": "Exercise 5 — Meta-regression and effect modification",
+    "section": "5. Causal interpretation challenge",
+    "text": "5. Causal interpretation challenge\nA colleague writes:\n\n“Longer implementation causes reduced tillage to increase soil carbon more strongly.”\n\nRewrite this claim so that it is supported by an ordinary study-level meta-regression.\nThen list two plausible confounders of the across-study duration–effect association.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 5 — Meta-regression and effect modification"
+    ]
+  },
+  {
+    "objectID": "exercises/05-meta-regression.html#extrapolation",
+    "href": "exercises/05-meta-regression.html#extrapolation",
+    "title": "Exercise 5 — Meta-regression and effect modification",
+    "section": "6. Extrapolation",
+    "text": "6. Extrapolation\nThe observed durations are limited to the range in the dataset. Would you use this model to predict an effect at 30 years? Explain why or why not.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 5 — Meta-regression and effect modification"
+    ]
+  },
+  {
+    "objectID": "exercises/05-meta-regression.html#reporting",
+    "href": "exercises/05-meta-regression.html#reporting",
+    "title": "Exercise 5 — Meta-regression and effect modification",
+    "section": "7. Reporting",
+    "text": "7. Reporting\nWrite a short results paragraph that includes:\n\nthe moderator being examined and why;\nthe estimated direction/magnitude and uncertainty;\nresidual heterogeneity;\na caution about across-study interpretation.\n\nDo not report only the moderator p-value.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 5 — Meta-regression and effect modification"
+    ]
+  },
+  {
+    "objectID": "exercises/07-reporting-bias.html",
+    "href": "exercises/07-reporting-bias.html",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "",
+    "text": "Investigate possible small-study effects while separating statistical patterns from claims about their cause.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "exercises/07-reporting-bias.html#aim",
+    "href": "exercises/07-reporting-bias.html#aim",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "",
+    "text": "Investigate possible small-study effects while separating statistical patterns from claims about their cause.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "exercises/07-reporting-bias.html#map-the-missingness-mechanisms",
+    "href": "exercises/07-reporting-bias.html#map-the-missingness-mechanisms",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "1. Map the missingness mechanisms",
+    "text": "1. Map the missingness mechanisms\nFor the soil-carbon review, imagine that some studies measured soil carbon, crop yield and soil moisture but published only selected outcomes. List at least three ways evidence could become unavailable between data collection and your meta-analysis.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "exercises/07-reporting-bias.html#inspect-a-funnel-plot",
+    "href": "exercises/07-reporting-bias.html#inspect-a-funnel-plot",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "2. Inspect a funnel plot",
+    "text": "2. Inspect a funnel plot\n\nm &lt;- rma(yi, vi, data = es, method = \"REML\")\nfunnel(m)\n\nDescribe the pattern without diagnosing its cause. What study characteristics could plausibly be associated with both precision and effect size?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "exercises/07-reporting-bias.html#explore-small-study-effects",
+    "href": "exercises/07-reporting-bias.html#explore-small-study-effects",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "3. Explore small-study effects",
+    "text": "3. Explore small-study effects\n\nregtest(m)\n\nAnswer:\n\nWhat pattern is this test designed to detect?\nWhy would a statistically significant result not prove publication bias?\nWhy would a non-significant result not prove its absence?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "exercises/07-reporting-bias.html#optional-exploratory-sensitivity-analysis",
+    "href": "exercises/07-reporting-bias.html#optional-exploratory-sensitivity-analysis",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "4. Optional exploratory sensitivity analysis",
+    "text": "4. Optional exploratory sensitivity analysis\n\nm_tf &lt;- trimfill(m)\nsummary(m_tf)\nfunnel(m_tf)\n\nCompare the original and trim-and-fill estimates. Write one sentence explaining why the second should not be called the “publication-bias-corrected” estimate.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "exercises/07-reporting-bias.html#triangulate",
+    "href": "exercises/07-reporting-bias.html#triangulate",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "5. Triangulate",
+    "text": "5. Triangulate\nImagine your search also found:\n\ntwo conference abstracts with insufficient numerical data;\none trial registration listing soil carbon that was absent from the final paper;\nseveral small studies conducted in different production systems from the large studies.\n\nWrite a short assessment of possible reporting bias that uses all of this information rather than relying on the funnel plot alone.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "exercises/07-reporting-bias.html#reporting-challenge",
+    "href": "exercises/07-reporting-bias.html#reporting-challenge",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "6. Reporting challenge",
+    "text": "6. Reporting challenge\nRewrite this sentence:\n\n“There was no publication bias because Egger’s test was non-significant.”\n\nYour replacement should state what was examined, what was observed and the limitation of the inference.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
+    "section": "",
+    "text": "This open teaching package introduces quantitative evidence synthesis using R and metafor, with examples framed around agri-food research.\nThe course follows a question-first workflow:\nQuestion → estimand → compatible evidence → effect size → model → uncertainty → interpretation.\nIt is designed for instructor-led workshops and self-directed learning."
+  },
+  {
+    "objectID": "index.html#about-this-resource",
+    "href": "index.html#about-this-resource",
+    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
+    "section": "",
+    "text": "This open teaching package introduces quantitative evidence synthesis using R and metafor, with examples framed around agri-food research.\nThe course follows a question-first workflow:\nQuestion → estimand → compatible evidence → effect size → model → uncertainty → interpretation.\nIt is designed for instructor-led workshops and self-directed learning."
+  },
+  {
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
+    "section": "Learning outcomes",
+    "text": "Learning outcomes\nBy the end, participants should be able to:\n\nchoose and interpret common effect-size measures;\ncalculate effect sizes and sampling variances;\nfit and interpret random-effects meta-analysis;\ndistinguish uncertainty in the mean effect from heterogeneity among true effects;\nuse prediction intervals appropriately;\nrecognise and model dependent effect sizes;\nuse meta-regression cautiously;\nconduct useful sensitivity analyses;\nrecognise limitations of publication-bias diagnostics; and\ntranslate model results into appropriately qualified conclusions."
+  },
+  {
+    "objectID": "index.html#software",
+    "href": "index.html#software",
+    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
+    "section": "Software",
+    "text": "Software\ninstall.packages(c(\"metafor\", \"tidyverse\"))\nStart with the introductory slides."
+  },
+  {
+    "objectID": "readings.html",
+    "href": "readings.html",
+    "title": "Recommended reading",
+    "section": "",
+    "text": "This page is intentionally a scaffold. Add the EU-NESA-recommended sources and current methodological references agreed with the Working Group before final release.\nSuggested categories:\n\neffect-size choice and interpretation;\nrandom-effects meta-analysis and heterogeneity;\ndependent effect sizes and multilevel models;\nmeta-regression;\nreporting/publication bias;\ntransparent and reproducible reporting."
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#the-job-of-an-effect-size",
+    "href": "slides/01-effect-sizes.html#the-job-of-an-effect-size",
+    "title": "Module 1 — Effect sizes",
+    "section": "The job of an effect size",
+    "text": "The job of an effect size\n\n\nStudy result\n\n\n→\n\n\nComparable effect\n\n\n→\n\n\nSampling variance\n\n\n→\n\n\nMeta-analysis\n\n\n\nThe effect measure defines what we are synthesising.\n\n\nOpen with the conceptual job rather than a formula. Meta-analysis needs study results expressed on a scale that has a consistent meaning across studies, plus an estimate of their sampling uncertainty. Emphasise that choosing an effect size is part of defining the estimand; it is not merely data preparation.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#learning-objectives",
+    "href": "slides/01-effect-sizes.html#learning-objectives",
+    "title": "Module 1 — Effect sizes",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain why meta-analysis needs an effect size and sampling variance;\ndistinguish mean difference, standardised mean difference and response ratio;\nselect an effect measure that matches the synthesis question;\ncalculate log response ratios and sampling variances with metafor;\nback-transform log response ratios for interpretation.\n\n\nThe goal is not to memorise every formula. Participants should understand what each measure means, what information it preserves or discards, and why the choice is substantive.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#one-comparison-several-possible-effects",
+    "href": "slides/01-effect-sizes.html#one-comparison-several-possible-effects",
+    "title": "Module 1 — Effect sizes",
+    "section": "One comparison, several possible effects",
+    "text": "One comparison, several possible effects\n\n\n\n\nReduced tillage\nConventional\n\n\n\n\nMean SOC\n22.1\n20.0\n\n\nSD\n4.2\n4.0\n\n\nn\n20\n20\n\n\n\n\n\nDifference\n+2.1 units\n\nRatio\n1.105\n\nRelative difference\n+10.5%\n\n\nAsk: which is easiest to interpret? Then: which would still make sense if another study used a different unit or had a very different baseline? The same raw data can answer subtly different questions depending on the effect measure.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#mean-difference-keep-the-original-unit",
+    "href": "slides/01-effect-sizes.html#mean-difference-keep-the-original-unit",
+    "title": "Module 1 — Effect sizes",
+    "section": "Mean difference: keep the original unit",
+    "text": "Mean difference: keep the original unit\n\\[MD = \\bar X_T - \\bar X_C\\]\n\n\nUseful when\n\nthe outcome is measured on the same scale;\nthe unit itself is meaningful;\nan absolute change answers the question.\n\n\n\nInterpretation “Yield was 0.6 t/ha higher.”\nNull = 0\n\n\n\nThe original unit is often a major advantage. Do not standardise simply because meta-analysis software makes it easy. If tonnes per hectare is the decision-relevant quantity, preserve it.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#standardised-mean-difference-change-the-question",
+    "href": "slides/01-effect-sizes.html#standardised-mean-difference-change-the-question",
+    "title": "Module 1 — Effect sizes",
+    "section": "Standardised mean difference: change the question",
+    "text": "Standardised mean difference: change the question\n\\[SMD = \\frac{\\bar X_T-\\bar X_C}{SD_{pooled}}\\]\n\nThe effect is now expressed in standard deviation units. Is that the quantity your users need?\n\n\nUseful for a similar construct measured on genuinely different scales.\nOften reported as Hedges’ g after small-sample correction.\nDifferences in SD can reflect populations and measurement, not just scale.\n\n\nThis is an important warning slide. SMD is not a generic solution to different units. Standardisation changes the estimand. Mention Hedges’ g, but keep the focus on interpretation rather than formulae.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#response-ratio-proportional-change",
+    "href": "slides/01-effect-sizes.html#response-ratio-proportional-change",
+    "title": "Module 1 — Effect sizes",
+    "section": "Response ratio: proportional change",
+    "text": "Response ratio: proportional change\n\\[RR=\\frac{\\bar X_T}{\\bar X_C}\\]\nWe usually analyse:\n\\[\\ln(RR)=\\ln(\\bar X_T)-\\ln(\\bar X_C)\\]\n\n\nRatio scale\nNull = 1\n\nLog scale\nNull = 0\n\n\nExplain why the log scale is useful: proportional increases and decreases become more symmetric. A doubling and halving are +0.693 and −0.693. The model can live on the log scale while interpretation returns to the ratio scale.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#back-transform-before-you-communicate",
+    "href": "slides/01-effect-sizes.html#back-transform-before-you-communicate",
+    "title": "Module 1 — Effect sizes",
+    "section": "Back-transform before you communicate",
+    "text": "Back-transform before you communicate\n\n\\(\\ln(RR)=0.095\\)\n↓\n\\(RR=e^{0.095}\\approx1.10\\)\n↓\nabout 10% higher\n\n\\[\\%\\Delta = 100\\times(RR-1)\\]\n\nFor negative effects, avoid casual symmetry claims on the percentage scale. RR = 0.80 means 20% lower. Encourage participants to back-transform before explaining results to non-technical audiences.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#choose-the-measure-from-the-question",
+    "href": "slides/01-effect-sizes.html#choose-the-measure-from-the-question",
+    "title": "Module 1 — Effect sizes",
+    "section": "Choose the measure from the question",
+    "text": "Choose the measure from the question\n\n\nAbsoluteHow many t/ha more yield?→ Mean difference\n\n\nStandardisedHow large is the difference relative to within-study variability?→ SMD\n\n\nProportionalWhat proportional change in SOC occurs?→ Response ratio\n\n\n\nMeaning first. Convenience second.\n\n\nAsk participants for examples from their own work. This is illustrative, not a mechanical decision rule. Study design, outcome distribution and data structure also matter.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#three-measures-three-meanings",
+    "href": "slides/01-effect-sizes.html#three-measures-three-meanings",
+    "title": "Module 1 — Effect sizes",
+    "section": "Three measures, three meanings",
+    "text": "Three measures, three meanings\n\n\n\n\nUse this as the synthesis slide before the decision exercise. The choice is not about which statistic is most sophisticated; it is about which quantity answers the review question while remaining comparable across studies.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#a-60-second-decision-exercise",
+    "href": "slides/01-effect-sizes.html#a-60-second-decision-exercise",
+    "title": "Module 1 — Effect sizes",
+    "section": "A 60-second decision exercise",
+    "text": "A 60-second decision exercise\nWhich effect measure would you start with?\n\nFertiliser increases wheat yield, reported as kg/ha in every study.\nAnimal welfare is measured using several validated continuous scales.\nSoil carbon is reported in several units, but the question is proportional change relative to control.\n\n\nWhat scientific interpretation would each choice imply?\n\n\nSuggested starting answers: MD; possibly SMD if the scales genuinely measure the same construct; response ratio. Stress that the justification matters more than the label.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#effect-size-alone-is-not-enough",
+    "href": "slides/01-effect-sizes.html#effect-size-alone-is-not-enough",
+    "title": "Module 1 — Effect sizes",
+    "section": "Effect size alone is not enough",
+    "text": "Effect size alone is not enough\nTwo studies can estimate the same effect but with very different precision.\nFor independent groups, an approximate variance for \\(\\ln(RR)\\) is:\n\\[v_i=\\frac{SD_T^2}{n_T\\bar X_T^2}+\\frac{SD_C^2}{n_C\\bar X_C^2}\\]\n\nEffect estimate + sampling variance travel together.\n\n\nDo not derive the equation. The conceptual point is that an estimate from a small noisy experiment carries less information than the same estimate from a precise experiment.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#precision-is-not-study-quality",
+    "href": "slides/01-effect-sizes.html#precision-is-not-study-quality",
+    "title": "Module 1 — Effect sizes",
+    "section": "Precision is not study quality",
+    "text": "Precision is not study quality\nUnder a random-effects model:\n\\[w_i=\\frac{1}{v_i+\\tau^2}\\]\n\n\nWeight reflects\n\nsampling precision;\nestimated heterogeneity.\n\n\nWeight does not guarantee\n\nlow risk of bias;\nrelevance;\ngood measurement;\ncausal identification.\n\n\n\nA large, precise but biased study can receive substantial statistical weight. Precision and risk of bias are different dimensions. This distinction is worth repeating throughout the course.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#calculate-lnrr-with-metafor",
+    "href": "slides/01-effect-sizes.html#calculate-lnrr-with-metafor",
+    "title": "Module 1 — Effect sizes",
+    "section": "Calculate lnRR with metafor",
+    "text": "Calculate lnRR with metafor\n\nlibrary(metafor)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes &lt;- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n)\n\nROM = log response ratio of means.\n\nGroup 1 is reduced tillage and group 2 conventional. Direction matters. Ask participants to write the intended contrast in words before running the code: reduced divided by conventional.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#inspect-before-modelling",
+    "href": "slides/01-effect-sizes.html#inspect-before-modelling",
+    "title": "Module 1 — Effect sizes",
+    "section": "Inspect before modelling",
+    "text": "Inspect before modelling\n\nes |&gt;\n  transform(\n    RR = exp(yi),\n    percent_change = 100 * (RR - 1)\n  ) |&gt;\n  subset(select = c(study_id, yi, vi, RR, percent_change))\n\n\nAre signs and directions sensible?\nAny impossible values or extreme variances?\nDuplicated effects?\nDoes the effect measure still answer the question?\n\n\nCalculation is not validation. Encourage participants to inspect several rows and manually reproduce at least one effect whenever establishing a new workflow.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#manual-check-study-a",
+    "href": "slides/01-effect-sizes.html#manual-check-study-a",
+    "title": "Module 1 — Effect sizes",
+    "section": "Manual check: Study A",
+    "text": "Manual check: Study A\n\n\\(\\ln(RR)=\\ln(22.1/20.0)\\approx0.100\\)\n\\(RR\\approx1.105\\)\nSOC ≈ 10.5% higher under reduced tillage\n\n\nOpposite sign? First check the treatment/comparator direction.\n\n\nDirection errors are easy to make and can propagate through an entire synthesis. This simple manual check is one of the cheapest quality-control steps available.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#common-traps",
+    "href": "slides/01-effect-sizes.html#common-traps",
+    "title": "Module 1 — Effect sizes",
+    "section": "Common traps",
+    "text": "Common traps\n\nMixing endpoint values and change scores without considering the estimand.\nTreating different outcome definitions as interchangeable.\nReversing treatment and comparator.\nUsing SMD simply because studies report different units.\nIgnoring shared controls or repeated measurements.\nTransforming effects without propagating uncertainty.\n\n\nThe shared-control point foreshadows Module 4 on dependence. Calculating multiple effects from one experiment does not make them independent observations.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#practical-1-effect-sizes",
+    "href": "slides/01-effect-sizes.html#practical-1-effect-sizes",
+    "title": "Module 1 — Effect sizes",
+    "section": "Practical 1 — Effect sizes",
+    "text": "Practical 1 — Effect sizes\nOpen exercises/01-effect-sizes.qmd.\n\n\nCalculate\n\n\n→\n\n\nBack-transform\n\n\n→\n\n\nCheck\n\n\n→\n\n\nJustify\n\n\nYour final answer should explain why the chosen effect measure matches the scientific question.\n\nAllow 20–30 minutes. If time is limited, prioritise the manual check and conceptual justification over completing every line of code.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/01-effect-sizes.html#take-home",
+    "href": "slides/01-effect-sizes.html#take-home",
+    "title": "Module 1 — Effect sizes",
+    "section": "Take-home",
+    "text": "Take-home\n\nAn effect size is part of the scientific question — not just an input to the model.\n\nBefore pooling, be able to explain:\n\nthe null value;\nthe direction of effect;\nthe real-world interpretation;\nhow uncertainty was calculated.\n\n\nTransition: now that each study is expressed on a common scale with sampling uncertainty, we can ask how to synthesise the effects.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#the-average-can-hide-the-decision-problem",
+    "href": "slides/03-heterogeneity.html#the-average-can-hide-the-decision-problem",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "The average can hide the decision problem",
+    "text": "The average can hide the decision problem\n\n+30%   +25%   +20%   +5%   0%   −10%\n\n\nThe average is positive. Is “the intervention increases the outcome” an adequate summary?\n\n\nGive participants a moment. A farmer or policymaker may care more about where the intervention works, whether it can fail, and whether their context resembles the evidence base. This is the scientific motivation for heterogeneity.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#learning-objectives",
+    "href": "slides/03-heterogeneity.html#learning-objectives",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\nexplain heterogeneity in scientific rather than purely statistical terms;\ndistinguish \\(\\tau^2\\), \\(\\tau\\) and \\(I^2\\);\ninterpret a prediction interval;\nexplain why \\(I^2\\) is not a quality score;\nidentify plausible sources of heterogeneity;\nrecognise when an average effect is insufficient.\n\n\nStart from the idea that observed estimates would differ even if the underlying effect were identical because of sampling variation. Heterogeneity is variation in underlying effects beyond that sampling variation.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#in-agri-food-research-variation-is-expected",
+    "href": "slides/03-heterogeneity.html#in-agri-food-research-variation-is-expected",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "In agri-food research, variation is expected",
+    "text": "In agri-food research, variation is expected\n\n\nEnvironmentclimate · soil · baseline condition\n\n\nManagementintensity · duration · implementation\n\n\nSystemcrop · livestock · landscape context\n\n\n\nContext dependence may be the scientific result.\n\n\nAvoid presenting heterogeneity as a nuisance or failure. For many management interventions, understanding context dependence is precisely what users need from the synthesis.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#three-quantities-three-different-questions",
+    "href": "slides/03-heterogeneity.html#three-quantities-three-different-questions",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Three quantities — three different questions",
+    "text": "Three quantities — three different questions\n\n\n\\(\\tau^2\\)How much between-study variance is estimated?Squared effect-size units\n\n\n\\(\\tau\\)What is the SD of underlying effects?Same scale as the analysed effect\n\n\n\\(I^2\\)How large is heterogeneity relative to observed sampling variation?A relative percentage\n\n\n\nThis slide is the map. The next slides unpack each quantity. Stress that none is a universal measure of “how bad” the meta-analysis is.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#tau2-between-study-variance",
+    "href": "slides/03-heterogeneity.html#tau2-between-study-variance",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "\\(\\tau^2\\): between-study variance",
+    "text": "\\(\\tau^2\\): between-study variance\n\\[\\theta_i \\sim N(\\mu,\\tau^2)\\]\n\\(\\tau^2\\) is the estimated variance among underlying study effects.\n\nUseful for modelling — but are squared effect-size units easy to interpret?\n\n\nTau-squared is the parameter commonly printed by software and used in random-effects weights. Its squared units make direct substantive interpretation awkward.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#tau-put-spread-back-on-the-effect-size-scale",
+    "href": "slides/03-heterogeneity.html#tau-put-spread-back-on-the-effect-size-scale",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "\\(\\tau\\): put spread back on the effect-size scale",
+    "text": "\\(\\tau\\): put spread back on the effect-size scale\n\\[\\tau=\\sqrt{\\tau^2}\\]\nFor lnRR, \\(\\tau\\) is the SD of underlying effects on the log-ratio scale.\n\nThere is no universal “small / medium / large” threshold for \\(\\tau\\).\n\n\nThe substantive importance of tau depends on the effect scale and the decision context. A particular amount of variation may be trivial for one outcome and decisive for another.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#i2-relative-not-absolute",
+    "href": "slides/03-heterogeneity.html#i2-relative-not-absolute",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "\\(I^2\\): relative, not absolute",
+    "text": "\\(I^2\\): relative, not absolute\nA common description is the proportion of observed variation attributable to heterogeneity rather than sampling variation.\nBut \\(I^2\\) depends on:\n\nbetween-study heterogeneity; and\nthe precision of the included studies.\n\n\nThe same \\(\\tau^2\\) can coexist with different \\(I^2\\) values.\n\n\nThis is why I-squared is not a direct measure of biological variability. More precise studies can yield a high I-squared even when absolute between-study variation is modest.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#i2-is-not-a-traffic-light",
+    "href": "slides/03-heterogeneity.html#i2-is-not-a-traffic-light",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "\\(I^2\\) is not a traffic light",
+    "text": "\\(I^2\\) is not a traffic light\n\nBe cautious: 25% = low · 50% = moderate · 75% = high\n\nThose labels do not tell us whether variation is scientifically important.\n\nCould the plausible range of effects change the decision?\n\n\nDo not tell participants never to report I-squared. It can be useful descriptive information. The problem is converting generic thresholds into substantive conclusions.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#prediction-intervals-make-variation-tangible",
+    "href": "slides/03-heterogeneity.html#prediction-intervals-make-variation-tangible",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Prediction intervals make variation tangible",
+    "text": "Prediction intervals make variation tangible\nSuppose:\n\nMean RR = 1.10\n95% prediction interval = 0.82–1.48\n\n\nA comparable setting could plausibly show a decrease or a substantial increase. Is the mean enough?\n\n\nThese values are illustrative rather than outputs from the teaching dataset. Ask which interval—CI or PI—is more relevant to someone deciding whether to implement the intervention locally.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#confidence-interval-prediction-interval",
+    "href": "slides/03-heterogeneity.html#confidence-interval-prediction-interval",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Confidence interval ≠ prediction interval",
+    "text": "Confidence interval ≠ prediction interval\n\n\nConfidence interval\nHow uncertain is our estimate of the mean effect?\n\nPrediction interval\nWhat underlying effect might occur in a comparable new setting?\n\n\nDifferent questions → different intervals.\n\n\nA narrow confidence interval does not imply effects are consistent. The mean can be precisely estimated while true effects vary widely.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#inspect-heterogeneity-in-metafor",
+    "href": "slides/03-heterogeneity.html#inspect-heterogeneity-in-metafor",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Inspect heterogeneity in metafor",
+    "text": "Inspect heterogeneity in metafor\n\nm &lt;- rma(yi, vi, data = es, method = \"REML\")\n\nm$tau2\nsqrt(m$tau2)\nm$I2\n\npredict(m, transf = exp)\n\n\nDon’t copy these numbers into a paper. Interpret them together.\n\n\nFor lnRR, back-transform pooled and predicted effects to response ratios before explaining them. Keep the distinction between the modelling scale and the communication scale clear.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#ask-why-might-effects-differ-before-testing-moderators",
+    "href": "slides/03-heterogeneity.html#ask-why-might-effects-differ-before-testing-moderators",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Ask “why might effects differ?” before testing moderators",
+    "text": "Ask “why might effects differ?” before testing moderators\n\n\nBiologyrainfall · soil texture · crop · baseline carbon\n\n\nImplementationduration · intensity · co-interventions\n\n\nMethodsmeasurement · design · analysis · risk of bias\n\n\n\nAsk participants to nominate plausible effect modifiers before inspecting associations. This encourages hypothesis-led analysis rather than searching through variables after seeing the data.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#not-all-heterogeneity-is-ecological-signal",
+    "href": "slides/03-heterogeneity.html#not-all-heterogeneity-is-ecological-signal",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Not all heterogeneity is ecological signal",
+    "text": "Not all heterogeneity is ecological signal\nVariation can arise from:\n\ndifferent outcome definitions;\nmeasurement methods;\nstudy designs;\nanalytical choices;\nselective reporting;\nrisk of bias.\n\n\nExplaining heterogeneity requires subject-matter and methodological judgement.\n\n\nA meta-regression association with study design might indicate bias rather than a biological modifier. Statistical explanation is not automatically causal explanation.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#should-we-explain-every-bit-of-heterogeneity",
+    "href": "slides/03-heterogeneity.html#should-we-explain-every-bit-of-heterogeneity",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Should we explain every bit of heterogeneity?",
+    "text": "Should we explain every bit of heterogeneity?\nNo. Meta-regression is most useful when moderators are:\n\nscientifically motivated;\nmeasured reasonably well;\nrepresented across enough studies;\nspecified without excessive data dredging.\n\n\nResidual heterogeneity is normal.\n\n\nForeshadow Module 5. Small meta-analyses contain little information for moderator effects. The goal is not to keep adding variables until tau-squared approaches zero.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#same-mean-does-not-mean-same-evidence",
+    "href": "slides/03-heterogeneity.html#same-mean-does-not-mean-same-evidence",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Same mean does not mean same evidence",
+    "text": "Same mean does not mean same evidence\n\n\n\n\nIf you report only the pooled mean, these evidence bases look the same.\n\n\nThis is the visual anchor for the module. Both panels have the same vertical mean line. In A, effects cluster around it. In B, the mean hides substantial context dependence. Ask which panel makes the pooled mean more portable to a new setting and why.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#same-mean-different-decisions",
+    "href": "slides/03-heterogeneity.html#same-mean-different-decisions",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Same mean, different decisions",
+    "text": "Same mean, different decisions\n\n\n\nScenario A Mean benefit ≈ 10% Effects tightly clustered around benefit\n\n\n\nScenario B Mean benefit ≈ 10% Effects range from meaningful harm to large benefit\n\n\n\nWhat information would you seek before applying Scenario B locally?\n\n\nExpected answers include context, moderators, study design, applicability, baseline conditions and uncertainty. The point is to connect heterogeneity to decisions rather than to a diagnostic threshold.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#a-reporting-checklist",
+    "href": "slides/03-heterogeneity.html#a-reporting-checklist",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "A reporting checklist",
+    "text": "A reporting checklist\nA useful account of heterogeneous evidence may include:\n\npooled mean effect + confidence interval;\n\\(\\tau^2\\) or \\(\\tau\\);\n\\(I^2\\) as descriptive context;\nprediction interval;\nforest plot / distribution of effects;\nplausible effect modifiers;\nlimitations in applicability and evidence quality.\n\n\nThe exact package depends on the evidence base. The principle is to communicate centre and spread, and to separate statistical variation from claims about why that variation occurs.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#practical-3-tell-the-scientific-story",
+    "href": "slides/03-heterogeneity.html#practical-3-tell-the-scientific-story",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Practical 3 — Tell the scientific story",
+    "text": "Practical 3 — Tell the scientific story\nOpen exercises/03-heterogeneity.qmd.\nYou will compare meta-analyses with similar means but different heterogeneity, then inspect the soil-carbon example.\n\nFinal task: write four sentences for a decision-maker without using “low”, “moderate” or “high” heterogeneity.\n\n\nIf time is short, prioritise the final interpretation task over extra calculations. Ask pairs to read their four sentences aloud and compare what information they chose to foreground.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/03-heterogeneity.html#take-home",
+    "href": "slides/03-heterogeneity.html#take-home",
+    "title": "Module 3 — Understanding heterogeneity",
+    "section": "Take-home",
+    "text": "Take-home\n\nHeterogeneity is not a nuisance statistic attached to the pooled effect.\n\nA useful synthesis communicates:\n\ncentre + uncertainty + variation + context\n\n\nEnd by returning to the question from Module 0. Would a single average effect answer it? What additional information would participants now want before using the synthesis for a decision?",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 3 — Understanding heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#heterogeneity-invites-a-better-question",
+    "href": "slides/05-meta-regression.html#heterogeneity-invites-a-better-question",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Heterogeneity invites a better question",
+    "text": "Heterogeneity invites a better question\nInstead of:\n\n“Is heterogeneity significant?”\n\nask:\n\nWhich scientifically plausible characteristics might explain why effects differ?\n\n\nModule 3 established that heterogeneity may be substantive information. Here we move from describing variation to asking whether measured study characteristics are associated with it.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#learning-objectives",
+    "href": "slides/05-meta-regression.html#learning-objectives",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\ndistinguish subgroup analysis from meta-regression;\nfit categorical and continuous moderators;\ninterpret coefficients on the lnRR and RR scales;\ndistinguish within-study causal effects from across-study associations;\nrecognise confounding, sparse data and multiplicity;\nuse moderators for explanation without overclaiming.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#start-with-a-hypothesis-not-a-variable-list",
+    "href": "slides/05-meta-regression.html#start-with-a-hypothesis-not-a-variable-list",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Start with a hypothesis, not a variable list",
+    "text": "Start with a hypothesis, not a variable list\nFor our soil-carbon example we might hypothesise:\n\neffects strengthen with intervention duration;\neffects differ among climate categories;\nbaseline soil properties modify response;\nmanagement intensity changes the effect.\n\n\nSpecify the mechanism before inspecting the coefficient.\n\n\nAsk participants which hypotheses are biologically plausible and which variables the teaching dataset actually contains. A moderator should earn its place scientifically, not because it happened to be recorded.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#categorical-moderators-subgroup-differences",
+    "href": "slides/05-meta-regression.html#categorical-moderators-subgroup-differences",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Categorical moderators: subgroup differences",
+    "text": "Categorical moderators: subgroup differences\n\nm_climate &lt;- rma.mv(\n  yi, vi,\n  mods = ~ climate,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\n\nsummary(m_climate)\n\nThe intercept represents the reference category; other coefficients represent differences from it.\n\nMake learners inspect factor coding with levels(es$climate). The coefficient is a difference on the log response-ratio scale, not a separate pooled effect unless transformed appropriately.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#continuous-moderators-a-slope",
+    "href": "slides/05-meta-regression.html#continuous-moderators-a-slope",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Continuous moderators: a slope",
+    "text": "Continuous moderators: a slope\n\nm_duration &lt;- rma.mv(\n  yi, vi,\n  mods = ~ duration,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\n\n\\[y_i=\\beta_0+\\beta_1\\text{duration}_i+u_i+e_i\\]\n\nWhat does a one-year increase in duration mean on the lnRR scale?\n\n\nBeta1 is the expected change in lnRR per one-unit increase in duration. exp(beta1) is the multiplicative change in RR per year. Emphasise units. Rescaling duration to five years can sometimes make interpretation easier.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#back-transform-the-slope-carefully",
+    "href": "slides/05-meta-regression.html#back-transform-the-slope-carefully",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Back-transform the slope carefully",
+    "text": "Back-transform the slope carefully\nSuppose \\(\\beta_1=0.025\\) per year.\n\\[\\exp(0.025)=1.025\\]\nThat corresponds to approximately a 2.5% multiplicative increase in RR per additional year, conditional on the model.\n\nIt does not mean that extending the same experiment by one year would necessarily cause a 2.5% larger effect.\n\n\nThis distinction is crucial. The meta-regression compares studies with different durations. Longer-duration studies may differ in many other ways.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#meta-regression-is-usually-observational-across-studies",
+    "href": "slides/05-meta-regression.html#meta-regression-is-usually-observational-across-studies",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Meta-regression is usually observational across studies",
+    "text": "Meta-regression is usually observational across studies\n\n\n\n\nEven if treatments were randomised within every primary study, duration, climate or study design generally were not randomised across studies. Meta-regression therefore does not inherit the causal protection of the treatment randomisation.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#a-familiar-trap-across-study-within-study",
+    "href": "slides/05-meta-regression.html#a-familiar-trap-across-study-within-study",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "A familiar trap: across-study ≠ within-study",
+    "text": "A familiar trap: across-study ≠ within-study\nImagine longer studies show larger effects.\nPossible explanations include:\n\nthe effect truly accumulates with time;\nlonger studies occur in different climates;\ndifferent crops are studied for longer;\nolder/longer studies use different methods;\npublication or follow-up processes differ.\n\n\nAssociation can generate hypotheses without identifying the mechanism.\n\n\nThis is ecological confounding at the study level. If some primary studies themselves randomised or compared duration, those within-study contrasts would answer a different and potentially stronger causal question.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#how-many-moderators-can-the-data-support",
+    "href": "slides/05-meta-regression.html#how-many-moderators-can-the-data-support",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "How many moderators can the data support?",
+    "text": "How many moderators can the data support?\nMeta-regression is often information-poor.\n\nA meta-analysis with 12 studies does not become a rich regression dataset because it has 30 dependent effect sizes.\nSparse categories yield unstable estimates.\nMultiple testing increases opportunities for chance findings.\nModerator measurement error can attenuate associations.\n\n\nAvoid mechanical “10 studies per moderator” rules — but be appropriately modest with small evidence bases.\n\n\nThere is no universal magic ratio. Precision depends on distributions, heterogeneity, dependence and effect sizes. The practical lesson is restraint, prespecification and honest uncertainty.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#multivariable-models-need-a-causal-story-too",
+    "href": "slides/05-meta-regression.html#multivariable-models-need-a-causal-story-too",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Multivariable models need a causal story too",
+    "text": "Multivariable models need a causal story too\n\nm_both &lt;- rma.mv(\n  yi, vi,\n  mods = ~ duration + climate,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\n\nAdding covariates can change the estimand of each coefficient.\n\nAre we adjusting for a confounder, a proxy, a mediator, or merely an available variable?\n\n\nThis is a light introduction to causal thinking, not a full DAG lesson. Encourage reviewers to articulate why each variable is included. “It reduced tau-squared” is not sufficient justification.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#residual-heterogeneity-is-not-model-failure",
+    "href": "slides/05-meta-regression.html#residual-heterogeneity-is-not-model-failure",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Residual heterogeneity is not model failure",
+    "text": "Residual heterogeneity is not model failure\nAfter adding moderators, ask:\n\nIs there evidence of an association?\nHow uncertain is it?\nHow much heterogeneity remains?\nAre predictions still variable across settings?\nDoes the moderator cover the range where we want to predict?\n\n\nThe goal is understanding, not making \\(\\tau^2\\) disappear.\n\n\nDo not select a model simply because it explains the largest fraction of heterogeneity. A flexible model can overfit a small meta-analysis.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#extrapolation-deserves-a-warning-label",
+    "href": "slides/05-meta-regression.html#extrapolation-deserves-a-warning-label",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Extrapolation deserves a warning label",
+    "text": "Extrapolation deserves a warning label\nIf durations in the evidence base range from 2–12 years:\n\nPredict at 8 years? ✓     Predict at 30 years? ?\n\n\nA fitted line is mathematically happy to extrapolate where the evidence does not exist.\n\n\nThis is particularly important for decision support. Show the observed moderator range alongside predictions. A linear trend may also be biologically implausible over long horizons.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#report-the-pattern-not-just-the-p-value",
+    "href": "slides/05-meta-regression.html#report-the-pattern-not-just-the-p-value",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Report the pattern, not just the p-value",
+    "text": "Report the pattern, not just the p-value\nA useful report includes:\n\nthe prespecified moderator and rationale;\ncoefficient/effect estimate with uncertainty;\nunits and reference category;\nnumber and distribution of studies;\nresidual heterogeneity;\nlimitations of across-study interpretation.\n\n\n“Significant moderator” is not an interpretation.\n\n\nEncourage a plot whenever possible. Readers need to see where the data lie and whether an apparent trend is driven by one or two studies.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/05-meta-regression.html#take-home-message",
+    "href": "slides/05-meta-regression.html#take-home-message",
+    "title": "Module 5 — Explaining heterogeneity",
+    "section": "Take-home message",
+    "text": "Take-home message\n\n\nHypothesis\n\n\n→\n\n\nModeratormodel\n\n\n→\n\n\nAssociation +uncertainty\n\n\n→\n\n\nCautiousinterpretation\n\n\n\nMeta-regression can describe context dependence. It does not automatically explain its cause.\n\n\nTransition to Module 6: every synthesis contains analytical choices. We now ask whether the substantive conclusion is robust to reasonable alternatives and influential evidence.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 5 — Explaining heterogeneity"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#the-meta-analysis-only-sees-available-evidence",
+    "href": "slides/07-reporting-bias.html#the-meta-analysis-only-sees-available-evidence",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "The meta-analysis only sees available evidence",
+    "text": "The meta-analysis only sees available evidence\n\n\n\n\nMissingness can occur at the study, outcome, analysis and result level.\n\n\nBegin with the mechanism rather than a funnel plot. Ask: what has to happen between collecting data and a result appearing in our review? Distinguish non-publication of whole studies from selective reporting within studies. In agri-food research, grey literature, reports and multiple outcomes can make availability especially complicated.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#learning-objectives",
+    "href": "slides/07-reporting-bias.html#learning-objectives",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "Learning objectives",
+    "text": "Learning objectives\nBy the end of this module, you should be able to:\n\ndistinguish publication bias from broader selective reporting;\nexplain what funnel plots and small-study-effect tests can and cannot show;\nrecognise plausible alternative causes of funnel asymmetry;\nuse diagnostics cautiously in R;\ncombine statistical diagnostics with review-process information;\ncommunicate uncertainty about missing evidence without claiming it has been “corrected”.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#publication-bias-is-only-one-mechanism",
+    "href": "slides/07-reporting-bias.html#publication-bias-is-only-one-mechanism",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "Publication bias is only one mechanism",
+    "text": "Publication bias is only one mechanism\n\n\nStudy publicationWhether an entire study becomes available.\n\n\nOutcome reportingWhich measured outcomes appear in the report.\n\n\nAnalysis reportingWhich time points, contrasts or models are shown.\n\n\n\nCould availability depend on the direction, magnitude or statistical significance of the result?\n\n\nUse “reporting bias” as the umbrella idea. A published paper does not guarantee that every measured outcome or analysis is available. Ask participants for examples: yield reported but soil carbon omitted; only one follow-up time; subgroup reported after seeing results.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#why-this-matters-for-meta-analysis",
+    "href": "slides/07-reporting-bias.html#why-this-matters-for-meta-analysis",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "Why this matters for meta-analysis",
+    "text": "Why this matters for meta-analysis\nIf the probability that an estimate is observed depends on its result, then the observed evidence may not represent the evidence that was generated.\nPossible consequences include:\n\nbiased pooled effects;\ndistorted heterogeneity;\nmisleading moderator relationships;\noverconfidence in the apparent evidence base.\n\n\nA larger meta-analysis is not necessarily a less biased meta-analysis.\n\n\nEmphasise that increasing k does not solve systematic selection. Missing evidence is about the data-generating and reporting process, not merely sample size.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#funnel-plots-what-are-they-showing",
+    "href": "slides/07-reporting-bias.html#funnel-plots-what-are-they-showing",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "Funnel plots: what are they showing?",
+    "text": "Funnel plots: what are they showing?\n\n\n\n\nA funnel plot visualises the relationship between effect estimates and their precision. In the absence of several complications, estimates from smaller studies are expected to scatter more widely. Do not teach symmetry as a formal null expectation that diagnoses publication bias.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#asymmetry-has-many-possible-causes",
+    "href": "slides/07-reporting-bias.html#asymmetry-has-many-possible-causes",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "Asymmetry has many possible causes",
+    "text": "Asymmetry has many possible causes\n\nselective publication or reporting;\ngenuine differences between small and large studies;\nstudy quality or design differences;\ndifferent interventions, populations or settings;\neffect-size/variance relationships;\nchance, especially with few studies.\n\n\nFunnel asymmetry is a clue to investigate, not a diagnosis.\n\n\nThis is the core message. Small studies may genuinely be different—for example, intensive experimental interventions at research stations versus larger pragmatic field trials.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#a-funnel-plot-in-metafor",
+    "href": "slides/07-reporting-bias.html#a-funnel-plot-in-metafor",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "A funnel plot in metafor",
+    "text": "A funnel plot in metafor\n\nm &lt;- rma(yi, vi, data = es, method = \"REML\")\nfunnel(m)\n\nBefore interpreting the picture, ask:\n\nAre there enough independent studies for the pattern to be informative?\nCould heterogeneity explain structure in the plot?\nAre effect size and precision mathematically related?\nDo study characteristics differ with study size?\n\n\nDo not offer a universal minimum k as a magic threshold. The point is that sparse plots are difficult to interpret and dependence further complicates them.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#small-study-effects-are-not-synonymous-with-publication-bias",
+    "href": "slides/07-reporting-bias.html#small-study-effects-are-not-synonymous-with-publication-bias",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "Small-study effects are not synonymous with publication bias",
+    "text": "Small-study effects are not synonymous with publication bias\nA regression-based test asks whether effect size is associated with precision or sampling variance.\n\nregtest(m)\n\n\nA detected small-study effect does not identify its cause.\n\n\nExplain that “Egger test = publication bias test” is an overstatement. The regression can detect a pattern consistent with small-study effects; selection is one possible explanation. Conversely, low power means a non-significant test cannot establish absence of bias.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#what-does-a-non-significant-test-tell-us",
+    "href": "slides/07-reporting-bias.html#what-does-a-non-significant-test-tell-us",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "What does a non-significant test tell us?",
+    "text": "What does a non-significant test tell us?\nNot this:\n\n“There was no publication bias (p &gt; 0.05).”\n\nBetter:\n\n“We found no clear evidence of a relationship between effect size and precision, but the analysis has limited ability to rule out selective reporting.”\n\n\nAsk the group what evidence would be required to support the first sentence. This links back to the course-wide theme that absence of statistical significance is not evidence of absence.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#what-about-trim-and-fill",
+    "href": "slides/07-reporting-bias.html#what-about-trim-and-fill",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "What about trim-and-fill?",
+    "text": "What about trim-and-fill?\nTrim-and-fill can be useful as an exploratory sensitivity analysis, but it relies on assumptions about funnel asymmetry that may not match the actual selection process.\n\nm_tf &lt;- trimfill(m)\nfunnel(m_tf)\n\n\nDo not describe the filled estimate as the result “corrected for publication bias”.\n\n\nThe method imputes hypothetical missing effects under a particular symmetry model. It does not recover unknown unpublished studies and does not establish why asymmetry occurred.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#start-earlier-than-the-statistical-diagnostics",
+    "href": "slides/07-reporting-bias.html#start-earlier-than-the-statistical-diagnostics",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "Start earlier than the statistical diagnostics",
+    "text": "Start earlier than the statistical diagnostics\nReview methods can provide direct clues:\n\nsearch grey literature and relevant repositories;\ncompare protocols/registrations with reports where available;\nrecord missing outcomes and unusable results;\ncontact authors when important data are unavailable;\ndocument conference abstracts and unpublished studies;\nconsider whether funding or dissemination pathways could affect availability.\n\n\nPrevention and detection begin with the search and extraction process.\n\n\nThis makes the module part of evidence synthesis rather than a collection of post-hoc tests. Statistical diagnostics operate only on what was observed.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#triangulate-do-not-tick-a-box",
+    "href": "slides/07-reporting-bias.html#triangulate-do-not-tick-a-box",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "Triangulate, do not tick a box",
+    "text": "Triangulate, do not tick a box\nA useful assessment combines:\n\n\nReview-process evidenceWhat appears to be missing?\n\n\nStudy characteristicsCould size and design explain patterns?\n\n\nStatistical patternsAre small-study effects apparent?\n\n\n\nThe conclusion is an argument from multiple pieces of evidence.\n\n\nAvoid converting this into a score. The goal is transparent reasoning about mechanisms and consequences.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#reporting-example",
+    "href": "slides/07-reporting-bias.html#reporting-example",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "Reporting example",
+    "text": "Reporting example\n\nSmaller studies tended to report larger effects, although study size was also associated with intervention duration and setting. Funnel-plot asymmetry and regression diagnostics therefore cannot be attributed uniquely to selective publication. Searches identified several reports with incomplete outcome information. We consider selective reporting a plausible source of bias and interpret the pooled estimate cautiously.\n\n\nPoint out the structure: observed pattern → competing explanation → direct review evidence → calibrated conclusion. It does not pretend the cause has been proven.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "slides/07-reporting-bias.html#take-home-message",
+    "href": "slides/07-reporting-bias.html#take-home-message",
+    "title": "Module 7 — Missing evidence and reporting bias",
+    "section": "Take-home message",
+    "text": "Take-home message\n\n\nAsk what couldbe missing\n\n\n→\n\n\nInvestigate thereporting process\n\n\n→\n\n\nUse diagnosticscautiously\n\n\n→\n\n\nTriangulate +report uncertainty\n\n\n\nNo funnel plot, test or adjustment can prove that the observed evidence is complete.\n\n\nTransition to Module 8. We now have all the ingredients—estimand, effect size, pooled effect, heterogeneity, dependence, moderators, robustness and missing evidence. The final task is to turn them into a conclusion that is useful without outrunning the evidence.",
+    "crumbs": [
+      "Home",
+      "Slides",
+      "Module 7 — Missing evidence and reporting bias"
+    ]
+  },
+  {
+    "objectID": "solutions/01-effect-sizes.html",
+    "href": "solutions/01-effect-sizes.html",
+    "title": "Solution 1 — Effect sizes",
+    "section": "",
+    "text": "library(metafor)\nlibrary(dplyr)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes &lt;- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n) |&gt;\n  mutate(\n    RR = exp(yi),\n    percent_change = 100 * (RR - 1)\n  )\n\nFor Study A, \\(\\ln(22.1/20.0)\\approx0.100\\), giving \\(RR\\approx1.105\\): the treatment mean is about 10.5% higher than the comparator mean."
+  },
+  {
+    "objectID": "solutions/01-effect-sizes.html#calculate-the-effects",
+    "href": "solutions/01-effect-sizes.html#calculate-the-effects",
+    "title": "Solution 1 — Effect sizes",
+    "section": "",
+    "text": "library(metafor)\nlibrary(dplyr)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes &lt;- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n) |&gt;\n  mutate(\n    RR = exp(yi),\n    percent_change = 100 * (RR - 1)\n  )\n\nFor Study A, \\(\\ln(22.1/20.0)\\approx0.100\\), giving \\(RR\\approx1.105\\): the treatment mean is about 10.5% higher than the comparator mean."
+  },
+  {
+    "objectID": "solutions/01-effect-sizes.html#effect-measure-discussion",
+    "href": "solutions/01-effect-sizes.html#effect-measure-discussion",
+    "title": "Solution 1 — Effect sizes",
+    "section": "Effect-measure discussion",
+    "text": "Effect-measure discussion\n\nMean difference is directly interpretable if tonnes/ha is common and meaningful across studies.\nSMD/Hedges’ g may be defensible if the scales genuinely measure the same construct, although the change in estimand and interpretability should be considered.\nResponse ratio / log response ratio matches a proportional soil-carbon question when means are positive.\n\nThe key is not that these are universal rules: the effect measure should correspond to the target estimand and available design/data."
+  },
+  {
+    "objectID": "solutions/03-heterogeneity.html",
+    "href": "solutions/03-heterogeneity.html",
+    "title": "Solution 3 — Understanding heterogeneity",
+    "section": "",
+    "text": "Meta-analysis B contains much greater variation in plausible underlying effects despite having the same estimated mean and confidence interval. Its prediction interval includes effects below and substantially above the null, so the mean alone is a poor description of what might occur in a particular comparable setting."
+  },
+  {
+    "objectID": "solutions/03-heterogeneity.html#part-a",
+    "href": "solutions/03-heterogeneity.html#part-a",
+    "title": "Solution 3 — Understanding heterogeneity",
+    "section": "",
+    "text": "Meta-analysis B contains much greater variation in plausible underlying effects despite having the same estimated mean and confidence interval. Its prediction interval includes effects below and substantially above the null, so the mean alone is a poor description of what might occur in a particular comparable setting."
+  },
+  {
+    "objectID": "solutions/03-heterogeneity.html#part-b",
+    "href": "solutions/03-heterogeneity.html#part-b",
+    "title": "Solution 3 — Understanding heterogeneity",
+    "section": "Part B",
+    "text": "Part B\n\nm$tau2          # estimated between-study variance\nsqrt(m$tau2)    # between-study SD, on the lnRR scale\nm$I2            # relative heterogeneity statistic\npredict(m, transf = exp)  # mean and prediction interval on RR scale\n\nInterpret these quantities together. \\(I^2\\) should not be converted mechanically into a qualitative traffic-light label."
+  },
+  {
+    "objectID": "solutions/03-heterogeneity.html#part-c",
+    "href": "solutions/03-heterogeneity.html#part-c",
+    "title": "Solution 3 — Understanding heterogeneity",
+    "section": "Part C",
+    "text": "Part C\nPlausible hypotheses include intervention duration, climate, soil properties, crop system, baseline carbon and management intensity. The teaching dataset contains duration and climate, but not all of these candidate moderators. Absence of a measured moderator does not mean it is unimportant."
+  },
+  {
+    "objectID": "solutions/03-heterogeneity.html#part-d",
+    "href": "solutions/03-heterogeneity.html#part-d",
+    "title": "Solution 3 — Understanding heterogeneity",
+    "section": "Part D",
+    "text": "Part D\nA strong answer communicates the estimated mean and its confidence interval, then explicitly distinguishes that uncertainty from between-study variation and the prediction interval. It should restrict inference to settings reasonably represented by the included evidence."
+  },
+  {
+    "objectID": "solutions/05-meta-regression.html",
+    "href": "solutions/05-meta-regression.html",
+    "title": "Solution 5 — Meta-regression and effect modification",
+    "section": "",
+    "text": "A plausible hypothesis is that soil-carbon responses accumulate with longer implementation because changes in carbon inputs, decomposition and soil structure may take time. This is a hypothesis to evaluate, not something established by the teaching data."
+  },
+  {
+    "objectID": "solutions/05-meta-regression.html#hypothesis",
+    "href": "solutions/05-meta-regression.html#hypothesis",
+    "title": "Solution 5 — Meta-regression and effect modification",
+    "section": "",
+    "text": "A plausible hypothesis is that soil-carbon responses accumulate with longer implementation because changes in carbon inputs, decomposition and soil structure may take time. This is a hypothesis to evaluate, not something established by the teaching data."
+  },
+  {
+    "objectID": "solutions/05-meta-regression.html#continuous-moderator",
+    "href": "solutions/05-meta-regression.html#continuous-moderator",
+    "title": "Solution 5 — Meta-regression and effect modification",
+    "section": "2. Continuous moderator",
+    "text": "2. Continuous moderator\n\nm_duration &lt;- rma.mv(\n  yi, vi,\n  mods = ~ duration,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\nsummary(m_duration)\n\nexp(coef(m_duration)[\"duration\"])\n\nThe duration coefficient is the expected difference in lnRR associated with a one-year difference in study duration. Exponentiating it gives the multiplicative change in RR associated with one additional year across the studies represented by the model. Inspect the confidence interval before deciding whether the data estimate that pattern precisely."
+  },
+  {
+    "objectID": "solutions/05-meta-regression.html#categorical-moderator",
+    "href": "solutions/05-meta-regression.html#categorical-moderator",
+    "title": "Solution 5 — Meta-regression and effect modification",
+    "section": "3. Categorical moderator",
+    "text": "3. Categorical moderator\n\nes$climate &lt;- factor(es$climate)\nlevels(es$climate)\n\nm_climate &lt;- rma.mv(\n  yi, vi,\n  mods = ~ climate,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\nsummary(m_climate)\n\nThe intercept corresponds to the factor’s reference climate. Each displayed climate coefficient is a contrast with that reference on the lnRR scale. It is not, by itself, the pooled effect for that climate category."
+  },
+  {
+    "objectID": "solutions/05-meta-regression.html#two-moderators",
+    "href": "solutions/05-meta-regression.html#two-moderators",
+    "title": "Solution 5 — Meta-regression and effect modification",
+    "section": "4. Two moderators",
+    "text": "4. Two moderators\n\nm_both &lt;- rma.mv(\n  yi, vi,\n  mods = ~ duration + climate,\n  random = ~ 1 | study_id/effect_id,\n  data = es\n)\n\nThe duration coefficient can change because duration and climate are associated in the evidence base. In the multivariable model it represents the duration association conditional on the included climate terms. With a small dataset, all such estimates should be treated cautiously."
+  },
+  {
+    "objectID": "solutions/05-meta-regression.html#causal-interpretation",
+    "href": "solutions/05-meta-regression.html#causal-interpretation",
+    "title": "Solution 5 — Meta-regression and effect modification",
+    "section": "5. Causal interpretation",
+    "text": "5. Causal interpretation\nA defensible rewrite is: “Across the included studies, longer-duration studies tended to show [larger/smaller] estimated effects, although this association is uncertain and may reflect other differences among studies.”\nPotential confounders include climate, crop type, baseline soil carbon, soil texture, management intensity, study design or measurement method. Only some are measured in the teaching dataset."
+  },
+  {
+    "objectID": "solutions/05-meta-regression.html#extrapolation",
+    "href": "solutions/05-meta-regression.html#extrapolation",
+    "title": "Solution 5 — Meta-regression and effect modification",
+    "section": "6. Extrapolation",
+    "text": "6. Extrapolation\nNo strong prediction at 30 years is supported by data observed only over a much shorter range. The model will calculate a value, but this requires extrapolating the fitted functional form beyond represented evidence and may be biologically implausible."
+  },
+  {
+    "objectID": "solutions/05-meta-regression.html#reporting",
+    "href": "solutions/05-meta-regression.html#reporting",
+    "title": "Solution 5 — Meta-regression and effect modification",
+    "section": "7. Reporting",
+    "text": "7. Reporting\nA strong paragraph reports the estimated association and interval, states the observed moderator range, notes remaining heterogeneity and explicitly describes the analysis as an across-study association rather than evidence that manipulating the moderator would cause the estimated change."
+  },
+  {
+    "objectID": "solutions/07-reporting-bias.html",
+    "href": "solutions/07-reporting-bias.html",
+    "title": "Solution 7 — Missing evidence and reporting bias",
+    "section": "",
+    "text": "Plausible mechanisms include non-publication of whole studies, selective omission of outcomes, selective time points or contrasts, incomplete numerical reporting, and analyses chosen after results were known."
+  },
+  {
+    "objectID": "solutions/07-reporting-bias.html#missingness-mechanisms",
+    "href": "solutions/07-reporting-bias.html#missingness-mechanisms",
+    "title": "Solution 7 — Missing evidence and reporting bias",
+    "section": "",
+    "text": "Plausible mechanisms include non-publication of whole studies, selective omission of outcomes, selective time points or contrasts, incomplete numerical reporting, and analyses chosen after results were known."
+  },
+  {
+    "objectID": "solutions/07-reporting-bias.html#funnel-plot-and-regression",
+    "href": "solutions/07-reporting-bias.html#funnel-plot-and-regression",
+    "title": "Solution 7 — Missing evidence and reporting bias",
+    "section": "2–3. Funnel plot and regression",
+    "text": "2–3. Funnel plot and regression\nThe plot should first be described in terms of any relationship between effect estimates and precision. regtest() evaluates evidence of a small-study-effect pattern; it does not identify the mechanism producing that pattern. Genuine heterogeneity correlated with study size, design differences and chance are among alternative explanations. Limited information can also make the test insensitive, so a non-significant result does not establish absence of selective reporting."
+  },
+  {
+    "objectID": "solutions/07-reporting-bias.html#trim-and-fill",
+    "href": "solutions/07-reporting-bias.html#trim-and-fill",
+    "title": "Solution 7 — Missing evidence and reporting bias",
+    "section": "4. Trim-and-fill",
+    "text": "4. Trim-and-fill\nA suitable statement is:\n\nTrim-and-fill shows how the pooled estimate changes under a particular model of funnel-plot asymmetry; it does not identify or recover the actual missing studies and therefore should not be interpreted as a corrected estimate."
+  },
+  {
+    "objectID": "solutions/07-reporting-bias.html#triangulation",
+    "href": "solutions/07-reporting-bias.html#triangulation",
+    "title": "Solution 7 — Missing evidence and reporting bias",
+    "section": "5. Triangulation",
+    "text": "5. Triangulation\nA strong answer notes that the registration and incomplete abstracts provide direct reasons to suspect unavailable results, while the different production systems provide a competing explanation for small-study effects. The appropriate conclusion is therefore calibrated: selective reporting is plausible, but funnel asymmetry alone cannot identify its cause or magnitude."
+  },
+  {
+    "objectID": "solutions/07-reporting-bias.html#reporting",
+    "href": "solutions/07-reporting-bias.html#reporting",
+    "title": "Solution 7 — Missing evidence and reporting bias",
+    "section": "6. Reporting",
+    "text": "6. Reporting\nFor example:\n\nWe found no clear statistical evidence of an association between effect size and precision in the regression-based small-study-effect analysis. However, this does not rule out selective publication or outcome reporting, particularly given the limited information available to diagnose these processes."
+  }
+]

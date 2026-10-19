@@ -1,0 +1,47 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Meta-analysis for Agri-food Evidence Synthesis"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: instructor-guide.qmd
+        text: Instructor guide
+      - href: readings.qmd
+        text: Reading
+  sidebar:
+    style: docked
+    contents:
+      - section: "Slides"
+        contents:
+          - slides/00-introduction.qmd
+          - slides/01-effect-sizes.qmd
+          - slides/02-first-meta-analysis.qmd
+          - slides/03-heterogeneity.qmd
+          - slides/04-dependence.qmd
+          - slides/05-meta-regression.qmd
+          - slides/06-sensitivity.qmd
+          - slides/07-reporting-bias.qmd
+          - slides/08-interpretation.qmd
+      - section: "Exercises"
+        contents:
+          - exercises/01-effect-sizes.qmd
+          - exercises/02-first-meta-analysis.qmd
+          - exercises/03-heterogeneity.qmd
+          - exercises/04-multilevel.qmd
+          - exercises/05-meta-regression.qmd
+          - exercises/06-sensitivity.qmd
+          - exercises/07-reporting-bias.qmd
+          - exercises/08-interpretation.qmd
+
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-fold: false
+
+execute:
+  freeze: auto

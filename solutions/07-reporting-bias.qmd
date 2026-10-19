@@ -1,0 +1,28 @@
+---
+title: "Solution 7 — Missing evidence and reporting bias"
+format: html
+---
+
+## 1. Missingness mechanisms
+
+Plausible mechanisms include non-publication of whole studies, selective omission of outcomes, selective time points or contrasts, incomplete numerical reporting, and analyses chosen after results were known.
+
+## 2–3. Funnel plot and regression
+
+The plot should first be described in terms of any relationship between effect estimates and precision. `regtest()` evaluates evidence of a small-study-effect pattern; it does not identify the mechanism producing that pattern. Genuine heterogeneity correlated with study size, design differences and chance are among alternative explanations. Limited information can also make the test insensitive, so a non-significant result does not establish absence of selective reporting.
+
+## 4. Trim-and-fill
+
+A suitable statement is:
+
+> Trim-and-fill shows how the pooled estimate changes under a particular model of funnel-plot asymmetry; it does not identify or recover the actual missing studies and therefore should not be interpreted as a corrected estimate.
+
+## 5. Triangulation
+
+A strong answer notes that the registration and incomplete abstracts provide direct reasons to suspect unavailable results, while the different production systems provide a competing explanation for small-study effects. The appropriate conclusion is therefore calibrated: selective reporting is plausible, but funnel asymmetry alone cannot identify its cause or magnitude.
+
+## 6. Reporting
+
+For example:
+
+> We found no clear statistical evidence of an association between effect size and precision in the regression-based small-study-effect analysis. However, this does not rule out selective publication or outcome reporting, particularly given the limited information available to diagnose these processes.

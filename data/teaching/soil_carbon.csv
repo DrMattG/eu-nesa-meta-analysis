@@ -1,0 +1,13 @@
+study_id,effect_id,mean_reduced,sd_reduced,n_reduced,mean_control,sd_control,n_control,duration,climate
+A,1,22.1,4.2,20,20.0,4.0,20,3,Temperate
+B,1,31.0,5.1,18,28.4,5.0,18,5,Temperate
+C,1,18.7,3.3,24,18.2,3.5,24,2,Mediterranean
+D,1,27.2,4.8,16,24.1,4.4,16,8,Temperate
+D,2,25.4,4.5,16,23.8,4.3,16,8,Temperate
+E,1,15.9,3.1,22,16.4,3.2,22,4,Mediterranean
+F,1,34.8,6.0,15,30.2,5.7,15,12,Continental
+G,1,21.4,4.0,20,19.5,3.8,20,6,Temperate
+H,1,29.3,5.2,19,27.9,5.0,19,10,Continental
+I,1,17.8,3.4,21,16.1,3.1,21,7,Mediterranean
+J,1,26.5,4.6,17,24.9,4.4,17,9,Temperate
+J,2,24.7,4.2,17,24.0,4.1,17,9,Temperate

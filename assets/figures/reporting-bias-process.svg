@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="360" viewBox="0 0 1100 360">
+<style>.t{font:28px sans-serif;fill:#222}.s{font:20px sans-serif;fill:#444}.b{fill:#f5f5f5;stroke:#555;stroke-width:2}.a{font:34px sans-serif;fill:#555}</style>
+<rect class="b" x="25" y="110" width="210" height="120" rx="18"/><text class="t" x="130" y="155" text-anchor="middle">All results</text><text class="s" x="130" y="190" text-anchor="middle">generated</text>
+<text class="a" x="255" y="180">→</text>
+<rect class="b" x="300" y="110" width="210" height="120" rx="18"/><text class="t" x="405" y="150" text-anchor="middle">Results</text><text class="s" x="405" y="185" text-anchor="middle">selected for</text><text class="s" x="405" y="213" text-anchor="middle">reporting</text>
+<text class="a" x="530" y="180">→</text>
+<rect class="b" x="575" y="110" width="210" height="120" rx="18"/><text class="t" x="680" y="150" text-anchor="middle">Studies</text><text class="s" x="680" y="185" text-anchor="middle">selected for</text><text class="s" x="680" y="213" text-anchor="middle">publication</text>
+<text class="a" x="805" y="180">→</text>
+<rect class="b" x="850" y="110" width="225" height="120" rx="18"/><text class="t" x="962" y="150" text-anchor="middle">Evidence we</text><text class="s" x="962" y="185" text-anchor="middle">can find and</text><text class="s" x="962" y="213" text-anchor="middle">synthesise</text>
+<text class="s" x="405" y="285" text-anchor="middle">outcome / analysis selection</text><text class="s" x="680" y="315" text-anchor="middle">publication / availability</text>
+</svg>

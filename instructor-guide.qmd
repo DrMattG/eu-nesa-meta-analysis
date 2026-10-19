@@ -1,0 +1,77 @@
+---
+title: "Instructor guide"
+format: html
+---
+
+## Teaching philosophy
+
+This course treats meta-analysis as part of **evidence synthesis**, not simply as a statistical procedure. The recurring sequence is:
+
+> **Question → estimand → compatible evidence → effect size → model → heterogeneity → dependence → moderators → robustness → interpretation**
+
+Modules 0–3 form the introductory core and can be taught as a half-day intensive session or expanded with exercises into a full day.
+
+## Suggested timings for Modules 0–3
+
+| Module | Slides/discussion | Exercise | Total |
+|---|---:|---:|---:|
+| 0. From question to meta-analysis | 30 min | 10 min | 40 min |
+| 1. Effect sizes | 35 min | 25 min | 60 min |
+| 2. First meta-analysis | 40 min | 30 min | 70 min |
+| 3. Heterogeneity | 35 min | 25 min | 60 min |
+
+Add breaks as appropriate. For a shorter workshop, retain the interpretation questions and reduce coding time rather than removing the conceptual framing.
+
+## Presenter notes
+
+Every RevealJS deck contains `::: {.notes}` blocks. These are intended as teaching prompts rather than a script that must be read verbatim. They identify discussion questions, common misconceptions and transitions.
+
+## Teaching dataset
+
+`data/teaching/soil_carbon.csv` is **synthetic**. It is deliberately simple and should not be presented as empirical evidence about reduced tillage. The final EU-NESA package can supplement it with openly licensed empirical agri-food datasets where permissions and provenance are clear.
+
+## R setup
+
+Participants need:
+
+```r
+install.packages(c("metafor", "tidyverse"))
+```
+
+The introductory exercises primarily use `metafor`; `dplyr` is used for readable data manipulation.
+
+## Key messages to protect
+
+- The effect measure follows from the estimand.
+- Precision is not the same as methodological quality.
+- Random effects do not make conceptually incompatible studies compatible.
+- Do not interpret individual statistical significance by vote counting.
+- $I^2$ is not a quality score or a universal traffic-light measure.
+- Prediction intervals can be more decision-relevant than the confidence interval around the mean.
+- Causal interpretation depends on study design and assumptions, not on meta-analysis alone.
+
+## Modules 4–6: suggested teaching plan
+
+### Module 4 — Dependence is not optional (35–45 min + 30 min practical)
+
+Use participants' own examples of multiple outcomes, time points and shared controls before introducing `rma.mv()`. The conceptual goal is to recognise dependence and map its source; the software is secondary. Explicitly distinguish random-effects clustering from sampling covariance.
+
+### Module 5 — Explaining heterogeneity (35–45 min + 30 min practical)
+
+Ask learners to state a biological moderator hypothesis before fitting a model. Keep the causal warning prominent: most meta-regressions compare study characteristics across studies, even when treatment allocation within the primary studies was randomised. Focus reporting on estimates, uncertainty, data support and residual heterogeneity rather than moderator p-values.
+
+### Module 6 — Sensitivity and robustness (30–40 min + 30 min practical)
+
+Begin by asking which analytical choices in the synthesis were genuinely uncertain. Separate influence diagnostics from sensitivity analyses. The endpoint is a robustness statement describing which conclusions are stable to which tested assumptions; avoid reducing robustness to whether statistical significance changes.
+
+## Module 7 — Missing evidence and reporting bias
+
+**Suggested time:** 40–50 minutes teaching + 25–35 minutes practical.
+
+The central teaching principle is that funnel plots and regression tests identify patterns, not the mechanism that caused them. Start with the reporting process, then introduce statistical diagnostics. Encourage triangulation across search/extraction information, study characteristics and statistical patterns. Avoid teaching trim-and-fill as a correction procedure.
+
+## Module 8 — From model to conclusion
+
+**Suggested time:** 40–50 minutes teaching + 30 minutes synthesis exercise.
+
+Use this as the capstone. Participants should return to the estimand from Module 0 and build a conclusion from magnitude, uncertainty, variation, credibility and applicability. The final exercise works well in pairs: one participant writes the technical paragraph and the other rewrites it for a decision-maker, then they compare what information was lost.

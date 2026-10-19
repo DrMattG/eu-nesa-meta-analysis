@@ -1,0 +1,15 @@
+{
+  "hash": "d922a5fc07c17e00eaf2b21cbdd9a938",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Solution 3 — Understanding heterogeneity\"\nformat: html\n---\n\n## Part A\n\nMeta-analysis B contains much greater variation in plausible underlying effects despite having the same estimated mean and confidence interval. Its prediction interval includes effects below and substantially above the null, so the mean alone is a poor description of what might occur in a particular comparable setting.\n\n## Part B\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm$tau2          # estimated between-study variance\nsqrt(m$tau2)    # between-study SD, on the lnRR scale\nm$I2            # relative heterogeneity statistic\npredict(m, transf = exp)  # mean and prediction interval on RR scale\n```\n:::\n\n\nInterpret these quantities together. $I^2$ should not be converted mechanically into a qualitative traffic-light label.\n\n## Part C\n\nPlausible hypotheses include intervention duration, climate, soil properties, crop system, baseline carbon and management intensity. The teaching dataset contains `duration` and `climate`, but not all of these candidate moderators. Absence of a measured moderator does not mean it is unimportant.\n\n## Part D\n\nA strong answer communicates the estimated mean and its confidence interval, then explicitly distinguishes that uncertainty from between-study variation and the prediction interval. It should restrict inference to settings reasonably represented by the included evidence.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

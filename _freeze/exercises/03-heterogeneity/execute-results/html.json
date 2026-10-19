@@ -1,0 +1,15 @@
+{
+  "hash": "35bcc0ac66f750a0b849acaf53a325bc",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Exercise 3 — Understanding heterogeneity\"\nformat: html\n---\n\n## Part A — Same mean, different story\n\nTwo hypothetical syntheses both estimate an average response ratio of **1.10**.\n\n| | Meta-analysis A | Meta-analysis B |\n|---|---:|---:|\n| Mean RR | 1.10 | 1.10 |\n| 95% CI | 1.05–1.15 | 1.05–1.15 |\n| 95% prediction interval | 1.03–1.17 | 0.82–1.48 |\n\nDiscuss:\n\n1. Would you give the same recommendation based on A and B?\n2. What information does the prediction interval add?\n3. Why would saying only “the pooled effect was positive and statistically significant” be inadequate?\n\n## Part B — Inspect heterogeneity in R\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm <- rma(yi, vi, data = es, method = \"REML\")\n\nm$tau2\nsqrt(m$tau2)\nm$I2\npredict(m, transf = exp)\n```\n:::\n\n\nRecord each quantity and explain it in plain language.\n\n## Part C — Generate hypotheses\n\nBefore fitting any meta-regression, propose **three scientifically plausible reasons** why the reduced-tillage effect might differ among studies.\n\nFor each, state whether the current dataset actually measures the proposed moderator.\n\n## Part D — Decision-maker summary\n\nWrite four sentences summarising the synthesis for a decision-maker.\n\nRequirements:\n\n- report the average effect;\n- acknowledge uncertainty;\n- describe between-study variation;\n- explain applicability cautiously;\n- do **not** use generic labels such as “low”, “moderate” or “high” heterogeneity.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

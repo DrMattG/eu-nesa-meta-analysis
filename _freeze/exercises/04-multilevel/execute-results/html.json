@@ -1,0 +1,17 @@
+{
+  "hash": "86aeb7a6657a2b854481a4cc3c6fb27a",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Exercise 4 — Dependence and multilevel meta-analysis\"\nformat: html\n---\n\n## Aim\n\nRecognise dependence, compare naive and multilevel models, and explain what changes when effects are clustered within studies.\n\n## 1. Prepare the effect sizes\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(metafor)\n\nsoil <- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes <- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n)\n```\n:::\n\n\n## 2. Map the dependence\n\n\n::: {.cell}\n\n```{.r .cell-code}\nwith(es, table(study_id))\ntable(table(es$study_id))\n```\n:::\n\n\n1. Which studies contribute more than one effect?\n2. Why might two effects from the same study be related?\n3. What additional information would you want from the primary paper to understand the dependence?\n\n## 3. Fit a naive model\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_naive <- rma(yi, vi, data = es, method = \"REML\")\nsummary(m_naive)\n```\n:::\n\n\nRecord the pooled estimate, SE, CI and heterogeneity estimate.\n\n## 4. Fit a multilevel model\n\nFill the blanks.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_mv <- rma.mv(\n  yi = ___,\n  V = ___,\n  random = ~ 1 | ___/___,\n  data = es,\n  method = \"REML\"\n)\nsummary(m_mv)\n```\n:::\n\n\nCompare the estimate and uncertainty with `m_naive`.\n\n## 5. Interpret the variance components\n\nUse:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_mv$sigma2\n```\n:::\n\n\nWhich component corresponds to variation among studies and which to variation among effects within studies? What might each represent scientifically?\n\n## 6. The important limitation\n\nThe teaching data provide sampling variances (`vi`) but not sampling covariances between effects from the same study.\n\nExplain why a study-level random effect does **not necessarily** solve correlation caused by shared controls or repeated measurements.\n\n## 7. Decision challenge\n\nWrite 3–4 sentences explaining to a review team:\n\n- why treating every row as independent is questionable;\n- what the multilevel model improves;\n- what dependence assumption remains unresolved;\n- what you would seek or test in a full review.\n",
+    "supporting": [
+      "04-multilevel_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

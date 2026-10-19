@@ -1,0 +1,15 @@
+{
+  "hash": "055ea5b6db3ea20184244a6daf0986ff",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Exercise 7 — Missing evidence and reporting bias\"\nformat: html\n---\n\n## Aim\n\nInvestigate possible small-study effects while separating statistical patterns from claims about their cause.\n\n## 1. Map the missingness mechanisms\n\nFor the soil-carbon review, imagine that some studies measured soil carbon, crop yield and soil moisture but published only selected outcomes. List at least three ways evidence could become unavailable between data collection and your meta-analysis.\n\n## 2. Inspect a funnel plot\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm <- rma(yi, vi, data = es, method = \"REML\")\nfunnel(m)\n```\n:::\n\n\nDescribe the pattern without diagnosing its cause. What study characteristics could plausibly be associated with both precision and effect size?\n\n## 3. Explore small-study effects\n\n\n::: {.cell}\n\n```{.r .cell-code}\nregtest(m)\n```\n:::\n\n\nAnswer:\n\n1. What pattern is this test designed to detect?\n2. Why would a statistically significant result not prove publication bias?\n3. Why would a non-significant result not prove its absence?\n\n## 4. Optional exploratory sensitivity analysis\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_tf <- trimfill(m)\nsummary(m_tf)\nfunnel(m_tf)\n```\n:::\n\n\nCompare the original and trim-and-fill estimates. Write one sentence explaining why the second should **not** be called the “publication-bias-corrected” estimate.\n\n## 5. Triangulate\n\nImagine your search also found:\n\n- two conference abstracts with insufficient numerical data;\n- one trial registration listing soil carbon that was absent from the final paper;\n- several small studies conducted in different production systems from the large studies.\n\nWrite a short assessment of possible reporting bias that uses **all** of this information rather than relying on the funnel plot alone.\n\n## 6. Reporting challenge\n\nRewrite this sentence:\n\n> “There was no publication bias because Egger's test was non-significant.”\n\nYour replacement should state what was examined, what was observed and the limitation of the inference.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

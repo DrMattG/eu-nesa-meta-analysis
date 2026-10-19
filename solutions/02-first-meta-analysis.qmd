@@ -1,0 +1,37 @@
+---
+title: "Solution 2 — Your first meta-analysis"
+format: html
+---
+
+```{r}
+#| eval: false
+library(metafor)
+soil <- read.csv("../data/teaching/soil_carbon.csv")
+
+es <- escalc(
+  measure = "ROM",
+  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,
+  m2i = mean_control, sd2i = sd_control, n2i = n_control,
+  data = soil
+)
+
+m <- rma(yi = yi, vi = vi, data = es, method = "REML")
+summary(m)
+predict(m, transf = exp)
+
+forest(
+  m,
+  slab = paste(es$study_id, es$effect_id, sep = "."),
+  atransf = exp,
+  xlab = "Response ratio (reduced / conventional)"
+)
+abline(v = 1, lty = 2)
+```
+
+## Interpretation
+
+A good answer separates the mean from variation. For example:
+
+> Across these synthetic studies, the model estimates the average proportional difference in soil carbon under reduced versus conventional tillage. The confidence interval describes uncertainty in that average effect. The prediction interval should be considered separately because it describes the range of underlying effects expected across comparable settings and may therefore be more relevant to local decisions.
+
+Use the numerical values produced by your fitted model rather than copying this wording mechanically.

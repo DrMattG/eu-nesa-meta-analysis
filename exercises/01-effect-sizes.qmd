@@ -1,0 +1,74 @@
+---
+title: "Exercise 1 — Effect sizes"
+format: html
+---
+
+## Aim
+
+Calculate and interpret effect sizes for the synthetic reduced-tillage soil-carbon dataset.
+
+> **Teaching data:** `data/teaching/soil_carbon.csv` are synthetic and are provided only for learning.
+
+## 1. Load the data
+
+```{r}
+#| eval: false
+library(metafor)
+library(dplyr)
+
+soil <- read.csv("../data/teaching/soil_carbon.csv")
+head(soil)
+```
+
+Before calculating anything, write down the direction you want the effect to have. What should a value above the null mean?
+
+## 2. Calculate log response ratios
+
+Complete the missing arguments.
+
+```{r}
+#| eval: false
+es <- escalc(
+  measure = "___",
+  m1i = ___, sd1i = ___, n1i = ___,
+  m2i = ___, sd2i = ___, n2i = ___,
+  data = soil
+)
+```
+
+## 3. Back-transform
+
+Create `RR` and `percent_change`.
+
+```{r}
+#| eval: false
+es <- es |>
+  mutate(
+    RR = ___,
+    percent_change = ___
+  )
+```
+
+In one sentence, interpret Study A.
+
+## 4. Check one calculation manually
+
+Using Study A, calculate:
+
+$$\ln(RR)=\ln(\bar X_T/\bar X_C)$$
+
+Compare your answer with `es$yi[1]`.
+
+Why is this manual check useful?
+
+## 5. Effect-measure choice
+
+For each question, choose a plausible effect measure and justify it briefly.
+
+1. How many tonnes/ha does an intervention change wheat yield when all studies report tonnes/ha?
+2. How much does an intervention change a latent “soil health” construct measured using several different validated scales?
+3. What proportional change in soil organic carbon occurs under reduced tillage?
+
+## 6. Reflection
+
+What information is lost or changed when you replace an absolute mean difference with a standardised or proportional effect?

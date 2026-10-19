@@ -1,0 +1,35 @@
+---
+title: "Solution 1 — Effect sizes"
+format: html
+---
+
+## Calculate the effects
+
+```{r}
+#| eval: false
+library(metafor)
+library(dplyr)
+
+soil <- read.csv("../data/teaching/soil_carbon.csv")
+
+es <- escalc(
+  measure = "ROM",
+  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,
+  m2i = mean_control, sd2i = sd_control, n2i = n_control,
+  data = soil
+) |>
+  mutate(
+    RR = exp(yi),
+    percent_change = 100 * (RR - 1)
+  )
+```
+
+For Study A, $\ln(22.1/20.0)\approx0.100$, giving $RR\approx1.105$: the treatment mean is about 10.5% higher than the comparator mean.
+
+## Effect-measure discussion
+
+1. **Mean difference** is directly interpretable if tonnes/ha is common and meaningful across studies.
+2. **SMD/Hedges' g** may be defensible if the scales genuinely measure the same construct, although the change in estimand and interpretability should be considered.
+3. **Response ratio / log response ratio** matches a proportional soil-carbon question when means are positive.
+
+The key is not that these are universal rules: the effect measure should correspond to the target estimand and available design/data.

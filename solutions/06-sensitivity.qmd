@@ -1,0 +1,65 @@
+---
+title: "Solution 6 — Sensitivity and robustness"
+format: html
+---
+
+## 1. Primary conclusion
+
+The exact numerical statement should come from the fitted teaching model. A good conclusion separates the estimated mean response from its uncertainty and from between-study variation.
+
+## 2. Leave-one-out
+
+```{r}
+#| eval: false
+loo <- leave1out(m_primary)
+loo
+```
+
+Interpret changes in effect magnitude, intervals and heterogeneity together. Crossing an arbitrary significance threshold is not, by itself, evidence that the scientific conclusion has fundamentally changed.
+
+## 3. Influence diagnostics
+
+```{r}
+#| eval: false
+inf <- influence(m_primary)
+print(inf)
+plot(inf)
+```
+
+First check the data and extraction, then understand why the observation is influential: precision, unusual effect size, leverage, or model structure. Exclusion requires a substantive or methodological justification; influence alone is not one.
+
+## 4. Alternative heterogeneity estimator
+
+```{r}
+#| eval: false
+m_pm <- rma(yi, vi, data = es, method = "PM")
+
+predict(m_primary, transf = exp)
+predict(m_pm, transf = exp)
+```
+
+Compare the pooled effect, uncertainty, heterogeneity and prediction interval. The important question is whether the decision-relevant interpretation changes, not whether the estimates are numerically identical.
+
+## 5. Dependence
+
+```{r}
+#| eval: false
+m_independent <- rma(yi, vi, data = es, method = "REML")
+
+m_multilevel <- rma.mv(
+  yi, vi,
+  random = ~ 1 | study_id/effect_id,
+  data = es,
+  method = "REML"
+)
+```
+
+The multilevel model better reflects the fact that some effects are nested within the same study. However, as discussed in Module 4, this does not reconstruct unknown sampling covariance caused by shared observations.
+
+## 6. Risk-of-bias sensitivity
+
+A prespecified analysis could compare the primary synthesis of all eligible studies with a model excluding studies judged high risk in the relevant measurement domain. Greater caution would be warranted if excluding those studies materially changed the effect magnitude, uncertainty, prediction interval or direction of the substantive conclusion. The purpose is not to search for a preferred answer but to assess dependence on evidence with a plausible bias mechanism.
+
+## 7. Robustness statement
+
+A strong statement names each tested assumption and describes what changed. For example: results may be stable to the heterogeneity estimator but more sensitive to treatment of dependent effects. The conclusion should therefore be described as robust to the former choice, not as universally “robust”.

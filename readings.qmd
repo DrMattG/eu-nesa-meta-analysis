@@ -1,0 +1,14 @@
+---
+title: "Recommended reading"
+---
+
+This page is intentionally a scaffold. Add the EU-NESA-recommended sources and current methodological references agreed with the Working Group before final release.
+
+Suggested categories:
+
+- effect-size choice and interpretation;
+- random-effects meta-analysis and heterogeneity;
+- dependent effect sizes and multilevel models;
+- meta-regression;
+- reporting/publication bias;
+- transparent and reproducible reporting.

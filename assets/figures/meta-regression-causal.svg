@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420">
+<style>text{font-family:Arial,sans-serif;fill:#222}.h{font-size:30px;font-weight:700}.t{font-size:23px}.box{fill:#fff;stroke:#333;stroke-width:2}.arr{stroke:#333;stroke-width:3;marker-end:url(#a)}</style><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#333"/></marker></defs>
+<text x="550" y="40" text-anchor="middle" class="h">A moderator association is not automatically causal</text>
+<rect x="80" y="165" width="230" height="90" rx="15" class="box"/><text x="195" y="205" text-anchor="middle" class="t">Climate</text><text x="195" y="235" text-anchor="middle" class="t">category</text>
+<rect x="435" y="165" width="230" height="90" rx="15" class="box"/><text x="550" y="220" text-anchor="middle" class="t">Observed effect size</text>
+<rect x="790" y="70" width="230" height="90" rx="15" class="box"/><text x="905" y="110" text-anchor="middle" class="t">Study duration</text><text x="905" y="140" text-anchor="middle" class="t">/ management</text>
+<line x1="310" y1="210" x2="430" y2="210" class="arr"/><line x1="795" y1="145" x2="655" y2="185" class="arr"/><line x1="795" y1="120" x2="305" y2="180" class="arr"/>
+<text x="550" y="345" text-anchor="middle" class="t">Across-study differences can be confounded, coarsely measured, and sparsely represented.</text>
+</svg>

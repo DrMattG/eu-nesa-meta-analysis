@@ -1,0 +1,71 @@
+---
+title: "Solution 5 — Meta-regression and effect modification"
+format: html
+---
+
+## 1. Hypothesis
+
+A plausible hypothesis is that soil-carbon responses accumulate with longer implementation because changes in carbon inputs, decomposition and soil structure may take time. This is a hypothesis to evaluate, not something established by the teaching data.
+
+## 2. Continuous moderator
+
+```{r}
+#| eval: false
+m_duration <- rma.mv(
+  yi, vi,
+  mods = ~ duration,
+  random = ~ 1 | study_id/effect_id,
+  data = es
+)
+summary(m_duration)
+
+exp(coef(m_duration)["duration"])
+```
+
+The duration coefficient is the expected difference in lnRR associated with a one-year difference in study duration. Exponentiating it gives the multiplicative change in RR associated with one additional year **across the studies represented by the model**. Inspect the confidence interval before deciding whether the data estimate that pattern precisely.
+
+## 3. Categorical moderator
+
+```{r}
+#| eval: false
+es$climate <- factor(es$climate)
+levels(es$climate)
+
+m_climate <- rma.mv(
+  yi, vi,
+  mods = ~ climate,
+  random = ~ 1 | study_id/effect_id,
+  data = es
+)
+summary(m_climate)
+```
+
+The intercept corresponds to the factor's reference climate. Each displayed climate coefficient is a contrast with that reference on the lnRR scale. It is not, by itself, the pooled effect for that climate category.
+
+## 4. Two moderators
+
+```{r}
+#| eval: false
+m_both <- rma.mv(
+  yi, vi,
+  mods = ~ duration + climate,
+  random = ~ 1 | study_id/effect_id,
+  data = es
+)
+```
+
+The duration coefficient can change because duration and climate are associated in the evidence base. In the multivariable model it represents the duration association conditional on the included climate terms. With a small dataset, all such estimates should be treated cautiously.
+
+## 5. Causal interpretation
+
+A defensible rewrite is: **“Across the included studies, longer-duration studies tended to show [larger/smaller] estimated effects, although this association is uncertain and may reflect other differences among studies.”**
+
+Potential confounders include climate, crop type, baseline soil carbon, soil texture, management intensity, study design or measurement method. Only some are measured in the teaching dataset.
+
+## 6. Extrapolation
+
+No strong prediction at 30 years is supported by data observed only over a much shorter range. The model will calculate a value, but this requires extrapolating the fitted functional form beyond represented evidence and may be biologically implausible.
+
+## 7. Reporting
+
+A strong paragraph reports the estimated association and interval, states the observed moderator range, notes remaining heterogeneity and explicitly describes the analysis as an across-study association rather than evidence that manipulating the moderator would cause the estimated change.

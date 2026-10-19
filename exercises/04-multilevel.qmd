@@ -1,0 +1,90 @@
+---
+title: "Exercise 4 — Dependence and multilevel meta-analysis"
+format: html
+---
+
+## Aim
+
+Recognise dependence, compare naive and multilevel models, and explain what changes when effects are clustered within studies.
+
+## 1. Prepare the effect sizes
+
+```{r}
+#| eval: false
+library(metafor)
+
+soil <- read.csv("../data/teaching/soil_carbon.csv")
+
+es <- escalc(
+  measure = "ROM",
+  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,
+  m2i = mean_control, sd2i = sd_control, n2i = n_control,
+  data = soil
+)
+```
+
+## 2. Map the dependence
+
+```{r}
+#| eval: false
+with(es, table(study_id))
+table(table(es$study_id))
+```
+
+1. Which studies contribute more than one effect?
+2. Why might two effects from the same study be related?
+3. What additional information would you want from the primary paper to understand the dependence?
+
+## 3. Fit a naive model
+
+```{r}
+#| eval: false
+m_naive <- rma(yi, vi, data = es, method = "REML")
+summary(m_naive)
+```
+
+Record the pooled estimate, SE, CI and heterogeneity estimate.
+
+## 4. Fit a multilevel model
+
+Fill the blanks.
+
+```{r}
+#| eval: false
+m_mv <- rma.mv(
+  yi = ___,
+  V = ___,
+  random = ~ 1 | ___/___,
+  data = es,
+  method = "REML"
+)
+summary(m_mv)
+```
+
+Compare the estimate and uncertainty with `m_naive`.
+
+## 5. Interpret the variance components
+
+Use:
+
+```{r}
+#| eval: false
+m_mv$sigma2
+```
+
+Which component corresponds to variation among studies and which to variation among effects within studies? What might each represent scientifically?
+
+## 6. The important limitation
+
+The teaching data provide sampling variances (`vi`) but not sampling covariances between effects from the same study.
+
+Explain why a study-level random effect does **not necessarily** solve correlation caused by shared controls or repeated measurements.
+
+## 7. Decision challenge
+
+Write 3–4 sentences explaining to a review team:
+
+- why treating every row as independent is questionable;
+- what the multilevel model improves;
+- what dependence assumption remains unresolved;
+- what you would seek or test in a full review.

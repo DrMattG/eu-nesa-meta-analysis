@@ -1,0 +1,17 @@
+{
+  "hash": "b5ff7b982f2ada766bb002f49a129ae8",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Exercise 2 — Your first meta-analysis\"\nformat: html\n---\n\n## Aim\n\nFit, visualise and interpret a random-effects meta-analysis.\n\n## 1. Prepare effect sizes\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(metafor)\n\nsoil <- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes <- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n)\n```\n:::\n\n\n## 2. Fit the model\n\nFill the blanks.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm <- rma(\n  yi = ___,\n  vi = ___,\n  data = ___,\n  method = \"___\"\n)\n\nsummary(m)\n```\n:::\n\n\nIdentify the pooled estimate, 95% CI, $\\tau^2$ and $I^2$.\n\n## 3. Back-transform\n\n\n::: {.cell}\n\n```{.r .cell-code}\npredict(m, transf = exp)\n```\n:::\n\n\nTranslate the pooled response ratio into a percentage difference.\n\n## 4. Make a forest plot\n\n\n::: {.cell}\n\n```{.r .cell-code}\nforest(\n  m,\n  slab = paste(es$study_id, es$effect_id, sep = \".\"),\n  atransf = exp,\n  xlab = \"Response ratio (reduced / conventional)\"\n)\nabline(v = 1, lty = 2)\n```\n:::\n\n\nWhat does the forest plot show that the pooled estimate alone does not?\n\n## 5. Interpretation challenge\n\nWrite three sentences that separately communicate:\n\n1. the average effect;\n2. uncertainty in that average;\n3. variation among effects / implications for a new comparable setting.\n\nAvoid counting how many individual studies are statistically significant.\n",
+    "supporting": [
+      "02-first-meta-analysis_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

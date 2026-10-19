@@ -1,0 +1,95 @@
+---
+title: "Exercise 5 — Meta-regression and effect modification"
+format: html
+---
+
+## Aim
+
+Fit prespecified moderators, interpret coefficients, and distinguish an across-study association from a causal effect.
+
+## 1. Prepare the data
+
+Use the `es` object from the previous exercises, or recreate it from `soil_carbon.csv`.
+
+```{r}
+#| eval: false
+levels(factor(es$climate))
+range(es$duration)
+```
+
+Before fitting a model, write down a biological reason why **duration** might modify the reduced-tillage effect on soil carbon.
+
+## 2. Continuous moderator
+
+```{r}
+#| eval: false
+m_duration <- rma.mv(
+  yi, vi,
+  mods = ~ ___,
+  random = ~ 1 | study_id/effect_id,
+  data = es
+)
+summary(m_duration)
+```
+
+1. What does the duration coefficient represent on the lnRR scale?
+2. Calculate `exp(coef(m_duration)["duration"])`. What does this represent?
+3. Is the coefficient estimated precisely?
+
+## 3. Categorical moderator
+
+```{r}
+#| eval: false
+es$climate <- factor(es$climate)
+levels(es$climate)
+
+m_climate <- rma.mv(
+  yi, vi,
+  mods = ~ climate,
+  random = ~ 1 | study_id/effect_id,
+  data = es
+)
+summary(m_climate)
+```
+
+Identify the reference category and explain one climate coefficient without calling it a separate “effect”.
+
+## 4. Two moderators
+
+```{r}
+#| eval: false
+m_both <- rma.mv(
+  yi, vi,
+  mods = ~ duration + climate,
+  random = ~ 1 | study_id/effect_id,
+  data = es
+)
+summary(m_both)
+```
+
+Compare the duration coefficient with the single-moderator model. Why might it change?
+
+## 5. Causal interpretation challenge
+
+A colleague writes:
+
+> “Longer implementation causes reduced tillage to increase soil carbon more strongly.”
+
+Rewrite this claim so that it is supported by an ordinary study-level meta-regression.
+
+Then list **two plausible confounders** of the across-study duration–effect association.
+
+## 6. Extrapolation
+
+The observed durations are limited to the range in the dataset. Would you use this model to predict an effect at 30 years? Explain why or why not.
+
+## 7. Reporting
+
+Write a short results paragraph that includes:
+
+- the moderator being examined and why;
+- the estimated direction/magnitude and uncertainty;
+- residual heterogeneity;
+- a caution about across-study interpretation.
+
+Do not report only the moderator p-value.

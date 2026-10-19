@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="330" viewBox="0 0 1100 330">
+<style>.t{font:25px sans-serif;fill:#222}.s{font:19px sans-serif;fill:#444}.b{fill:#f6f6f6;stroke:#555;stroke-width:2}.a{font:34px sans-serif;fill:#555}</style>
+<rect class="b" x="20" y="90" width="190" height="120" rx="16"/><text class="t" x="115" y="135" text-anchor="middle">Estimand</text><text class="s" x="115" y="175" text-anchor="middle">What exactly?</text><text class="a" x="220" y="160">→</text>
+<rect class="b" x="270" y="90" width="190" height="120" rx="16"/><text class="t" x="365" y="135" text-anchor="middle">Estimate</text><text class="s" x="365" y="175" text-anchor="middle">Magnitude + uncertainty</text><text class="a" x="470" y="160">→</text>
+<rect class="b" x="520" y="90" width="190" height="120" rx="16"/><text class="t" x="615" y="135" text-anchor="middle">Variation</text><text class="s" x="615" y="175" text-anchor="middle">Across contexts</text><text class="a" x="720" y="160">→</text>
+<rect class="b" x="770" y="90" width="300" height="120" rx="16"/><text class="t" x="920" y="135" text-anchor="middle">Decision-relevant claim</text><text class="s" x="920" y="175" text-anchor="middle">Benefits, limits, context</text>
+</svg>

@@ -1,0 +1,36 @@
+---
+title: "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector"
+---
+
+## About this resource
+
+This open teaching package introduces quantitative evidence synthesis using **R** and **metafor**, with examples framed around agri-food research.
+
+The course follows a question-first workflow:
+
+**Question → estimand → compatible evidence → effect size → model → uncertainty → interpretation.**
+
+It is designed for instructor-led workshops and self-directed learning.
+
+## Learning outcomes
+
+By the end, participants should be able to:
+
+- choose and interpret common effect-size measures;
+- calculate effect sizes and sampling variances;
+- fit and interpret random-effects meta-analysis;
+- distinguish uncertainty in the mean effect from heterogeneity among true effects;
+- use prediction intervals appropriately;
+- recognise and model dependent effect sizes;
+- use meta-regression cautiously;
+- conduct useful sensitivity analyses;
+- recognise limitations of publication-bias diagnostics; and
+- translate model results into appropriately qualified conclusions.
+
+## Software
+
+```r
+install.packages(c("metafor", "tidyverse"))
+```
+
+Start with the [introductory slides](slides/00-introduction.qmd).

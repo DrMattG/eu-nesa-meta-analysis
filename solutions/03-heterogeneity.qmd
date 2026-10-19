@@ -1,0 +1,28 @@
+---
+title: "Solution 3 — Understanding heterogeneity"
+format: html
+---
+
+## Part A
+
+Meta-analysis B contains much greater variation in plausible underlying effects despite having the same estimated mean and confidence interval. Its prediction interval includes effects below and substantially above the null, so the mean alone is a poor description of what might occur in a particular comparable setting.
+
+## Part B
+
+```{r}
+#| eval: false
+m$tau2          # estimated between-study variance
+sqrt(m$tau2)    # between-study SD, on the lnRR scale
+m$I2            # relative heterogeneity statistic
+predict(m, transf = exp)  # mean and prediction interval on RR scale
+```
+
+Interpret these quantities together. $I^2$ should not be converted mechanically into a qualitative traffic-light label.
+
+## Part C
+
+Plausible hypotheses include intervention duration, climate, soil properties, crop system, baseline carbon and management intensity. The teaching dataset contains `duration` and `climate`, but not all of these candidate moderators. Absence of a measured moderator does not mean it is unimportant.
+
+## Part D
+
+A strong answer communicates the estimated mean and its confidence interval, then explicitly distinguishes that uncertainty from between-study variation and the prediction interval. It should restrict inference to settings reasonably represented by the included evidence.

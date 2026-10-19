@@ -1,0 +1,92 @@
+---
+title: "Exercise 6 — Sensitivity and robustness"
+format: html
+---
+
+## Aim
+
+Test whether substantive conclusions depend on influential observations or defensible analytical choices.
+
+## 1. Define the primary conclusion first
+
+Fit the primary model:
+
+```{r}
+#| eval: false
+m_primary <- rma(yi, vi, data = es, method = "REML")
+predict(m_primary, transf = exp)
+```
+
+Before running diagnostics, write one sentence stating the substantive conclusion you would currently draw.
+
+## 2. Leave-one-out analysis
+
+```{r}
+#| eval: false
+loo <- leave1out(m_primary)
+loo
+```
+
+Ask:
+
+1. How much does the pooled estimate move?
+2. How much does its uncertainty move?
+3. Does heterogeneity change substantially?
+4. Does the **substantive conclusion** change?
+
+Avoid using “does p remain < 0.05?” as the sole robustness criterion.
+
+## 3. Influence diagnostics
+
+```{r}
+#| eval: false
+inf <- influence(m_primary)
+print(inf)
+plot(inf)
+```
+
+If an effect is influential, what should you do **before** considering exclusion?
+
+## 4. Alternative heterogeneity estimator
+
+```{r}
+#| eval: false
+m_pm <- rma(yi, vi, data = es, method = "PM")
+
+predict(m_primary, transf = exp)
+predict(m_pm, transf = exp)
+```
+
+Does this defensible modelling choice materially alter the interpretation?
+
+## 5. Dependence as a sensitivity question
+
+Compare:
+
+```{r}
+#| eval: false
+m_independent <- rma(yi, vi, data = es, method = "REML")
+
+m_multilevel <- rma.mv(
+  yi, vi,
+  random = ~ 1 | study_id/effect_id,
+  data = es,
+  method = "REML"
+)
+```
+
+How do the estimates and standard errors differ? Which model better represents the known structure of the teaching data?
+
+## 6. Risk-of-bias thought experiment
+
+Imagine two studies were judged at high risk of bias because outcome measurement differed systematically between intervention and control groups.
+
+Design a **prespecified sensitivity analysis**. What would you compare, and what result would make you more cautious about the primary conclusion?
+
+## 7. Robustness statement
+
+Write a paragraph using this structure:
+
+> The primary analysis estimated ____. Results were similar/different when ____. The conclusion was most sensitive to ____. Therefore, ____.
+
+Be explicit about which assumptions you tested. Do not claim that the result is “robust” in general.

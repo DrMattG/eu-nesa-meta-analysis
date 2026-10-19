@@ -1,0 +1,57 @@
+---
+title: "Solution 4 — Dependence and multilevel meta-analysis"
+format: html
+---
+
+## 1–2. Map the dependence
+
+```{r}
+#| eval: false
+with(es, table(study_id))
+table(table(es$study_id))
+```
+
+Studies D and J each contribute two effects in this teaching dataset. Effects from the same study may share plots, participants, controls, measurement procedures or contextual conditions. The primary report would ideally tell us exactly how each effect was generated and whether groups or measurements overlap.
+
+## 3. Naive model
+
+```{r}
+#| eval: false
+m_naive <- rma(yi, vi, data = es, method = "REML")
+summary(m_naive)
+```
+
+This model treats each row as conditionally independent apart from the common random-effects distribution.
+
+## 4. Multilevel model
+
+```{r}
+#| eval: false
+m_mv <- rma.mv(
+  yi = yi,
+  V = vi,
+  random = ~ 1 | study_id/effect_id,
+  data = es,
+  method = "REML"
+)
+summary(m_mv)
+```
+
+The multilevel model partitions heterogeneity at study and effect-within-study levels. With this small synthetic dataset, do not over-interpret numerical differences between models; the exercise is about the changed assumptions.
+
+## 5. Variance components
+
+```{r}
+#| eval: false
+m_mv$sigma2
+```
+
+For `~ 1 | study_id/effect_id`, the first component corresponds to study-level heterogeneity and the second to heterogeneity among effects nested within studies. Their substantive meaning depends on what the repeated effects represent.
+
+## 6. Limitation
+
+`V = vi` supplies only diagonal sampling variances. If two effect estimates share a control or repeated observations, their sampling errors can be correlated. Random effects represent heterogeneity in underlying effects; they do not reconstruct an unknown sampling covariance matrix. A full analysis might derive covariance from the study design, assume and vary plausible correlations, aggregate compatible effects, or use suitable cluster-robust inference.
+
+## 7. Example interpretation
+
+The dataset contains multiple estimates from some studies, so treating every row as independent can give prolific studies too much information and understate uncertainty. A multilevel model recognises the clustering of effects and separates study-level from within-study heterogeneity. However, the available teaching data do not identify sampling correlations created by shared observations or controls. In a full review we would map those relationships during extraction and assess whether conclusions are robust to defensible covariance or aggregation assumptions.

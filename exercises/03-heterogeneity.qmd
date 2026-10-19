@@ -1,0 +1,52 @@
+---
+title: "Exercise 3 — Understanding heterogeneity"
+format: html
+---
+
+## Part A — Same mean, different story
+
+Two hypothetical syntheses both estimate an average response ratio of **1.10**.
+
+| | Meta-analysis A | Meta-analysis B |
+|---|---:|---:|
+| Mean RR | 1.10 | 1.10 |
+| 95% CI | 1.05–1.15 | 1.05–1.15 |
+| 95% prediction interval | 1.03–1.17 | 0.82–1.48 |
+
+Discuss:
+
+1. Would you give the same recommendation based on A and B?
+2. What information does the prediction interval add?
+3. Why would saying only “the pooled effect was positive and statistically significant” be inadequate?
+
+## Part B — Inspect heterogeneity in R
+
+```{r}
+#| eval: false
+m <- rma(yi, vi, data = es, method = "REML")
+
+m$tau2
+sqrt(m$tau2)
+m$I2
+predict(m, transf = exp)
+```
+
+Record each quantity and explain it in plain language.
+
+## Part C — Generate hypotheses
+
+Before fitting any meta-regression, propose **three scientifically plausible reasons** why the reduced-tillage effect might differ among studies.
+
+For each, state whether the current dataset actually measures the proposed moderator.
+
+## Part D — Decision-maker summary
+
+Write four sentences summarising the synthesis for a decision-maker.
+
+Requirements:
+
+- report the average effect;
+- acknowledge uncertainty;
+- describe between-study variation;
+- explain applicability cautiously;
+- do **not** use generic labels such as “low”, “moderate” or “high” heterogeneity.

@@ -1,0 +1,17 @@
+{
+  "hash": "519dcbaf5d1aec23813eaf92460a0d7b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Solution 4 — Dependence and multilevel meta-analysis\"\nformat: html\n---\n\n## 1–2. Map the dependence\n\n\n::: {.cell}\n\n```{.r .cell-code}\nwith(es, table(study_id))\ntable(table(es$study_id))\n```\n:::\n\n\nStudies D and J each contribute two effects in this teaching dataset. Effects from the same study may share plots, participants, controls, measurement procedures or contextual conditions. The primary report would ideally tell us exactly how each effect was generated and whether groups or measurements overlap.\n\n## 3. Naive model\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_naive <- rma(yi, vi, data = es, method = \"REML\")\nsummary(m_naive)\n```\n:::\n\n\nThis model treats each row as conditionally independent apart from the common random-effects distribution.\n\n## 4. Multilevel model\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_mv <- rma.mv(\n  yi = yi,\n  V = vi,\n  random = ~ 1 | study_id/effect_id,\n  data = es,\n  method = \"REML\"\n)\nsummary(m_mv)\n```\n:::\n\n\nThe multilevel model partitions heterogeneity at study and effect-within-study levels. With this small synthetic dataset, do not over-interpret numerical differences between models; the exercise is about the changed assumptions.\n\n## 5. Variance components\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_mv$sigma2\n```\n:::\n\n\nFor `~ 1 | study_id/effect_id`, the first component corresponds to study-level heterogeneity and the second to heterogeneity among effects nested within studies. Their substantive meaning depends on what the repeated effects represent.\n\n## 6. Limitation\n\n`V = vi` supplies only diagonal sampling variances. If two effect estimates share a control or repeated observations, their sampling errors can be correlated. Random effects represent heterogeneity in underlying effects; they do not reconstruct an unknown sampling covariance matrix. A full analysis might derive covariance from the study design, assume and vary plausible correlations, aggregate compatible effects, or use suitable cluster-robust inference.\n\n## 7. Example interpretation\n\nThe dataset contains multiple estimates from some studies, so treating every row as independent can give prolific studies too much information and understate uncertainty. A multilevel model recognises the clustering of effects and separates study-level from within-study heterogeneity. However, the available teaching data do not identify sampling correlations created by shared observations or controls. In a full review we would map those relationships during extraction and assess whether conclusions are robust to defensible covariance or aggregation assumptions.\n",
+    "supporting": [
+      "04-multilevel_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

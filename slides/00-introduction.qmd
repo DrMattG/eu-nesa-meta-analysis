@@ -1,0 +1,281 @@
+---
+title: "Module 0 — From question to meta-analysis"
+subtitle: "Start with the claim you want the evidence to support"
+author: "Matthew Grainger"
+format:
+  revealjs:
+    css: styles/styles.css
+    slide-number: c/t
+    incremental: false
+    chalkboard: false
+    footer: "EU-NESA | Meta-analysis for agri-food evidence synthesis"
+execute:
+  echo: false
+---
+
+## Learning objectives
+
+By the end of this module, you should be able to:
+
+- explain what a meta-analysis does — and does **not** do;
+- translate an agri-food question into a clear **estimand**;
+- distinguish the target question from the available data;
+- identify when studies are sufficiently compatible to combine;
+- recognise why model choice comes **after** defining the question.
+
+::: {.notes}
+Open by asking participants what they hope a meta-analysis gives them. Common answers are “an overall effect”, “more power”, or “a definitive answer”. Keep these answers visible if possible. Return to them at the end.
+
+The central message of the module is that meta-analysis is not primarily a software procedure. It is a way of estimating a clearly defined quantity from multiple studies.
+:::
+
+## What is meta-analysis?
+
+> **Meta-analysis is the statistical synthesis of results from multiple studies addressing a sufficiently similar question.**
+
+It can help us estimate:
+
+- the average effect;
+- uncertainty around that average;
+- variation in effects among contexts;
+- whether observed differences can be explained by study characteristics.
+
+::: {.notes}
+Emphasise “sufficiently similar question”. Statistical compatibility does not establish conceptual compatibility. We can always put numbers into a model; that does not mean the resulting pooled estimate answers a useful question.
+:::
+
+## Meta-analysis is not the whole review
+
+::: {.small}
+
+:::: {.columns}
+
+::: {.column width="48%"}
+
+### Evidence generation
+
+**Question**
+
+↓
+
+**Eligibility criteria**
+
+↓
+
+**Search & screening**
+
+↓
+
+**Critical appraisal**
+
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="48%"}
+
+### Quantitative synthesis
+
+**Data extraction**
+
+↓
+
+**Effect sizes**
+
+↓
+
+**Meta-analysis**
+
+↓
+
+**Interpretation**
+
+:::
+
+::::
+
+:::
+
+::: {.notes}
+This is an important distinction for people who have encountered meta-analysis as a statistics exercise. A sophisticated model cannot repair biased eligibility criteria, selective evidence, poor extraction, or incompatible outcomes.
+
+Mention that critical appraisal should inform interpretation and, where appropriate, sensitivity analysis; it is not simply a box to tick.
+:::
+
+## Start with the decision or claim
+
+Suppose a policy colleague asks:
+
+> **Does reduced tillage increase soil organic carbon?**
+
+Before opening R, ask:
+
+1. Compared with **what**?
+2. In **which systems**?
+3. Over **what time period**?
+4. Which measure of **soil carbon**?
+5. What kind of effect would answer the question?
+
+::: {.notes}
+Give participants 60–90 seconds in pairs. Ask them to identify what is underspecified. The aim is to show that apparently simple questions hide multiple analytical choices.
+:::
+
+## The question contains an estimand
+
+An **estimand** is the quantity we want to estimate.
+
+For our running example:
+
+> The average proportional difference in soil organic carbon under reduced tillage compared with conventional tillage, across eligible field studies and relevant agri-food contexts.
+
+We still need to define:
+
+**Population/context · Intervention · Comparator · Outcome · Effect measure · Target quantity**
+
+::: {.notes}
+Do not make this overly technical. “Estimand” is useful because it forces us to say exactly what number we want the synthesis to estimate.
+
+Point out that the target quantity might be an average effect, a distribution of effects, an effect in a particular context, or something else. The pooled mean is not automatically the most decision-relevant target.
+:::
+
+## A useful translation exercise
+
+**Broad question**
+
+> Does reduced tillage improve soil carbon?
+
+**More explicit synthesis question**
+
+> Among agricultural field systems, what is the proportional difference in soil organic carbon under reduced or no tillage versus conventional tillage at the end of follow-up?
+
+**Effect measure**
+
+$$\ln(RR)=\ln\left(\frac{\bar X_{reduced}}{\bar X_{control}}\right)$$
+
+::: {.notes}
+Explain why the response ratio is attractive here: soil carbon is positive, studies may use different absolute scales, and a proportional effect has a meaningful interpretation. This is not a universal rule; Module 1 deals with choosing effect measures.
+:::
+
+## What evidence belongs together?
+
+Two studies can both mention “soil carbon” and still estimate different things.
+
+Consider differences in:
+
+- soil carbon measure and depth;
+- intervention definition;
+- comparator;
+- follow-up duration;
+- experimental design;
+- climate and soil system;
+- unit of analysis.
+
+**Pooling is a scientific judgement before it is a statistical operation.**
+
+::: {.notes}
+Ask: “Would you combine soil organic carbon measured at 0–10 cm after one year with total carbon at 0–30 cm after 20 years?” There is no automatic yes/no answer. The point is that compatibility must be justified.
+:::
+
+## Variation is not necessarily noise
+
+Agri-food interventions often operate differently across:
+
+- climates;
+- soils;
+- crops;
+- management histories;
+- intervention intensity;
+- duration.
+
+A useful synthesis may therefore ask both:
+
+> **What is the average effect?**
+
+and
+
+> **How much do effects vary, and why?**
+
+::: {.notes}
+Set up the later heterogeneity module. Avoid implying that heterogeneity is a statistical nuisance to be “fixed”. In applied ecology and agriculture it is often scientifically important.
+:::
+
+## The data do not define the question
+
+A common workflow is:
+
+> “These are the outcomes reported in the papers. Which can we meta-analyse?”
+
+A stronger workflow is:
+
+> “This is the quantity our question requires. Which reported results estimate it?”
+
+That distinction helps prevent **estimand drift**.
+
+::: {.notes}
+Give an example: the management question concerns long-term soil carbon, but most studies report short-term microbial activity. Those data may be interesting, but pooling them does not answer the original question.
+:::
+
+## What does a pooled effect mean?
+
+Imagine the synthesis eventually estimates a response ratio of **1.10**.
+
+That could be described as:
+
+> On average, soil organic carbon was approximately 10% higher under reduced tillage than under the comparator in the included evidence.
+
+But this statement alone tells us nothing about:
+
+- how variable effects are;
+- whether the estimate is dominated by particular studies;
+- risk of bias;
+- applicability to a new setting.
+
+::: {.notes}
+Stress the phrase “in the included evidence”. Avoid jumping from a pooled estimate to a universal causal statement. The strength of causal interpretation depends on study designs and assumptions.
+:::
+
+## Before you meta-analyse: five questions
+
+1. **What quantity do I want to estimate?**
+2. **Do the included effects estimate that quantity?**
+3. **Are the effects comparable enough to synthesise?**
+4. **Are observations statistically independent?**
+5. **What sources of bias or uncertainty affect interpretation?**
+
+::: {.notes}
+These questions can become a recurring checklist throughout the course. Question 4 foreshadows the multilevel module. Question 5 links the statistical training back to evidence-synthesis practice.
+:::
+
+## Mini exercise: define the estimand
+
+A review asks:
+
+> *Do cover crops improve crop yield?*
+
+In pairs, specify:
+
+- population/context;
+- intervention;
+- comparator;
+- outcome;
+- effect measure;
+- target quantity.
+
+**Then ask:** what decisions would change if the target were *next-season yield* versus *mean yield over five years*?
+
+::: {.notes}
+Allow about five minutes. There is deliberately no single perfect answer. Ask two groups to share their estimands and compare how small wording changes alter which studies/results would be eligible.
+:::
+
+## Take-home message
+
+> **The question determines the estimand.**  
+> **The estimand determines which effects are compatible.**  
+> **Only then should the model be chosen.**
+
+Next: **How do we put compatible study results onto an appropriate effect-size scale?**
+
+::: {.notes}
+Return to the opening question: what does meta-analysis give us? Ideally participants now answer in terms of estimating a defined quantity and its uncertainty/distribution, rather than merely “combining studies”.
+:::

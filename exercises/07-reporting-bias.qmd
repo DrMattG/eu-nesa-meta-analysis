@@ -1,0 +1,64 @@
+---
+title: "Exercise 7 — Missing evidence and reporting bias"
+format: html
+---
+
+## Aim
+
+Investigate possible small-study effects while separating statistical patterns from claims about their cause.
+
+## 1. Map the missingness mechanisms
+
+For the soil-carbon review, imagine that some studies measured soil carbon, crop yield and soil moisture but published only selected outcomes. List at least three ways evidence could become unavailable between data collection and your meta-analysis.
+
+## 2. Inspect a funnel plot
+
+```{r}
+#| eval: false
+m <- rma(yi, vi, data = es, method = "REML")
+funnel(m)
+```
+
+Describe the pattern without diagnosing its cause. What study characteristics could plausibly be associated with both precision and effect size?
+
+## 3. Explore small-study effects
+
+```{r}
+#| eval: false
+regtest(m)
+```
+
+Answer:
+
+1. What pattern is this test designed to detect?
+2. Why would a statistically significant result not prove publication bias?
+3. Why would a non-significant result not prove its absence?
+
+## 4. Optional exploratory sensitivity analysis
+
+```{r}
+#| eval: false
+m_tf <- trimfill(m)
+summary(m_tf)
+funnel(m_tf)
+```
+
+Compare the original and trim-and-fill estimates. Write one sentence explaining why the second should **not** be called the “publication-bias-corrected” estimate.
+
+## 5. Triangulate
+
+Imagine your search also found:
+
+- two conference abstracts with insufficient numerical data;
+- one trial registration listing soil carbon that was absent from the final paper;
+- several small studies conducted in different production systems from the large studies.
+
+Write a short assessment of possible reporting bias that uses **all** of this information rather than relying on the funnel plot alone.
+
+## 6. Reporting challenge
+
+Rewrite this sentence:
+
+> “There was no publication bias because Egger's test was non-significant.”
+
+Your replacement should state what was examined, what was observed and the limitation of the inference.

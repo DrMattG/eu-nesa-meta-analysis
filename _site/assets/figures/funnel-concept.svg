@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<style>.t{font:22px sans-serif;fill:#222}.p{fill:#666}.l{stroke:#777;stroke-width:2;fill:none;stroke-dasharray:8 7}.axis{stroke:#222;stroke-width:2}</style>
+<line class="axis" x1="100" y1="430" x2="820" y2="430"/><line class="axis" x1="100" y1="70" x2="100" y2="430"/>
+<text class="t" x="450" y="485" text-anchor="middle">Effect estimate</text><text class="t" transform="translate(35,260) rotate(-90)" text-anchor="middle">Standard error</text>
+<line class="l" x1="460" y1="85" x2="240" y2="420"/><line class="l" x1="460" y1="85" x2="680" y2="420"/><line class="l" x1="460" y1="80" x2="460" y2="430"/>
+<g class="p"><circle cx="450" cy="110" r="8"/><circle cx="485" cy="145" r="8"/><circle cx="420" cy="160" r="8"/><circle cx="515" cy="205" r="8"/><circle cx="390" cy="220" r="8"/><circle cx="555" cy="270" r="8"/><circle cx="425" cy="285" r="8"/><circle cx="600" cy="335" r="8"/><circle cx="520" cy="360" r="8"/><circle cx="640" cy="390" r="8"/></g>
+<text class="t" x="720" y="150">A funnel plot is a pattern,</text><text class="t" x="720" y="180">not a bias detector.</text>
+</svg>

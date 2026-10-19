@@ -1,0 +1,15 @@
+{
+  "hash": "f5892961d1e56900f07398a47997a1ea",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Exercise 6 — Sensitivity and robustness\"\nformat: html\n---\n\n## Aim\n\nTest whether substantive conclusions depend on influential observations or defensible analytical choices.\n\n## 1. Define the primary conclusion first\n\nFit the primary model:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_primary <- rma(yi, vi, data = es, method = \"REML\")\npredict(m_primary, transf = exp)\n```\n:::\n\n\nBefore running diagnostics, write one sentence stating the substantive conclusion you would currently draw.\n\n## 2. Leave-one-out analysis\n\n\n::: {.cell}\n\n```{.r .cell-code}\nloo <- leave1out(m_primary)\nloo\n```\n:::\n\n\nAsk:\n\n1. How much does the pooled estimate move?\n2. How much does its uncertainty move?\n3. Does heterogeneity change substantially?\n4. Does the **substantive conclusion** change?\n\nAvoid using “does p remain < 0.05?” as the sole robustness criterion.\n\n## 3. Influence diagnostics\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninf <- influence(m_primary)\nprint(inf)\nplot(inf)\n```\n:::\n\n\nIf an effect is influential, what should you do **before** considering exclusion?\n\n## 4. Alternative heterogeneity estimator\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_pm <- rma(yi, vi, data = es, method = \"PM\")\n\npredict(m_primary, transf = exp)\npredict(m_pm, transf = exp)\n```\n:::\n\n\nDoes this defensible modelling choice materially alter the interpretation?\n\n## 5. Dependence as a sensitivity question\n\nCompare:\n\n\n::: {.cell}\n\n```{.r .cell-code}\nm_independent <- rma(yi, vi, data = es, method = \"REML\")\n\nm_multilevel <- rma.mv(\n  yi, vi,\n  random = ~ 1 | study_id/effect_id,\n  data = es,\n  method = \"REML\"\n)\n```\n:::\n\n\nHow do the estimates and standard errors differ? Which model better represents the known structure of the teaching data?\n\n## 6. Risk-of-bias thought experiment\n\nImagine two studies were judged at high risk of bias because outcome measurement differed systematically between intervention and control groups.\n\nDesign a **prespecified sensitivity analysis**. What would you compare, and what result would make you more cautious about the primary conclusion?\n\n## 7. Robustness statement\n\nWrite a paragraph using this structure:\n\n> The primary analysis estimated ____. Results were similar/different when ____. The conclusion was most sensitive to ____. Therefore, ____.\n\nBe explicit about which assumptions you tested. Do not claim that the result is “robust” in general.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
