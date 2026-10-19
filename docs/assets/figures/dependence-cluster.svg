@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="420" viewBox="0 0 1100 420">
+<style>text{font-family:Arial,sans-serif;fill:#222}.h{font-size:30px;font-weight:700}.t{font-size:24px}.s{font-size:20px}.box{fill:#fff;stroke:#333;stroke-width:2}.line{stroke:#555;stroke-width:3}</style>
+<text x="550" y="38" text-anchor="middle" class="h">Rows are not always independent pieces of information</text>
+<rect x="70" y="95" width="220" height="220" rx="18" class="box"/><text x="180" y="130" text-anchor="middle" class="t">Study A</text>
+<circle cx="180" cy="175" r="26" fill="#ddd" stroke="#333"/><circle cx="130" cy="245" r="26" fill="#ddd" stroke="#333"/><circle cx="230" cy="245" r="26" fill="#ddd" stroke="#333"/><text x="180" y="295" text-anchor="middle" class="s">3 outcomes</text>
+<rect x="440" y="95" width="220" height="220" rx="18" class="box"/><text x="550" y="130" text-anchor="middle" class="t">Study B</text>
+<circle cx="550" cy="205" r="26" fill="#ddd" stroke="#333"/><text x="550" y="295" text-anchor="middle" class="s">1 outcome</text>
+<rect x="810" y="95" width="220" height="220" rx="18" class="box"/><text x="920" y="130" text-anchor="middle" class="t">Study C</text>
+<circle cx="880" cy="210" r="26" fill="#ddd" stroke="#333"/><circle cx="960" cy="210" r="26" fill="#ddd" stroke="#333"/><text x="920" y="295" text-anchor="middle" class="s">2 outcomes</text>
+<text x="550" y="370" text-anchor="middle" class="t">Treating all 6 rows as independent gives studies unequal influence and overstates information.</text>
+</svg>

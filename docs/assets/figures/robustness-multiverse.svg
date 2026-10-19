@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="430" viewBox="0 0 1100 430">
+<style>text{font-family:Arial,sans-serif;fill:#222}.h{font-size:30px;font-weight:700}.t{font-size:22px}.s{font-size:19px}.box{fill:#fff;stroke:#333;stroke-width:2}.line{stroke:#333;stroke-width:3}</style>
+<text x="550" y="40" text-anchor="middle" class="h">Robustness asks whether defensible choices change the story</text>
+<line x1="160" y1="220" x2="940" y2="220" class="line"/><line x1="550" y1="195" x2="550" y2="245" class="line"/><text x="550" y="275" text-anchor="middle" class="s">null</text>
+<g class="t"><text x="85" y="115">Primary model</text><text x="85" y="165">Alternative τ²</text><text x="85" y="215">Exclude high RoB</text><text x="85" y="265">One effect/study</text><text x="85" y="315">Leave-one-out</text></g>
+<g stroke="#333" stroke-width="4" fill="#ddd"><line x1="635" y1="108" x2="760" y2="108"/><circle cx="700" cy="108" r="10"/><line x1="620" y1="158" x2="750" y2="158"/><circle cx="685" cy="158" r="10"/><line x1="570" y1="208" x2="720" y2="208"/><circle cx="650" cy="208" r="10"/><line x1="520" y1="258" x2="690" y2="258"/><circle cx="610" cy="258" r="10"/><line x1="590" y1="308" x2="735" y2="308"/><circle cx="665" cy="308" r="10"/></g>
+<text x="550" y="390" text-anchor="middle" class="t">The question is not “did significance survive?” but “what conclusions remain defensible?”</text>
+</svg>
