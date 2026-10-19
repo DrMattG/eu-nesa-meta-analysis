@@ -50,7 +50,7 @@ install.packages(c("metafor", "tidyverse"))
 
 ## Licence
 
-Add the licence agreed with EU-NESA/COST before public release. For openly reusable teaching materials, CC BY 4.0 is a suitable option if compatible with the Action's requirements.
+CC BY 4.0 
 
 ## Modules 7–8 completed
 

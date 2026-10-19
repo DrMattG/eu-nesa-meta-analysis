@@ -1,5 +1,5 @@
 :root { --r-heading-font: "Aptos Display", "Arial", sans-serif; --r-main-font: "Aptos", "Arial", sans-serif; --r-heading-text-transform: none; }
-.reveal { font-size: 31px; }
+.reveal { font-size: 18px; }
 .reveal h1, .reveal h2 { letter-spacing: -0.02em; }
 .reveal h2 { margin-bottom: .55em; }
 .reveal .subtitle { opacity: .78; }
@@ -24,3 +24,151 @@
 .reveal .figure-frame { border: 1px solid rgba(127,127,127,.35); border-radius: 14px; padding: .3em; background: rgba(255,255,255,.96); }
 .reveal .figure-frame img { max-height: 470px; }
 .reveal .check { margin-top:.7em; padding:.45em .65em; border-top:2px solid currentColor; font-weight:650; }
+/* Fix Mermaid sizing inside RevealJS */
+.reveal .mermaid {
+  font-size: 16px !important;
+}
+
+.reveal .mermaid svg {
+  font-size: 16px !important;
+}
+
+.reveal .mermaid .nodeLabel,
+.reveal .mermaid .edgeLabel {
+  font-size: 16px !important;
+}
+
+.reveal .mermaid foreignObject,
+.reveal .mermaid foreignObject div,
+.reveal .mermaid foreignObject span,
+.reveal .mermaid foreignObject p {
+  font-size: 16px !important;
+  line-height: 1.2 !important;
+}
+/* Evidence synthesis workflow */
+
+.reveal .workflow {
+  display: grid !important;
+  grid-template-columns:
+    minmax(0, 1fr) 40px
+    minmax(0, 1fr) 40px
+    minmax(0, 1fr) 40px
+    minmax(0, 1fr);
+
+  grid-template-rows: 75px 35px 75px;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 1em auto;
+
+  align-items: center;
+  column-gap: 8px;
+  row-gap: 4px;
+
+  font-size: 20px;
+}
+
+.reveal .workflow .wf-box {
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid currentColor;
+  border-radius: 12px;
+  padding: 12px 6px;
+  text-align: center;
+  font-weight: 650;
+  line-height: 1.15;
+}
+
+.reveal .workflow .wf-arrow,
+.reveal .workflow .wf-down {
+  text-align: center;
+  font-size: 28px;
+  line-height: 1;
+}
+
+
+/* ---------- TOP ROW ---------- */
+
+.reveal .wf-question {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.reveal .wf-r1 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.reveal .wf-eligibility {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.reveal .wf-r2 {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.reveal .wf-search {
+  grid-column: 5;
+  grid-row: 1;
+}
+
+.reveal .wf-r3 {
+  grid-column: 6;
+  grid-row: 1;
+}
+
+.reveal .wf-critical {
+  grid-column: 7;
+  grid-row: 1;
+}
+
+
+/* ---------- TURN ---------- */
+
+.reveal .wf-down {
+  grid-column: 7;
+  grid-row: 2;
+}
+
+
+/* ---------- BOTTOM ROW ---------- */
+
+.reveal .wf-interpretation {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.reveal .wf-l3 {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.reveal .wf-meta {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.reveal .wf-l2 {
+  grid-column: 4;
+  grid-row: 3;
+}
+
+.reveal .wf-effect {
+  grid-column: 5;
+  grid-row: 3;
+}
+
+.reveal .wf-l1 {
+  grid-column: 6;
+  grid-row: 3;
+}
+
+.reveal .wf-data {
+  grid-column: 7;
+  grid-row: 3;
+}
+.reveal .slides {
+  border: 10px solid red !important;
+}

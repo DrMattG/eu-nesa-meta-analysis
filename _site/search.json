@@ -1047,637 +1047,134 @@
     ]
   },
   {
-    "objectID": "instructor-guide.html",
-    "href": "instructor-guide.html",
-    "title": "Instructor guide",
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "Meta-analysis for Agri-food Evidence Synthesis",
     "section": "",
-    "text": "This course treats meta-analysis as part of evidence synthesis, not simply as a statistical procedure. The recurring sequence is:\n\nQuestion → estimand → compatible evidence → effect size → model → heterogeneity → dependence → moderators → robustness → interpretation\n\nModules 0–3 form the introductory core and can be taught as a half-day intensive session or expanded with exercises into a full day."
+    "text": "Attribution 4.0 International\n=======================================================================\nCreative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible.\nUsing Creative Commons Public Licenses\nCreative Commons public licenses provide a standard set of terms and conditions that creators and other rights holders may use to share original works of authorship and other material subject to copyright and certain other rights specified in the public license below. The following considerations are for informational purposes only, are not exhaustive, and do not form part of our licenses.\n Considerations for licensors: Our public licenses are\n intended for use by those authorized to give the public\n permission to use material in ways otherwise restricted by\n copyright and certain other rights. Our licenses are\n irrevocable. Licensors should read and understand the terms\n and conditions of the license they choose before applying it.\n Licensors should also secure all rights necessary before\n applying our licenses so that the public can reuse the\n material as expected. Licensors should clearly mark any\n material not subject to the license. This includes other CC-\n licensed material, or material used under an exception or\n limitation to copyright. More considerations for licensors:\nwiki.creativecommons.org/Considerations_for_licensors\n\n Considerations for the public: By using one of our public\n licenses, a licensor grants the public permission to use the\n licensed material under specified terms and conditions. If\n the licensor's permission is not necessary for any reason--for\n example, because of any applicable exception or limitation to\n copyright--then that use is not regulated by the license. Our\n licenses grant only permissions under copyright and certain\n other rights that a licensor has authority to grant. Use of\n the licensed material may still be restricted for other\n reasons, including because others have copyright or other\n rights in the material. A licensor may make special requests,\n such as asking that all changes be marked or described.\n Although not required by our licenses, you are encouraged to\n respect those requests where reasonable. More considerations\n for the public: \nwiki.creativecommons.org/Considerations_for_licensees\n=======================================================================\nCreative Commons Attribution 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)\n\nnever produces Adapted Material.\n\nDownstream recipients.\n\nOffer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nNo downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\n\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\nIf You Share Adapted Material You produce, the Adapter’s License You apply must not prevent recipients of the Adapted Material from complying with this Public License.\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material; and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE EXTENT POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS AND AS-AVAILABLE, AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE LICENSED MATERIAL, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHER. THIS INCLUDES, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT KNOWN OR DISCOVERABLE. WHERE DISCLAIMERS OF WARRANTIES ARE NOT ALLOWED IN FULL OR IN PART, THIS DISCLAIMER MAY NOT APPLY TO YOU.\nTO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) OR OTHERWISE FOR ANY DIRECT, SPECIAL, INDIRECT, INCIDENTAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY, OR OTHER LOSSES, COSTS, EXPENSES, OR DAMAGES ARISING OUT OF THIS PUBLIC LICENSE OR USE OF THE LICENSED MATERIAL, EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSSES, COSTS, EXPENSES, OR DAMAGES. WHERE A LIMITATION OF LIABILITY IS NOT ALLOWED IN FULL OR IN PART, THIS LIMITATION MAY NOT APPLY TO YOU.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n=======================================================================\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” The text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication. Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org."
   },
   {
-    "objectID": "instructor-guide.html#teaching-philosophy",
-    "href": "instructor-guide.html#teaching-philosophy",
-    "title": "Instructor guide",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
     "section": "",
-    "text": "This course treats meta-analysis as part of evidence synthesis, not simply as a statistical procedure. The recurring sequence is:\n\nQuestion → estimand → compatible evidence → effect size → model → heterogeneity → dependence → moderators → robustness → interpretation\n\nModules 0–3 form the introductory core and can be taught as a half-day intensive session or expanded with exercises into a full day."
+    "text": "This open teaching package introduces quantitative evidence synthesis using R and metafor, with examples framed around agri-food research.\nThe course follows a question-first workflow:\nQuestion → estimand → compatible evidence → effect size → model → uncertainty → interpretation.\nIt is designed for instructor-led workshops and self-directed learning."
   },
   {
-    "objectID": "instructor-guide.html#suggested-timings-for-modules-03",
-    "href": "instructor-guide.html#suggested-timings-for-modules-03",
-    "title": "Instructor guide",
-    "section": "Suggested timings for Modules 0–3",
-    "text": "Suggested timings for Modules 0–3\n\n\n\nModule\nSlides/discussion\nExercise\nTotal\n\n\n\n\n0. From question to meta-analysis\n30 min\n10 min\n40 min\n\n\n1. Effect sizes\n35 min\n25 min\n60 min\n\n\n2. First meta-analysis\n40 min\n30 min\n70 min\n\n\n3. Heterogeneity\n35 min\n25 min\n60 min\n\n\n\nAdd breaks as appropriate. For a shorter workshop, retain the interpretation questions and reduce coding time rather than removing the conceptual framing."
-  },
-  {
-    "objectID": "instructor-guide.html#presenter-notes",
-    "href": "instructor-guide.html#presenter-notes",
-    "title": "Instructor guide",
-    "section": "Presenter notes",
-    "text": "Presenter notes\nEvery RevealJS deck contains ::: {.notes} blocks. These are intended as teaching prompts rather than a script that must be read verbatim. They identify discussion questions, common misconceptions and transitions."
-  },
-  {
-    "objectID": "instructor-guide.html#teaching-dataset",
-    "href": "instructor-guide.html#teaching-dataset",
-    "title": "Instructor guide",
-    "section": "Teaching dataset",
-    "text": "Teaching dataset\ndata/teaching/soil_carbon.csv is synthetic. It is deliberately simple and should not be presented as empirical evidence about reduced tillage. The final EU-NESA package can supplement it with openly licensed empirical agri-food datasets where permissions and provenance are clear."
-  },
-  {
-    "objectID": "instructor-guide.html#r-setup",
-    "href": "instructor-guide.html#r-setup",
-    "title": "Instructor guide",
-    "section": "R setup",
-    "text": "R setup\nParticipants need:\ninstall.packages(c(\"metafor\", \"tidyverse\"))\nThe introductory exercises primarily use metafor; dplyr is used for readable data manipulation."
-  },
-  {
-    "objectID": "instructor-guide.html#key-messages-to-protect",
-    "href": "instructor-guide.html#key-messages-to-protect",
-    "title": "Instructor guide",
-    "section": "Key messages to protect",
-    "text": "Key messages to protect\n\nThe effect measure follows from the estimand.\nPrecision is not the same as methodological quality.\nRandom effects do not make conceptually incompatible studies compatible.\nDo not interpret individual statistical significance by vote counting.\n\\(I^2\\) is not a quality score or a universal traffic-light measure.\nPrediction intervals can be more decision-relevant than the confidence interval around the mean.\nCausal interpretation depends on study design and assumptions, not on meta-analysis alone."
-  },
-  {
-    "objectID": "instructor-guide.html#modules-46-suggested-teaching-plan",
-    "href": "instructor-guide.html#modules-46-suggested-teaching-plan",
-    "title": "Instructor guide",
-    "section": "Modules 4–6: suggested teaching plan",
-    "text": "Modules 4–6: suggested teaching plan\n\nModule 4 — Dependence is not optional (35–45 min + 30 min practical)\nUse participants’ own examples of multiple outcomes, time points and shared controls before introducing rma.mv(). The conceptual goal is to recognise dependence and map its source; the software is secondary. Explicitly distinguish random-effects clustering from sampling covariance.\n\n\nModule 5 — Explaining heterogeneity (35–45 min + 30 min practical)\nAsk learners to state a biological moderator hypothesis before fitting a model. Keep the causal warning prominent: most meta-regressions compare study characteristics across studies, even when treatment allocation within the primary studies was randomised. Focus reporting on estimates, uncertainty, data support and residual heterogeneity rather than moderator p-values.\n\n\nModule 6 — Sensitivity and robustness (30–40 min + 30 min practical)\nBegin by asking which analytical choices in the synthesis were genuinely uncertain. Separate influence diagnostics from sensitivity analyses. The endpoint is a robustness statement describing which conclusions are stable to which tested assumptions; avoid reducing robustness to whether statistical significance changes."
-  },
-  {
-    "objectID": "instructor-guide.html#module-7-missing-evidence-and-reporting-bias",
-    "href": "instructor-guide.html#module-7-missing-evidence-and-reporting-bias",
-    "title": "Instructor guide",
-    "section": "Module 7 — Missing evidence and reporting bias",
-    "text": "Module 7 — Missing evidence and reporting bias\nSuggested time: 40–50 minutes teaching + 25–35 minutes practical.\nThe central teaching principle is that funnel plots and regression tests identify patterns, not the mechanism that caused them. Start with the reporting process, then introduce statistical diagnostics. Encourage triangulation across search/extraction information, study characteristics and statistical patterns. Avoid teaching trim-and-fill as a correction procedure."
-  },
-  {
-    "objectID": "instructor-guide.html#module-8-from-model-to-conclusion",
-    "href": "instructor-guide.html#module-8-from-model-to-conclusion",
-    "title": "Instructor guide",
-    "section": "Module 8 — From model to conclusion",
-    "text": "Module 8 — From model to conclusion\nSuggested time: 40–50 minutes teaching + 30 minutes synthesis exercise.\nUse this as the capstone. Participants should return to the estimand from Module 0 and build a conclusion from magnitude, uncertainty, variation, credibility and applicability. The final exercise works well in pairs: one participant writes the technical paragraph and the other rewrites it for a decision-maker, then they compare what information was lost."
-  },
-  {
-    "objectID": "exercises/08-interpretation.html",
-    "href": "exercises/08-interpretation.html",
-    "title": "Exercise 8 — From model to conclusion",
+    "objectID": "index.html#about-this-resource",
+    "href": "index.html#about-this-resource",
+    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
     "section": "",
-    "text": "Turn the completed analysis into a concise, decision-relevant evidence statement without outrunning the evidence.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 8 — From model to conclusion"
-    ]
+    "text": "This open teaching package introduces quantitative evidence synthesis using R and metafor, with examples framed around agri-food research.\nThe course follows a question-first workflow:\nQuestion → estimand → compatible evidence → effect size → model → uncertainty → interpretation.\nIt is designed for instructor-led workshops and self-directed learning."
   },
   {
-    "objectID": "exercises/08-interpretation.html#aim",
-    "href": "exercises/08-interpretation.html#aim",
-    "title": "Exercise 8 — From model to conclusion",
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
+    "section": "Learning outcomes",
+    "text": "Learning outcomes\nBy the end, participants should be able to:\n\nchoose and interpret common effect-size measures;\ncalculate effect sizes and sampling variances;\nfit and interpret random-effects meta-analysis;\ndistinguish uncertainty in the mean effect from heterogeneity among true effects;\nuse prediction intervals appropriately;\nrecognise and model dependent effect sizes;\nuse meta-regression cautiously;\nconduct useful sensitivity analyses;\nrecognise limitations of publication-bias diagnostics; and\ntranslate model results into appropriately qualified conclusions."
+  },
+  {
+    "objectID": "index.html#software",
+    "href": "index.html#software",
+    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
+    "section": "Software",
+    "text": "Software\ninstall.packages(c(\"metafor\", \"tidyverse\"))\nStart with the introductory slides."
+  },
+  {
+    "objectID": "exercises/07-reporting-bias.html",
+    "href": "exercises/07-reporting-bias.html",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
     "section": "",
-    "text": "Turn the completed analysis into a concise, decision-relevant evidence statement without outrunning the evidence.",
+    "text": "Investigate possible small-study effects while separating statistical patterns from claims about their cause.",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 8 — From model to conclusion"
+      "Exercise 7 — Missing evidence and reporting bias"
     ]
   },
   {
-    "objectID": "exercises/08-interpretation.html#return-to-the-estimand",
-    "href": "exercises/08-interpretation.html#return-to-the-estimand",
-    "title": "Exercise 8 — From model to conclusion",
-    "section": "1. Return to the estimand",
-    "text": "1. Return to the estimand\nWrite your target estimand in one sentence: population/settings, intervention, comparator, outcome, effect measure and relevant time frame. Then state whether the analysed evidence matches it exactly or only approximately.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 8 — From model to conclusion"
-    ]
-  },
-  {
-    "objectID": "exercises/08-interpretation.html#extract-the-quantities-you-need",
-    "href": "exercises/08-interpretation.html#extract-the-quantities-you-need",
-    "title": "Exercise 8 — From model to conclusion",
-    "section": "2. Extract the quantities you need",
-    "text": "2. Extract the quantities you need\nFrom your preferred model, record:\n\nsummary(m)\npredict(m, transf = exp)\n\nCapture:\n\npooled effect on the analysis scale;\ntransformed relative effect;\n95% confidence interval;\nprediction interval;\nheterogeneity estimate(s).",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 8 — From model to conclusion"
-    ]
-  },
-  {
-    "objectID": "exercises/08-interpretation.html#translate-without-significance-language",
-    "href": "exercises/08-interpretation.html#translate-without-significance-language",
-    "title": "Exercise 8 — From model to conclusion",
-    "section": "3. Translate without significance language",
-    "text": "3. Translate without significance language\nWrite two sentences describing magnitude and uncertainty without using “significant”, “non-significant”, “works” or “does not work”.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 8 — From model to conclusion"
-    ]
-  },
-  {
-    "objectID": "exercises/08-interpretation.html#add-variation-and-context",
-    "href": "exercises/08-interpretation.html#add-variation-and-context",
-    "title": "Exercise 8 — From model to conclusion",
-    "section": "4. Add variation and context",
-    "text": "4. Add variation and context\nAdd one sentence explaining what the prediction interval/heterogeneity means for applying the average effect to another agri-food setting.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 8 — From model to conclusion"
-    ]
-  },
-  {
-    "objectID": "exercises/08-interpretation.html#add-credibility",
-    "href": "exercises/08-interpretation.html#add-credibility",
-    "title": "Exercise 8 — From model to conclusion",
-    "section": "5. Add credibility",
-    "text": "5. Add credibility\nUsing Modules 6 and 7, add one sentence covering the most important robustness or reporting-bias limitation. Do not list every diagnostic.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 8 — From model to conclusion"
-    ]
-  },
-  {
-    "objectID": "exercises/08-interpretation.html#decision-maker-version",
-    "href": "exercises/08-interpretation.html#decision-maker-version",
-    "title": "Exercise 8 — From model to conclusion",
-    "section": "6. Decision-maker version",
-    "text": "6. Decision-maker version\nWrite a maximum 80-word summary for a policy or management audience. It should include:\n\ndirection and approximate magnitude;\nuncertainty and/or variation;\nthe most important qualification;\nthe population/settings to which the evidence most directly applies.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 8 — From model to conclusion"
-    ]
-  },
-  {
-    "objectID": "exercises/08-interpretation.html#final-check",
-    "href": "exercises/08-interpretation.html#final-check",
-    "title": "Exercise 8 — From model to conclusion",
-    "section": "7. Final check",
-    "text": "7. Final check\nHighlight any claim in your paragraph that goes beyond the design of the included studies or beyond the range of contexts represented. Rewrite it more cautiously.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 8 — From model to conclusion"
-    ]
-  },
-  {
-    "objectID": "exercises/06-sensitivity.html",
-    "href": "exercises/06-sensitivity.html",
-    "title": "Exercise 6 — Sensitivity and robustness",
+    "objectID": "exercises/07-reporting-bias.html#aim",
+    "href": "exercises/07-reporting-bias.html#aim",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
     "section": "",
-    "text": "Test whether substantive conclusions depend on influential observations or defensible analytical choices.",
+    "text": "Investigate possible small-study effects while separating statistical patterns from claims about their cause.",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 6 — Sensitivity and robustness"
+      "Exercise 7 — Missing evidence and reporting bias"
     ]
   },
   {
-    "objectID": "exercises/06-sensitivity.html#aim",
-    "href": "exercises/06-sensitivity.html#aim",
-    "title": "Exercise 6 — Sensitivity and robustness",
-    "section": "",
-    "text": "Test whether substantive conclusions depend on influential observations or defensible analytical choices.",
+    "objectID": "exercises/07-reporting-bias.html#map-the-missingness-mechanisms",
+    "href": "exercises/07-reporting-bias.html#map-the-missingness-mechanisms",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "1. Map the missingness mechanisms",
+    "text": "1. Map the missingness mechanisms\nFor the soil-carbon review, imagine that some studies measured soil carbon, crop yield and soil moisture but published only selected outcomes. List at least three ways evidence could become unavailable between data collection and your meta-analysis.",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 6 — Sensitivity and robustness"
+      "Exercise 7 — Missing evidence and reporting bias"
     ]
   },
   {
-    "objectID": "exercises/06-sensitivity.html#define-the-primary-conclusion-first",
-    "href": "exercises/06-sensitivity.html#define-the-primary-conclusion-first",
-    "title": "Exercise 6 — Sensitivity and robustness",
-    "section": "1. Define the primary conclusion first",
-    "text": "1. Define the primary conclusion first\nFit the primary model:\n\nm_primary &lt;- rma(yi, vi, data = es, method = \"REML\")\npredict(m_primary, transf = exp)\n\nBefore running diagnostics, write one sentence stating the substantive conclusion you would currently draw.",
+    "objectID": "exercises/07-reporting-bias.html#inspect-a-funnel-plot",
+    "href": "exercises/07-reporting-bias.html#inspect-a-funnel-plot",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "2. Inspect a funnel plot",
+    "text": "2. Inspect a funnel plot\n\nm &lt;- rma(yi, vi, data = es, method = \"REML\")\nfunnel(m)\n\nDescribe the pattern without diagnosing its cause. What study characteristics could plausibly be associated with both precision and effect size?",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 6 — Sensitivity and robustness"
+      "Exercise 7 — Missing evidence and reporting bias"
     ]
   },
   {
-    "objectID": "exercises/06-sensitivity.html#leave-one-out-analysis",
-    "href": "exercises/06-sensitivity.html#leave-one-out-analysis",
-    "title": "Exercise 6 — Sensitivity and robustness",
-    "section": "2. Leave-one-out analysis",
-    "text": "2. Leave-one-out analysis\n\nloo &lt;- leave1out(m_primary)\nloo\n\nAsk:\n\nHow much does the pooled estimate move?\nHow much does its uncertainty move?\nDoes heterogeneity change substantially?\nDoes the substantive conclusion change?\n\nAvoid using “does p remain &lt; 0.05?” as the sole robustness criterion.",
+    "objectID": "exercises/07-reporting-bias.html#explore-small-study-effects",
+    "href": "exercises/07-reporting-bias.html#explore-small-study-effects",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "3. Explore small-study effects",
+    "text": "3. Explore small-study effects\n\nregtest(m)\n\nAnswer:\n\nWhat pattern is this test designed to detect?\nWhy would a statistically significant result not prove publication bias?\nWhy would a non-significant result not prove its absence?",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 6 — Sensitivity and robustness"
+      "Exercise 7 — Missing evidence and reporting bias"
     ]
   },
   {
-    "objectID": "exercises/06-sensitivity.html#influence-diagnostics",
-    "href": "exercises/06-sensitivity.html#influence-diagnostics",
-    "title": "Exercise 6 — Sensitivity and robustness",
-    "section": "3. Influence diagnostics",
-    "text": "3. Influence diagnostics\n\ninf &lt;- influence(m_primary)\nprint(inf)\nplot(inf)\n\nIf an effect is influential, what should you do before considering exclusion?",
+    "objectID": "exercises/07-reporting-bias.html#optional-exploratory-sensitivity-analysis",
+    "href": "exercises/07-reporting-bias.html#optional-exploratory-sensitivity-analysis",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "4. Optional exploratory sensitivity analysis",
+    "text": "4. Optional exploratory sensitivity analysis\n\nm_tf &lt;- trimfill(m)\nsummary(m_tf)\nfunnel(m_tf)\n\nCompare the original and trim-and-fill estimates. Write one sentence explaining why the second should not be called the “publication-bias-corrected” estimate.",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 6 — Sensitivity and robustness"
+      "Exercise 7 — Missing evidence and reporting bias"
     ]
   },
   {
-    "objectID": "exercises/06-sensitivity.html#alternative-heterogeneity-estimator",
-    "href": "exercises/06-sensitivity.html#alternative-heterogeneity-estimator",
-    "title": "Exercise 6 — Sensitivity and robustness",
-    "section": "4. Alternative heterogeneity estimator",
-    "text": "4. Alternative heterogeneity estimator\n\nm_pm &lt;- rma(yi, vi, data = es, method = \"PM\")\n\npredict(m_primary, transf = exp)\npredict(m_pm, transf = exp)\n\nDoes this defensible modelling choice materially alter the interpretation?",
+    "objectID": "exercises/07-reporting-bias.html#triangulate",
+    "href": "exercises/07-reporting-bias.html#triangulate",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "5. Triangulate",
+    "text": "5. Triangulate\nImagine your search also found:\n\ntwo conference abstracts with insufficient numerical data;\none trial registration listing soil carbon that was absent from the final paper;\nseveral small studies conducted in different production systems from the large studies.\n\nWrite a short assessment of possible reporting bias that uses all of this information rather than relying on the funnel plot alone.",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 6 — Sensitivity and robustness"
+      "Exercise 7 — Missing evidence and reporting bias"
     ]
   },
   {
-    "objectID": "exercises/06-sensitivity.html#dependence-as-a-sensitivity-question",
-    "href": "exercises/06-sensitivity.html#dependence-as-a-sensitivity-question",
-    "title": "Exercise 6 — Sensitivity and robustness",
-    "section": "5. Dependence as a sensitivity question",
-    "text": "5. Dependence as a sensitivity question\nCompare:\n\nm_independent &lt;- rma(yi, vi, data = es, method = \"REML\")\n\nm_multilevel &lt;- rma.mv(\n  yi, vi,\n  random = ~ 1 | study_id/effect_id,\n  data = es,\n  method = \"REML\"\n)\n\nHow do the estimates and standard errors differ? Which model better represents the known structure of the teaching data?",
+    "objectID": "exercises/07-reporting-bias.html#reporting-challenge",
+    "href": "exercises/07-reporting-bias.html#reporting-challenge",
+    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "section": "6. Reporting challenge",
+    "text": "6. Reporting challenge\nRewrite this sentence:\n\n“There was no publication bias because Egger’s test was non-significant.”\n\nYour replacement should state what was examined, what was observed and the limitation of the inference.",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 6 — Sensitivity and robustness"
-    ]
-  },
-  {
-    "objectID": "exercises/06-sensitivity.html#risk-of-bias-thought-experiment",
-    "href": "exercises/06-sensitivity.html#risk-of-bias-thought-experiment",
-    "title": "Exercise 6 — Sensitivity and robustness",
-    "section": "6. Risk-of-bias thought experiment",
-    "text": "6. Risk-of-bias thought experiment\nImagine two studies were judged at high risk of bias because outcome measurement differed systematically between intervention and control groups.\nDesign a prespecified sensitivity analysis. What would you compare, and what result would make you more cautious about the primary conclusion?",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 6 — Sensitivity and robustness"
-    ]
-  },
-  {
-    "objectID": "exercises/06-sensitivity.html#robustness-statement",
-    "href": "exercises/06-sensitivity.html#robustness-statement",
-    "title": "Exercise 6 — Sensitivity and robustness",
-    "section": "7. Robustness statement",
-    "text": "7. Robustness statement\nWrite a paragraph using this structure:\n\nThe primary analysis estimated ____. Results were similar/different when ____. The conclusion was most sensitive to ____. Therefore, ____.\n\nBe explicit about which assumptions you tested. Do not claim that the result is “robust” in general.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 6 — Sensitivity and robustness"
-    ]
-  },
-  {
-    "objectID": "exercises/04-multilevel.html",
-    "href": "exercises/04-multilevel.html",
-    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
-    "section": "",
-    "text": "Recognise dependence, compare naive and multilevel models, and explain what changes when effects are clustered within studies.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 4 — Dependence and multilevel meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/04-multilevel.html#aim",
-    "href": "exercises/04-multilevel.html#aim",
-    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
-    "section": "",
-    "text": "Recognise dependence, compare naive and multilevel models, and explain what changes when effects are clustered within studies.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 4 — Dependence and multilevel meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/04-multilevel.html#prepare-the-effect-sizes",
-    "href": "exercises/04-multilevel.html#prepare-the-effect-sizes",
-    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
-    "section": "1. Prepare the effect sizes",
-    "text": "1. Prepare the effect sizes\n\nlibrary(metafor)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes &lt;- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n)",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 4 — Dependence and multilevel meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/04-multilevel.html#map-the-dependence",
-    "href": "exercises/04-multilevel.html#map-the-dependence",
-    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
-    "section": "2. Map the dependence",
-    "text": "2. Map the dependence\n\nwith(es, table(study_id))\ntable(table(es$study_id))\n\n\nWhich studies contribute more than one effect?\nWhy might two effects from the same study be related?\nWhat additional information would you want from the primary paper to understand the dependence?",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 4 — Dependence and multilevel meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/04-multilevel.html#fit-a-naive-model",
-    "href": "exercises/04-multilevel.html#fit-a-naive-model",
-    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
-    "section": "3. Fit a naive model",
-    "text": "3. Fit a naive model\n\nm_naive &lt;- rma(yi, vi, data = es, method = \"REML\")\nsummary(m_naive)\n\nRecord the pooled estimate, SE, CI and heterogeneity estimate.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 4 — Dependence and multilevel meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/04-multilevel.html#fit-a-multilevel-model",
-    "href": "exercises/04-multilevel.html#fit-a-multilevel-model",
-    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
-    "section": "4. Fit a multilevel model",
-    "text": "4. Fit a multilevel model\nFill the blanks.\n\nm_mv &lt;- rma.mv(\n  yi = ___,\n  V = ___,\n  random = ~ 1 | ___/___,\n  data = es,\n  method = \"REML\"\n)\nsummary(m_mv)\n\nCompare the estimate and uncertainty with m_naive.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 4 — Dependence and multilevel meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/04-multilevel.html#interpret-the-variance-components",
-    "href": "exercises/04-multilevel.html#interpret-the-variance-components",
-    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
-    "section": "5. Interpret the variance components",
-    "text": "5. Interpret the variance components\nUse:\n\nm_mv$sigma2\n\nWhich component corresponds to variation among studies and which to variation among effects within studies? What might each represent scientifically?",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 4 — Dependence and multilevel meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/04-multilevel.html#the-important-limitation",
-    "href": "exercises/04-multilevel.html#the-important-limitation",
-    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
-    "section": "6. The important limitation",
-    "text": "6. The important limitation\nThe teaching data provide sampling variances (vi) but not sampling covariances between effects from the same study.\nExplain why a study-level random effect does not necessarily solve correlation caused by shared controls or repeated measurements.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 4 — Dependence and multilevel meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/04-multilevel.html#decision-challenge",
-    "href": "exercises/04-multilevel.html#decision-challenge",
-    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
-    "section": "7. Decision challenge",
-    "text": "7. Decision challenge\nWrite 3–4 sentences explaining to a review team:\n\nwhy treating every row as independent is questionable;\nwhat the multilevel model improves;\nwhat dependence assumption remains unresolved;\nwhat you would seek or test in a full review.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 4 — Dependence and multilevel meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/02-first-meta-analysis.html",
-    "href": "exercises/02-first-meta-analysis.html",
-    "title": "Exercise 2 — Your first meta-analysis",
-    "section": "",
-    "text": "Fit, visualise and interpret a random-effects meta-analysis.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 2 — Your first meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/02-first-meta-analysis.html#aim",
-    "href": "exercises/02-first-meta-analysis.html#aim",
-    "title": "Exercise 2 — Your first meta-analysis",
-    "section": "",
-    "text": "Fit, visualise and interpret a random-effects meta-analysis.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 2 — Your first meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/02-first-meta-analysis.html#prepare-effect-sizes",
-    "href": "exercises/02-first-meta-analysis.html#prepare-effect-sizes",
-    "title": "Exercise 2 — Your first meta-analysis",
-    "section": "1. Prepare effect sizes",
-    "text": "1. Prepare effect sizes\n\nlibrary(metafor)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes &lt;- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n)",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 2 — Your first meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/02-first-meta-analysis.html#fit-the-model",
-    "href": "exercises/02-first-meta-analysis.html#fit-the-model",
-    "title": "Exercise 2 — Your first meta-analysis",
-    "section": "2. Fit the model",
-    "text": "2. Fit the model\nFill the blanks.\n\nm &lt;- rma(\n  yi = ___,\n  vi = ___,\n  data = ___,\n  method = \"___\"\n)\n\nsummary(m)\n\nIdentify the pooled estimate, 95% CI, \\(\\tau^2\\) and \\(I^2\\).",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 2 — Your first meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/02-first-meta-analysis.html#back-transform",
-    "href": "exercises/02-first-meta-analysis.html#back-transform",
-    "title": "Exercise 2 — Your first meta-analysis",
-    "section": "3. Back-transform",
-    "text": "3. Back-transform\n\npredict(m, transf = exp)\n\nTranslate the pooled response ratio into a percentage difference.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 2 — Your first meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/02-first-meta-analysis.html#make-a-forest-plot",
-    "href": "exercises/02-first-meta-analysis.html#make-a-forest-plot",
-    "title": "Exercise 2 — Your first meta-analysis",
-    "section": "4. Make a forest plot",
-    "text": "4. Make a forest plot\n\nforest(\n  m,\n  slab = paste(es$study_id, es$effect_id, sep = \".\"),\n  atransf = exp,\n  xlab = \"Response ratio (reduced / conventional)\"\n)\nabline(v = 1, lty = 2)\n\nWhat does the forest plot show that the pooled estimate alone does not?",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 2 — Your first meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/02-first-meta-analysis.html#interpretation-challenge",
-    "href": "exercises/02-first-meta-analysis.html#interpretation-challenge",
-    "title": "Exercise 2 — Your first meta-analysis",
-    "section": "5. Interpretation challenge",
-    "text": "5. Interpretation challenge\nWrite three sentences that separately communicate:\n\nthe average effect;\nuncertainty in that average;\nvariation among effects / implications for a new comparable setting.\n\nAvoid counting how many individual studies are statistically significant.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 2 — Your first meta-analysis"
-    ]
-  },
-  {
-    "objectID": "exercises/01-effect-sizes.html",
-    "href": "exercises/01-effect-sizes.html",
-    "title": "Exercise 1 — Effect sizes",
-    "section": "",
-    "text": "Calculate and interpret effect sizes for the synthetic reduced-tillage soil-carbon dataset.\n\nTeaching data: data/teaching/soil_carbon.csv are synthetic and are provided only for learning.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 1 — Effect sizes"
-    ]
-  },
-  {
-    "objectID": "exercises/01-effect-sizes.html#aim",
-    "href": "exercises/01-effect-sizes.html#aim",
-    "title": "Exercise 1 — Effect sizes",
-    "section": "",
-    "text": "Calculate and interpret effect sizes for the synthetic reduced-tillage soil-carbon dataset.\n\nTeaching data: data/teaching/soil_carbon.csv are synthetic and are provided only for learning.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 1 — Effect sizes"
-    ]
-  },
-  {
-    "objectID": "exercises/01-effect-sizes.html#load-the-data",
-    "href": "exercises/01-effect-sizes.html#load-the-data",
-    "title": "Exercise 1 — Effect sizes",
-    "section": "1. Load the data",
-    "text": "1. Load the data\n\nlibrary(metafor)\nlibrary(dplyr)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\nhead(soil)\n\nBefore calculating anything, write down the direction you want the effect to have. What should a value above the null mean?",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 1 — Effect sizes"
-    ]
-  },
-  {
-    "objectID": "exercises/01-effect-sizes.html#calculate-log-response-ratios",
-    "href": "exercises/01-effect-sizes.html#calculate-log-response-ratios",
-    "title": "Exercise 1 — Effect sizes",
-    "section": "2. Calculate log response ratios",
-    "text": "2. Calculate log response ratios\nComplete the missing arguments.\n\nes &lt;- escalc(\n  measure = \"___\",\n  m1i = ___, sd1i = ___, n1i = ___,\n  m2i = ___, sd2i = ___, n2i = ___,\n  data = soil\n)",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 1 — Effect sizes"
-    ]
-  },
-  {
-    "objectID": "exercises/01-effect-sizes.html#back-transform",
-    "href": "exercises/01-effect-sizes.html#back-transform",
-    "title": "Exercise 1 — Effect sizes",
-    "section": "3. Back-transform",
-    "text": "3. Back-transform\nCreate RR and percent_change.\n\nes &lt;- es |&gt;\n  mutate(\n    RR = ___,\n    percent_change = ___\n  )\n\nIn one sentence, interpret Study A.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 1 — Effect sizes"
-    ]
-  },
-  {
-    "objectID": "exercises/01-effect-sizes.html#check-one-calculation-manually",
-    "href": "exercises/01-effect-sizes.html#check-one-calculation-manually",
-    "title": "Exercise 1 — Effect sizes",
-    "section": "4. Check one calculation manually",
-    "text": "4. Check one calculation manually\nUsing Study A, calculate:\n\\[\\ln(RR)=\\ln(\\bar X_T/\\bar X_C)\\]\nCompare your answer with es$yi[1].\nWhy is this manual check useful?",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 1 — Effect sizes"
-    ]
-  },
-  {
-    "objectID": "exercises/01-effect-sizes.html#effect-measure-choice",
-    "href": "exercises/01-effect-sizes.html#effect-measure-choice",
-    "title": "Exercise 1 — Effect sizes",
-    "section": "5. Effect-measure choice",
-    "text": "5. Effect-measure choice\nFor each question, choose a plausible effect measure and justify it briefly.\n\nHow many tonnes/ha does an intervention change wheat yield when all studies report tonnes/ha?\nHow much does an intervention change a latent “soil health” construct measured using several different validated scales?\nWhat proportional change in soil organic carbon occurs under reduced tillage?",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 1 — Effect sizes"
-    ]
-  },
-  {
-    "objectID": "exercises/01-effect-sizes.html#reflection",
-    "href": "exercises/01-effect-sizes.html#reflection",
-    "title": "Exercise 1 — Effect sizes",
-    "section": "6. Reflection",
-    "text": "6. Reflection\nWhat information is lost or changed when you replace an absolute mean difference with a standardised or proportional effect?",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 1 — Effect sizes"
-    ]
-  },
-  {
-    "objectID": "exercises/03-heterogeneity.html",
-    "href": "exercises/03-heterogeneity.html",
-    "title": "Exercise 3 — Understanding heterogeneity",
-    "section": "",
-    "text": "Two hypothetical syntheses both estimate an average response ratio of 1.10.\n\n\n\n\nMeta-analysis A\nMeta-analysis B\n\n\n\n\nMean RR\n1.10\n1.10\n\n\n95% CI\n1.05–1.15\n1.05–1.15\n\n\n95% prediction interval\n1.03–1.17\n0.82–1.48\n\n\n\nDiscuss:\n\nWould you give the same recommendation based on A and B?\nWhat information does the prediction interval add?\nWhy would saying only “the pooled effect was positive and statistically significant” be inadequate?",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 3 — Understanding heterogeneity"
-    ]
-  },
-  {
-    "objectID": "exercises/03-heterogeneity.html#part-a-same-mean-different-story",
-    "href": "exercises/03-heterogeneity.html#part-a-same-mean-different-story",
-    "title": "Exercise 3 — Understanding heterogeneity",
-    "section": "",
-    "text": "Two hypothetical syntheses both estimate an average response ratio of 1.10.\n\n\n\n\nMeta-analysis A\nMeta-analysis B\n\n\n\n\nMean RR\n1.10\n1.10\n\n\n95% CI\n1.05–1.15\n1.05–1.15\n\n\n95% prediction interval\n1.03–1.17\n0.82–1.48\n\n\n\nDiscuss:\n\nWould you give the same recommendation based on A and B?\nWhat information does the prediction interval add?\nWhy would saying only “the pooled effect was positive and statistically significant” be inadequate?",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 3 — Understanding heterogeneity"
-    ]
-  },
-  {
-    "objectID": "exercises/03-heterogeneity.html#part-b-inspect-heterogeneity-in-r",
-    "href": "exercises/03-heterogeneity.html#part-b-inspect-heterogeneity-in-r",
-    "title": "Exercise 3 — Understanding heterogeneity",
-    "section": "Part B — Inspect heterogeneity in R",
-    "text": "Part B — Inspect heterogeneity in R\n\nm &lt;- rma(yi, vi, data = es, method = \"REML\")\n\nm$tau2\nsqrt(m$tau2)\nm$I2\npredict(m, transf = exp)\n\nRecord each quantity and explain it in plain language.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 3 — Understanding heterogeneity"
-    ]
-  },
-  {
-    "objectID": "exercises/03-heterogeneity.html#part-c-generate-hypotheses",
-    "href": "exercises/03-heterogeneity.html#part-c-generate-hypotheses",
-    "title": "Exercise 3 — Understanding heterogeneity",
-    "section": "Part C — Generate hypotheses",
-    "text": "Part C — Generate hypotheses\nBefore fitting any meta-regression, propose three scientifically plausible reasons why the reduced-tillage effect might differ among studies.\nFor each, state whether the current dataset actually measures the proposed moderator.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 3 — Understanding heterogeneity"
-    ]
-  },
-  {
-    "objectID": "exercises/03-heterogeneity.html#part-d-decision-maker-summary",
-    "href": "exercises/03-heterogeneity.html#part-d-decision-maker-summary",
-    "title": "Exercise 3 — Understanding heterogeneity",
-    "section": "Part D — Decision-maker summary",
-    "text": "Part D — Decision-maker summary\nWrite four sentences summarising the synthesis for a decision-maker.\nRequirements:\n\nreport the average effect;\nacknowledge uncertainty;\ndescribe between-study variation;\nexplain applicability cautiously;\ndo not use generic labels such as “low”, “moderate” or “high” heterogeneity.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 3 — Understanding heterogeneity"
+      "Exercise 7 — Missing evidence and reporting bias"
     ]
   },
   {
@@ -1789,128 +1286,638 @@
     ]
   },
   {
-    "objectID": "exercises/07-reporting-bias.html",
-    "href": "exercises/07-reporting-bias.html",
-    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "objectID": "exercises/03-heterogeneity.html",
+    "href": "exercises/03-heterogeneity.html",
+    "title": "Exercise 3 — Understanding heterogeneity",
     "section": "",
-    "text": "Investigate possible small-study effects while separating statistical patterns from claims about their cause.",
+    "text": "Two hypothetical syntheses both estimate an average response ratio of 1.10.\n\n\n\n\nMeta-analysis A\nMeta-analysis B\n\n\n\n\nMean RR\n1.10\n1.10\n\n\n95% CI\n1.05–1.15\n1.05–1.15\n\n\n95% prediction interval\n1.03–1.17\n0.82–1.48\n\n\n\nDiscuss:\n\nWould you give the same recommendation based on A and B?\nWhat information does the prediction interval add?\nWhy would saying only “the pooled effect was positive and statistically significant” be inadequate?",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 7 — Missing evidence and reporting bias"
+      "Exercise 3 — Understanding heterogeneity"
     ]
   },
   {
-    "objectID": "exercises/07-reporting-bias.html#aim",
-    "href": "exercises/07-reporting-bias.html#aim",
-    "title": "Exercise 7 — Missing evidence and reporting bias",
+    "objectID": "exercises/03-heterogeneity.html#part-a-same-mean-different-story",
+    "href": "exercises/03-heterogeneity.html#part-a-same-mean-different-story",
+    "title": "Exercise 3 — Understanding heterogeneity",
     "section": "",
-    "text": "Investigate possible small-study effects while separating statistical patterns from claims about their cause.",
+    "text": "Two hypothetical syntheses both estimate an average response ratio of 1.10.\n\n\n\n\nMeta-analysis A\nMeta-analysis B\n\n\n\n\nMean RR\n1.10\n1.10\n\n\n95% CI\n1.05–1.15\n1.05–1.15\n\n\n95% prediction interval\n1.03–1.17\n0.82–1.48\n\n\n\nDiscuss:\n\nWould you give the same recommendation based on A and B?\nWhat information does the prediction interval add?\nWhy would saying only “the pooled effect was positive and statistically significant” be inadequate?",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 7 — Missing evidence and reporting bias"
+      "Exercise 3 — Understanding heterogeneity"
     ]
   },
   {
-    "objectID": "exercises/07-reporting-bias.html#map-the-missingness-mechanisms",
-    "href": "exercises/07-reporting-bias.html#map-the-missingness-mechanisms",
-    "title": "Exercise 7 — Missing evidence and reporting bias",
-    "section": "1. Map the missingness mechanisms",
-    "text": "1. Map the missingness mechanisms\nFor the soil-carbon review, imagine that some studies measured soil carbon, crop yield and soil moisture but published only selected outcomes. List at least three ways evidence could become unavailable between data collection and your meta-analysis.",
+    "objectID": "exercises/03-heterogeneity.html#part-b-inspect-heterogeneity-in-r",
+    "href": "exercises/03-heterogeneity.html#part-b-inspect-heterogeneity-in-r",
+    "title": "Exercise 3 — Understanding heterogeneity",
+    "section": "Part B — Inspect heterogeneity in R",
+    "text": "Part B — Inspect heterogeneity in R\n\nm &lt;- rma(yi, vi, data = es, method = \"REML\")\n\nm$tau2\nsqrt(m$tau2)\nm$I2\npredict(m, transf = exp)\n\nRecord each quantity and explain it in plain language.",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 7 — Missing evidence and reporting bias"
+      "Exercise 3 — Understanding heterogeneity"
     ]
   },
   {
-    "objectID": "exercises/07-reporting-bias.html#inspect-a-funnel-plot",
-    "href": "exercises/07-reporting-bias.html#inspect-a-funnel-plot",
-    "title": "Exercise 7 — Missing evidence and reporting bias",
-    "section": "2. Inspect a funnel plot",
-    "text": "2. Inspect a funnel plot\n\nm &lt;- rma(yi, vi, data = es, method = \"REML\")\nfunnel(m)\n\nDescribe the pattern without diagnosing its cause. What study characteristics could plausibly be associated with both precision and effect size?",
+    "objectID": "exercises/03-heterogeneity.html#part-c-generate-hypotheses",
+    "href": "exercises/03-heterogeneity.html#part-c-generate-hypotheses",
+    "title": "Exercise 3 — Understanding heterogeneity",
+    "section": "Part C — Generate hypotheses",
+    "text": "Part C — Generate hypotheses\nBefore fitting any meta-regression, propose three scientifically plausible reasons why the reduced-tillage effect might differ among studies.\nFor each, state whether the current dataset actually measures the proposed moderator.",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 7 — Missing evidence and reporting bias"
+      "Exercise 3 — Understanding heterogeneity"
     ]
   },
   {
-    "objectID": "exercises/07-reporting-bias.html#explore-small-study-effects",
-    "href": "exercises/07-reporting-bias.html#explore-small-study-effects",
-    "title": "Exercise 7 — Missing evidence and reporting bias",
-    "section": "3. Explore small-study effects",
-    "text": "3. Explore small-study effects\n\nregtest(m)\n\nAnswer:\n\nWhat pattern is this test designed to detect?\nWhy would a statistically significant result not prove publication bias?\nWhy would a non-significant result not prove its absence?",
+    "objectID": "exercises/03-heterogeneity.html#part-d-decision-maker-summary",
+    "href": "exercises/03-heterogeneity.html#part-d-decision-maker-summary",
+    "title": "Exercise 3 — Understanding heterogeneity",
+    "section": "Part D — Decision-maker summary",
+    "text": "Part D — Decision-maker summary\nWrite four sentences summarising the synthesis for a decision-maker.\nRequirements:\n\nreport the average effect;\nacknowledge uncertainty;\ndescribe between-study variation;\nexplain applicability cautiously;\ndo not use generic labels such as “low”, “moderate” or “high” heterogeneity.",
     "crumbs": [
       "Home",
       "Exercises",
-      "Exercise 7 — Missing evidence and reporting bias"
+      "Exercise 3 — Understanding heterogeneity"
     ]
   },
   {
-    "objectID": "exercises/07-reporting-bias.html#optional-exploratory-sensitivity-analysis",
-    "href": "exercises/07-reporting-bias.html#optional-exploratory-sensitivity-analysis",
-    "title": "Exercise 7 — Missing evidence and reporting bias",
-    "section": "4. Optional exploratory sensitivity analysis",
-    "text": "4. Optional exploratory sensitivity analysis\n\nm_tf &lt;- trimfill(m)\nsummary(m_tf)\nfunnel(m_tf)\n\nCompare the original and trim-and-fill estimates. Write one sentence explaining why the second should not be called the “publication-bias-corrected” estimate.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 7 — Missing evidence and reporting bias"
-    ]
-  },
-  {
-    "objectID": "exercises/07-reporting-bias.html#triangulate",
-    "href": "exercises/07-reporting-bias.html#triangulate",
-    "title": "Exercise 7 — Missing evidence and reporting bias",
-    "section": "5. Triangulate",
-    "text": "5. Triangulate\nImagine your search also found:\n\ntwo conference abstracts with insufficient numerical data;\none trial registration listing soil carbon that was absent from the final paper;\nseveral small studies conducted in different production systems from the large studies.\n\nWrite a short assessment of possible reporting bias that uses all of this information rather than relying on the funnel plot alone.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 7 — Missing evidence and reporting bias"
-    ]
-  },
-  {
-    "objectID": "exercises/07-reporting-bias.html#reporting-challenge",
-    "href": "exercises/07-reporting-bias.html#reporting-challenge",
-    "title": "Exercise 7 — Missing evidence and reporting bias",
-    "section": "6. Reporting challenge",
-    "text": "6. Reporting challenge\nRewrite this sentence:\n\n“There was no publication bias because Egger’s test was non-significant.”\n\nYour replacement should state what was examined, what was observed and the limitation of the inference.",
-    "crumbs": [
-      "Home",
-      "Exercises",
-      "Exercise 7 — Missing evidence and reporting bias"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
+    "objectID": "exercises/01-effect-sizes.html",
+    "href": "exercises/01-effect-sizes.html",
+    "title": "Exercise 1 — Effect sizes",
     "section": "",
-    "text": "This open teaching package introduces quantitative evidence synthesis using R and metafor, with examples framed around agri-food research.\nThe course follows a question-first workflow:\nQuestion → estimand → compatible evidence → effect size → model → uncertainty → interpretation.\nIt is designed for instructor-led workshops and self-directed learning."
+    "text": "Calculate and interpret effect sizes for the synthetic reduced-tillage soil-carbon dataset.\n\nTeaching data: data/teaching/soil_carbon.csv are synthetic and are provided only for learning.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
   },
   {
-    "objectID": "index.html#about-this-resource",
-    "href": "index.html#about-this-resource",
-    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
+    "objectID": "exercises/01-effect-sizes.html#aim",
+    "href": "exercises/01-effect-sizes.html#aim",
+    "title": "Exercise 1 — Effect sizes",
     "section": "",
-    "text": "This open teaching package introduces quantitative evidence synthesis using R and metafor, with examples framed around agri-food research.\nThe course follows a question-first workflow:\nQuestion → estimand → compatible evidence → effect size → model → uncertainty → interpretation.\nIt is designed for instructor-led workshops and self-directed learning."
+    "text": "Calculate and interpret effect sizes for the synthetic reduced-tillage soil-carbon dataset.\n\nTeaching data: data/teaching/soil_carbon.csv are synthetic and are provided only for learning.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
   },
   {
-    "objectID": "index.html#learning-outcomes",
-    "href": "index.html#learning-outcomes",
-    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
-    "section": "Learning outcomes",
-    "text": "Learning outcomes\nBy the end, participants should be able to:\n\nchoose and interpret common effect-size measures;\ncalculate effect sizes and sampling variances;\nfit and interpret random-effects meta-analysis;\ndistinguish uncertainty in the mean effect from heterogeneity among true effects;\nuse prediction intervals appropriately;\nrecognise and model dependent effect sizes;\nuse meta-regression cautiously;\nconduct useful sensitivity analyses;\nrecognise limitations of publication-bias diagnostics; and\ntranslate model results into appropriately qualified conclusions."
+    "objectID": "exercises/01-effect-sizes.html#load-the-data",
+    "href": "exercises/01-effect-sizes.html#load-the-data",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "1. Load the data",
+    "text": "1. Load the data\n\nlibrary(metafor)\nlibrary(dplyr)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\nhead(soil)\n\nBefore calculating anything, write down the direction you want the effect to have. What should a value above the null mean?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
   },
   {
-    "objectID": "index.html#software",
-    "href": "index.html#software",
-    "title": "Practical Meta-analysis for Evidence Synthesis in the Agri-food Sector",
-    "section": "Software",
-    "text": "Software\ninstall.packages(c(\"metafor\", \"tidyverse\"))\nStart with the introductory slides."
+    "objectID": "exercises/01-effect-sizes.html#calculate-log-response-ratios",
+    "href": "exercises/01-effect-sizes.html#calculate-log-response-ratios",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "2. Calculate log response ratios",
+    "text": "2. Calculate log response ratios\nComplete the missing arguments.\n\nes &lt;- escalc(\n  measure = \"___\",\n  m1i = ___, sd1i = ___, n1i = ___,\n  m2i = ___, sd2i = ___, n2i = ___,\n  data = soil\n)",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html#back-transform",
+    "href": "exercises/01-effect-sizes.html#back-transform",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "3. Back-transform",
+    "text": "3. Back-transform\nCreate RR and percent_change.\n\nes &lt;- es |&gt;\n  mutate(\n    RR = ___,\n    percent_change = ___\n  )\n\nIn one sentence, interpret Study A.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html#check-one-calculation-manually",
+    "href": "exercises/01-effect-sizes.html#check-one-calculation-manually",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "4. Check one calculation manually",
+    "text": "4. Check one calculation manually\nUsing Study A, calculate:\n\\[\\ln(RR)=\\ln(\\bar X_T/\\bar X_C)\\]\nCompare your answer with es$yi[1].\nWhy is this manual check useful?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html#effect-measure-choice",
+    "href": "exercises/01-effect-sizes.html#effect-measure-choice",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "5. Effect-measure choice",
+    "text": "5. Effect-measure choice\nFor each question, choose a plausible effect measure and justify it briefly.\n\nHow many tonnes/ha does an intervention change wheat yield when all studies report tonnes/ha?\nHow much does an intervention change a latent “soil health” construct measured using several different validated scales?\nWhat proportional change in soil organic carbon occurs under reduced tillage?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/01-effect-sizes.html#reflection",
+    "href": "exercises/01-effect-sizes.html#reflection",
+    "title": "Exercise 1 — Effect sizes",
+    "section": "6. Reflection",
+    "text": "6. Reflection\nWhat information is lost or changed when you replace an absolute mean difference with a standardised or proportional effect?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 1 — Effect sizes"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html",
+    "href": "exercises/02-first-meta-analysis.html",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "",
+    "text": "Fit, visualise and interpret a random-effects meta-analysis.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#aim",
+    "href": "exercises/02-first-meta-analysis.html#aim",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "",
+    "text": "Fit, visualise and interpret a random-effects meta-analysis.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#prepare-effect-sizes",
+    "href": "exercises/02-first-meta-analysis.html#prepare-effect-sizes",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "1. Prepare effect sizes",
+    "text": "1. Prepare effect sizes\n\nlibrary(metafor)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes &lt;- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n)",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#fit-the-model",
+    "href": "exercises/02-first-meta-analysis.html#fit-the-model",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "2. Fit the model",
+    "text": "2. Fit the model\nFill the blanks.\n\nm &lt;- rma(\n  yi = ___,\n  vi = ___,\n  data = ___,\n  method = \"___\"\n)\n\nsummary(m)\n\nIdentify the pooled estimate, 95% CI, \\(\\tau^2\\) and \\(I^2\\).",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#back-transform",
+    "href": "exercises/02-first-meta-analysis.html#back-transform",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "3. Back-transform",
+    "text": "3. Back-transform\n\npredict(m, transf = exp)\n\nTranslate the pooled response ratio into a percentage difference.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#make-a-forest-plot",
+    "href": "exercises/02-first-meta-analysis.html#make-a-forest-plot",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "4. Make a forest plot",
+    "text": "4. Make a forest plot\n\nforest(\n  m,\n  slab = paste(es$study_id, es$effect_id, sep = \".\"),\n  atransf = exp,\n  xlab = \"Response ratio (reduced / conventional)\"\n)\nabline(v = 1, lty = 2)\n\nWhat does the forest plot show that the pooled estimate alone does not?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/02-first-meta-analysis.html#interpretation-challenge",
+    "href": "exercises/02-first-meta-analysis.html#interpretation-challenge",
+    "title": "Exercise 2 — Your first meta-analysis",
+    "section": "5. Interpretation challenge",
+    "text": "5. Interpretation challenge\nWrite three sentences that separately communicate:\n\nthe average effect;\nuncertainty in that average;\nvariation among effects / implications for a new comparable setting.\n\nAvoid counting how many individual studies are statistically significant.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 2 — Your first meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html",
+    "href": "exercises/04-multilevel.html",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "",
+    "text": "Recognise dependence, compare naive and multilevel models, and explain what changes when effects are clustered within studies.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#aim",
+    "href": "exercises/04-multilevel.html#aim",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "",
+    "text": "Recognise dependence, compare naive and multilevel models, and explain what changes when effects are clustered within studies.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#prepare-the-effect-sizes",
+    "href": "exercises/04-multilevel.html#prepare-the-effect-sizes",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "1. Prepare the effect sizes",
+    "text": "1. Prepare the effect sizes\n\nlibrary(metafor)\n\nsoil &lt;- read.csv(\"../data/teaching/soil_carbon.csv\")\n\nes &lt;- escalc(\n  measure = \"ROM\",\n  m1i = mean_reduced, sd1i = sd_reduced, n1i = n_reduced,\n  m2i = mean_control, sd2i = sd_control, n2i = n_control,\n  data = soil\n)",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#map-the-dependence",
+    "href": "exercises/04-multilevel.html#map-the-dependence",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "2. Map the dependence",
+    "text": "2. Map the dependence\n\nwith(es, table(study_id))\ntable(table(es$study_id))\n\n\nWhich studies contribute more than one effect?\nWhy might two effects from the same study be related?\nWhat additional information would you want from the primary paper to understand the dependence?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#fit-a-naive-model",
+    "href": "exercises/04-multilevel.html#fit-a-naive-model",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "3. Fit a naive model",
+    "text": "3. Fit a naive model\n\nm_naive &lt;- rma(yi, vi, data = es, method = \"REML\")\nsummary(m_naive)\n\nRecord the pooled estimate, SE, CI and heterogeneity estimate.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#fit-a-multilevel-model",
+    "href": "exercises/04-multilevel.html#fit-a-multilevel-model",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "4. Fit a multilevel model",
+    "text": "4. Fit a multilevel model\nFill the blanks.\n\nm_mv &lt;- rma.mv(\n  yi = ___,\n  V = ___,\n  random = ~ 1 | ___/___,\n  data = es,\n  method = \"REML\"\n)\nsummary(m_mv)\n\nCompare the estimate and uncertainty with m_naive.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#interpret-the-variance-components",
+    "href": "exercises/04-multilevel.html#interpret-the-variance-components",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "5. Interpret the variance components",
+    "text": "5. Interpret the variance components\nUse:\n\nm_mv$sigma2\n\nWhich component corresponds to variation among studies and which to variation among effects within studies? What might each represent scientifically?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#the-important-limitation",
+    "href": "exercises/04-multilevel.html#the-important-limitation",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "6. The important limitation",
+    "text": "6. The important limitation\nThe teaching data provide sampling variances (vi) but not sampling covariances between effects from the same study.\nExplain why a study-level random effect does not necessarily solve correlation caused by shared controls or repeated measurements.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/04-multilevel.html#decision-challenge",
+    "href": "exercises/04-multilevel.html#decision-challenge",
+    "title": "Exercise 4 — Dependence and multilevel meta-analysis",
+    "section": "7. Decision challenge",
+    "text": "7. Decision challenge\nWrite 3–4 sentences explaining to a review team:\n\nwhy treating every row as independent is questionable;\nwhat the multilevel model improves;\nwhat dependence assumption remains unresolved;\nwhat you would seek or test in a full review.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 4 — Dependence and multilevel meta-analysis"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html",
+    "href": "exercises/06-sensitivity.html",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "",
+    "text": "Test whether substantive conclusions depend on influential observations or defensible analytical choices.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#aim",
+    "href": "exercises/06-sensitivity.html#aim",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "",
+    "text": "Test whether substantive conclusions depend on influential observations or defensible analytical choices.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#define-the-primary-conclusion-first",
+    "href": "exercises/06-sensitivity.html#define-the-primary-conclusion-first",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "1. Define the primary conclusion first",
+    "text": "1. Define the primary conclusion first\nFit the primary model:\n\nm_primary &lt;- rma(yi, vi, data = es, method = \"REML\")\npredict(m_primary, transf = exp)\n\nBefore running diagnostics, write one sentence stating the substantive conclusion you would currently draw.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#leave-one-out-analysis",
+    "href": "exercises/06-sensitivity.html#leave-one-out-analysis",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "2. Leave-one-out analysis",
+    "text": "2. Leave-one-out analysis\n\nloo &lt;- leave1out(m_primary)\nloo\n\nAsk:\n\nHow much does the pooled estimate move?\nHow much does its uncertainty move?\nDoes heterogeneity change substantially?\nDoes the substantive conclusion change?\n\nAvoid using “does p remain &lt; 0.05?” as the sole robustness criterion.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#influence-diagnostics",
+    "href": "exercises/06-sensitivity.html#influence-diagnostics",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "3. Influence diagnostics",
+    "text": "3. Influence diagnostics\n\ninf &lt;- influence(m_primary)\nprint(inf)\nplot(inf)\n\nIf an effect is influential, what should you do before considering exclusion?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#alternative-heterogeneity-estimator",
+    "href": "exercises/06-sensitivity.html#alternative-heterogeneity-estimator",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "4. Alternative heterogeneity estimator",
+    "text": "4. Alternative heterogeneity estimator\n\nm_pm &lt;- rma(yi, vi, data = es, method = \"PM\")\n\npredict(m_primary, transf = exp)\npredict(m_pm, transf = exp)\n\nDoes this defensible modelling choice materially alter the interpretation?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#dependence-as-a-sensitivity-question",
+    "href": "exercises/06-sensitivity.html#dependence-as-a-sensitivity-question",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "5. Dependence as a sensitivity question",
+    "text": "5. Dependence as a sensitivity question\nCompare:\n\nm_independent &lt;- rma(yi, vi, data = es, method = \"REML\")\n\nm_multilevel &lt;- rma.mv(\n  yi, vi,\n  random = ~ 1 | study_id/effect_id,\n  data = es,\n  method = \"REML\"\n)\n\nHow do the estimates and standard errors differ? Which model better represents the known structure of the teaching data?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#risk-of-bias-thought-experiment",
+    "href": "exercises/06-sensitivity.html#risk-of-bias-thought-experiment",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "6. Risk-of-bias thought experiment",
+    "text": "6. Risk-of-bias thought experiment\nImagine two studies were judged at high risk of bias because outcome measurement differed systematically between intervention and control groups.\nDesign a prespecified sensitivity analysis. What would you compare, and what result would make you more cautious about the primary conclusion?",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/06-sensitivity.html#robustness-statement",
+    "href": "exercises/06-sensitivity.html#robustness-statement",
+    "title": "Exercise 6 — Sensitivity and robustness",
+    "section": "7. Robustness statement",
+    "text": "7. Robustness statement\nWrite a paragraph using this structure:\n\nThe primary analysis estimated ____. Results were similar/different when ____. The conclusion was most sensitive to ____. Therefore, ____.\n\nBe explicit about which assumptions you tested. Do not claim that the result is “robust” in general.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 6 — Sensitivity and robustness"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html",
+    "href": "exercises/08-interpretation.html",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "",
+    "text": "Turn the completed analysis into a concise, decision-relevant evidence statement without outrunning the evidence.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#aim",
+    "href": "exercises/08-interpretation.html#aim",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "",
+    "text": "Turn the completed analysis into a concise, decision-relevant evidence statement without outrunning the evidence.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#return-to-the-estimand",
+    "href": "exercises/08-interpretation.html#return-to-the-estimand",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "1. Return to the estimand",
+    "text": "1. Return to the estimand\nWrite your target estimand in one sentence: population/settings, intervention, comparator, outcome, effect measure and relevant time frame. Then state whether the analysed evidence matches it exactly or only approximately.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#extract-the-quantities-you-need",
+    "href": "exercises/08-interpretation.html#extract-the-quantities-you-need",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "2. Extract the quantities you need",
+    "text": "2. Extract the quantities you need\nFrom your preferred model, record:\n\nsummary(m)\npredict(m, transf = exp)\n\nCapture:\n\npooled effect on the analysis scale;\ntransformed relative effect;\n95% confidence interval;\nprediction interval;\nheterogeneity estimate(s).",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#translate-without-significance-language",
+    "href": "exercises/08-interpretation.html#translate-without-significance-language",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "3. Translate without significance language",
+    "text": "3. Translate without significance language\nWrite two sentences describing magnitude and uncertainty without using “significant”, “non-significant”, “works” or “does not work”.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#add-variation-and-context",
+    "href": "exercises/08-interpretation.html#add-variation-and-context",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "4. Add variation and context",
+    "text": "4. Add variation and context\nAdd one sentence explaining what the prediction interval/heterogeneity means for applying the average effect to another agri-food setting.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#add-credibility",
+    "href": "exercises/08-interpretation.html#add-credibility",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "5. Add credibility",
+    "text": "5. Add credibility\nUsing Modules 6 and 7, add one sentence covering the most important robustness or reporting-bias limitation. Do not list every diagnostic.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#decision-maker-version",
+    "href": "exercises/08-interpretation.html#decision-maker-version",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "6. Decision-maker version",
+    "text": "6. Decision-maker version\nWrite a maximum 80-word summary for a policy or management audience. It should include:\n\ndirection and approximate magnitude;\nuncertainty and/or variation;\nthe most important qualification;\nthe population/settings to which the evidence most directly applies.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "exercises/08-interpretation.html#final-check",
+    "href": "exercises/08-interpretation.html#final-check",
+    "title": "Exercise 8 — From model to conclusion",
+    "section": "7. Final check",
+    "text": "7. Final check\nHighlight any claim in your paragraph that goes beyond the design of the included studies or beyond the range of contexts represented. Rewrite it more cautiously.",
+    "crumbs": [
+      "Home",
+      "Exercises",
+      "Exercise 8 — From model to conclusion"
+    ]
+  },
+  {
+    "objectID": "instructor-guide.html",
+    "href": "instructor-guide.html",
+    "title": "Instructor guide",
+    "section": "",
+    "text": "This course treats meta-analysis as part of evidence synthesis, not simply as a statistical procedure. The recurring sequence is:\n\nQuestion → estimand → compatible evidence → effect size → model → heterogeneity → dependence → moderators → robustness → interpretation\n\nModules 0–3 form the introductory core and can be taught as a half-day intensive session or expanded with exercises into a full day."
+  },
+  {
+    "objectID": "instructor-guide.html#teaching-philosophy",
+    "href": "instructor-guide.html#teaching-philosophy",
+    "title": "Instructor guide",
+    "section": "",
+    "text": "This course treats meta-analysis as part of evidence synthesis, not simply as a statistical procedure. The recurring sequence is:\n\nQuestion → estimand → compatible evidence → effect size → model → heterogeneity → dependence → moderators → robustness → interpretation\n\nModules 0–3 form the introductory core and can be taught as a half-day intensive session or expanded with exercises into a full day."
+  },
+  {
+    "objectID": "instructor-guide.html#suggested-timings-for-modules-03",
+    "href": "instructor-guide.html#suggested-timings-for-modules-03",
+    "title": "Instructor guide",
+    "section": "Suggested timings for Modules 0–3",
+    "text": "Suggested timings for Modules 0–3\n\n\n\nModule\nSlides/discussion\nExercise\nTotal\n\n\n\n\n0. From question to meta-analysis\n30 min\n10 min\n40 min\n\n\n1. Effect sizes\n35 min\n25 min\n60 min\n\n\n2. First meta-analysis\n40 min\n30 min\n70 min\n\n\n3. Heterogeneity\n35 min\n25 min\n60 min\n\n\n\nAdd breaks as appropriate. For a shorter workshop, retain the interpretation questions and reduce coding time rather than removing the conceptual framing."
+  },
+  {
+    "objectID": "instructor-guide.html#presenter-notes",
+    "href": "instructor-guide.html#presenter-notes",
+    "title": "Instructor guide",
+    "section": "Presenter notes",
+    "text": "Presenter notes\nEvery RevealJS deck contains ::: {.notes} blocks. These are intended as teaching prompts rather than a script that must be read verbatim. They identify discussion questions, common misconceptions and transitions."
+  },
+  {
+    "objectID": "instructor-guide.html#teaching-dataset",
+    "href": "instructor-guide.html#teaching-dataset",
+    "title": "Instructor guide",
+    "section": "Teaching dataset",
+    "text": "Teaching dataset\ndata/teaching/soil_carbon.csv is synthetic. It is deliberately simple and should not be presented as empirical evidence about reduced tillage. The final EU-NESA package can supplement it with openly licensed empirical agri-food datasets where permissions and provenance are clear."
+  },
+  {
+    "objectID": "instructor-guide.html#r-setup",
+    "href": "instructor-guide.html#r-setup",
+    "title": "Instructor guide",
+    "section": "R setup",
+    "text": "R setup\nParticipants need:\ninstall.packages(c(\"metafor\", \"tidyverse\"))\nThe introductory exercises primarily use metafor; dplyr is used for readable data manipulation."
+  },
+  {
+    "objectID": "instructor-guide.html#key-messages-to-protect",
+    "href": "instructor-guide.html#key-messages-to-protect",
+    "title": "Instructor guide",
+    "section": "Key messages to protect",
+    "text": "Key messages to protect\n\nThe effect measure follows from the estimand.\nPrecision is not the same as methodological quality.\nRandom effects do not make conceptually incompatible studies compatible.\nDo not interpret individual statistical significance by vote counting.\n\\(I^2\\) is not a quality score or a universal traffic-light measure.\nPrediction intervals can be more decision-relevant than the confidence interval around the mean.\nCausal interpretation depends on study design and assumptions, not on meta-analysis alone."
+  },
+  {
+    "objectID": "instructor-guide.html#modules-46-suggested-teaching-plan",
+    "href": "instructor-guide.html#modules-46-suggested-teaching-plan",
+    "title": "Instructor guide",
+    "section": "Modules 4–6: suggested teaching plan",
+    "text": "Modules 4–6: suggested teaching plan\n\nModule 4 — Dependence is not optional (35–45 min + 30 min practical)\nUse participants’ own examples of multiple outcomes, time points and shared controls before introducing rma.mv(). The conceptual goal is to recognise dependence and map its source; the software is secondary. Explicitly distinguish random-effects clustering from sampling covariance.\n\n\nModule 5 — Explaining heterogeneity (35–45 min + 30 min practical)\nAsk learners to state a biological moderator hypothesis before fitting a model. Keep the causal warning prominent: most meta-regressions compare study characteristics across studies, even when treatment allocation within the primary studies was randomised. Focus reporting on estimates, uncertainty, data support and residual heterogeneity rather than moderator p-values.\n\n\nModule 6 — Sensitivity and robustness (30–40 min + 30 min practical)\nBegin by asking which analytical choices in the synthesis were genuinely uncertain. Separate influence diagnostics from sensitivity analyses. The endpoint is a robustness statement describing which conclusions are stable to which tested assumptions; avoid reducing robustness to whether statistical significance changes."
+  },
+  {
+    "objectID": "instructor-guide.html#module-7-missing-evidence-and-reporting-bias",
+    "href": "instructor-guide.html#module-7-missing-evidence-and-reporting-bias",
+    "title": "Instructor guide",
+    "section": "Module 7 — Missing evidence and reporting bias",
+    "text": "Module 7 — Missing evidence and reporting bias\nSuggested time: 40–50 minutes teaching + 25–35 minutes practical.\nThe central teaching principle is that funnel plots and regression tests identify patterns, not the mechanism that caused them. Start with the reporting process, then introduce statistical diagnostics. Encourage triangulation across search/extraction information, study characteristics and statistical patterns. Avoid teaching trim-and-fill as a correction procedure."
+  },
+  {
+    "objectID": "instructor-guide.html#module-8-from-model-to-conclusion",
+    "href": "instructor-guide.html#module-8-from-model-to-conclusion",
+    "title": "Instructor guide",
+    "section": "Module 8 — From model to conclusion",
+    "text": "Module 8 — From model to conclusion\nSuggested time: 40–50 minutes teaching + 30 minutes synthesis exercise.\nUse this as the capstone. Participants should return to the estimand from Module 0 and build a conclusion from magnitude, uncertainty, variation, credibility and applicability. The final exercise works well in pairs: one participant writes the technical paragraph and the other rewrites it for a decision-maker, then they compare what information was lost."
   },
   {
     "objectID": "readings.html",
